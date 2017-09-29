@@ -12,6 +12,7 @@ angular
       $urlRouterProvider) {
     $stateProvider
       .state('login', {
+        title: 'Đăng nhập & Đăng ký',
         url: '',
         templateUrl: 'views/login.html',
         controller: 'LoginController'

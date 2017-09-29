@@ -28,8 +28,7 @@
       "required": true
     },
     "sex": {
-      "type": "boolean",
-      "required": true
+      "type": "boolean"
     },
     "address": {
       "type": "string"

@@ -22,13 +22,11 @@
   <div class="container">
     <header>
       <h1>Login and Registration Form</h1>
-
     </header>
     <section>
       <div id="container_demo">
         <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
-        <a class="hiddenanchor" id="toregister"></a>
-        <a class="hiddenanchor" id="tologin"></a>
+
         <div id="wrapper">
           <div id="login" class="animate form" ng-if="login">
             <form action="mysuperscript.php" autocomplete="on">
@@ -46,41 +44,44 @@
                 <label for="loginkeeping">Keep me logged in</label>
               </p>
               <p class="login button">
-                <a href="http://cookingfoodsworld.blogspot.in/" target="_blank"></a>
+                <input type="submit" value="Signin" />
               </p>
               <p class="change_link">
                 Not a member yet ?
-                <a ng-click="show(register)" class="to_register">Join us</a>
+                <a ng-click="show('register')" class="to_register">Join us</a>
               </p>
             </form>
           </div>
 
           <div id="register" class="animate form" ng-if="!login">
-            <form action="mysuperscript.php" autocomplete="on">
+            <form ng-submit="register()" autocomplete="on">
               <h1> Sign up </h1>
               <p>
                 <label for="usernamesignup" class="uname">Your username</label>
-                <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="mysuperusername690" />
+                <input id="usernamesignup" ng-model="student.name" name="usernamesignup" required="required" type="text" placeholder="Bạn tên là gì nhỉ ?"
+                />
               </p>
               <p>
                 <label for="emailsignup" class="youmail"> Your email</label>
-                <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@mail.com" />
+                <input id="emailsignup" name="emailsignup" ng-model="student.email" required="required" type="email" placeholder="mysupermail@mail.com"
+                />
               </p>
               <p>
                 <label for="passwordsignup" class="youpasswd">Your password </label>
-                <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO" />
+                <input id="passwordsignup" name="passwordsignup" ng-model="student.password" required="required" type="password" placeholder="eg. X8df!90EO"
+                />
               </p>
               <p>
                 <label for="passwordsignup_confirm" class="youpasswd">Please confirm your password </label>
-                <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"
-                />
+                <input id="passwordsignup_confirm" name="passwordsignup_confirm" ng-model="student.repass" required="required" type="password"
+                  placeholder="eg. X8df!90EO" />
               </p>
               <p class="signin button">
-                <input type="submit" value="Sign up" />
+                <input ng-submit="register()" type="submit" value="Sign up" />
               </p>
               <p class="change_link">
                 Already a member ?
-                <a ng-click="show(login)" class="to_register"> Go and log in </a>
+                <a ng-click="show('login')" class="to_register"> Go and log in </a>
               </p>
             </form>
           </div>

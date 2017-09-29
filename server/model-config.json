@@ -19,5 +19,8 @@
     "options": {
       "realmRequired": false
     }
+  },
+  "Email": {
+    "dataSource": "emailDs"
   }
 }
