@@ -1,0 +1,31 @@
+{
+  "mysqlDs": {
+    "host": "localhost",
+    "port": 3306,
+    "url": "",
+    "database": "bkconnect",
+    "password": "",
+    "name": "mysqlDs",
+    "user": "root",
+    "connector": "mysql"
+  },
+  "emailDs": {
+    "name": "emailDs",
+    "connector": "mail",
+    "transports": [
+      {
+        "type": "smtp",
+        "host": "smtp.gmail.com",
+        "secure": true,
+        "port": 465,
+        "tls": {
+          "rejectUnauthorized": false
+        },
+        "auth": {
+          "user": "confirm.huylv@gmail.com",
+          "pass": "vanhuy96"
+        }
+      }
+    ]
+  }
+}

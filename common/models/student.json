@@ -1,0 +1,66 @@
+{
+  "name": "student",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "restrictResetPasswordTokenScope": true,
+  "emailVerificationRequired": true,
+  "properties": {
+    "realm": false,
+    "username": false,
+    "idstudent": {
+      "type": "number",
+      "id": true,
+      "required": false,
+      "doc": "This is the primary ID used to identify a contact"
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string"
+    },
+    "password": {
+      "type": "string",
+      "required": true
+    },
+    "sex": {
+      "type": "boolean",
+      "required": true
+    },
+    "address": {
+      "type": "string"
+    },
+    "birthday": {
+      "type": "date"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "skill": {
+      "type": "object"
+    },
+    "experience": {
+      "type": "object"
+    },
+    "education": {
+      "type": "object"
+    },
+    "objective": {
+      "type": "string"
+    },
+    "photo": {
+      "type": "string"
+    },
+    "other": {
+      "type": "object"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
