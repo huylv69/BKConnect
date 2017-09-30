@@ -3,6 +3,9 @@ angular.module('app').controller('LoginController', ['$scope', '$state', '$rootS
 
         $scope.student = {};
         $scope.user = {};
+        $scope.admin = {};
+
+        //show template login/register
         $scope.login = true;
         $scope.show = function (type) {
             if (type == 'register') {
@@ -12,6 +15,7 @@ angular.module('app').controller('LoginController', ['$scope', '$state', '$rootS
             }
         }
 
+        //register student
         $scope.register = function () {
             var name = $scope.student.name;
             var password = $scope.student.password;
@@ -37,6 +41,7 @@ angular.module('app').controller('LoginController', ['$scope', '$state', '$rootS
             }
         }
 
+        //signin student
         $scope.signIn = function () {
             var email = $scope.user.email;
             var password = $scope.user.password;
@@ -44,13 +49,13 @@ angular.module('app').controller('LoginController', ['$scope', '$state', '$rootS
             $mAuth.signin(email, password, function (response) {
                 console.log(response);
                 if (response.status == 200) {
-                    $rootScope.textNotifi = "Đăng kí nhập thành công";
+                    $rootScope.textNotifi = "Đăng nhập thành công";
                     $scope.showNotifi = true;
                 } else {
-                    if (response.data.error.code == "LOGIN_FAILED_EMAIL_NOT_VERIFIED"){
+                    if (response.data.error.code == "LOGIN_FAILED_EMAIL_NOT_VERIFIED") {
                         $scope.textLogin = "Xác thực email trước khi đăng nhập";
                         $scope.errLogin = true;
-                    }else{
+                    } else {
                         $scope.textLogin = "*Login failed. Wrong username or password ";
                         $scope.errLogin = true;
                     }
@@ -58,4 +63,22 @@ angular.module('app').controller('LoginController', ['$scope', '$state', '$rootS
             });
         }
 
+
+        //Admin 
+        $scope.loginAdmin = function () {
+            var username = $scope.admin.username;
+            var password = $scope.admin.password;
+            console.log($scope.admin);
+            $mAuth.loginAdmin(username, password, function (response) {
+                console.log(response);
+                if (response.status == 200) {
+                    $scope.textAdmin = "Đăng nhập thành công";
+                    $scope.adminNotifi = true;
+                } else {
+                    $scope.textAdmin = "*Login failed. Wrong username or password ";
+                    $scope.adminNotifi = true;
+
+                }
+            });
+        }
     }]);

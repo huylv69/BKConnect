@@ -1,0 +1,25 @@
+<head>
+  <link href="views/admin/css/login.css" rel="stylesheet" type="text/css">
+  <script src="views/admin/js/login.js"></script>
+</head>
+<div class="container"></div>
+<div id="login-box">
+  <div class="logo">
+    <img src="http://lorempixel.com/output/people-q-c-100-100-1.jpg" class="img img-responsive img-circle center-block" />
+    <h1 class="logo-caption"><span class="tweak">L</span>ogin</h1>
+  </div>
+  <!-- /.logo -->
+  <div class="controls">
+    <input type="text" ng-model="admin.username" name="username" placeholder="Username" class="form-control" />
+    <input type="password" ng-model="admin.password" name="password" placeholder="Password" class="form-control" />
+    <button type="button" ng-click="loginAdmin()" class="btn btn-default btn-block btn-custom">Login</button>
+  </div>
+  <!-- /.controls -->
+</div>
+<!-- /#login-box -->
+<h1 class="text-notifi" ng-if="adminNotifi"> {{textAdmin}} </h1>
+
+</div>
+<!-- /.container -->
+<div id="particles-js"></div>
+<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>-->

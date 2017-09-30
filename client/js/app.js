@@ -9,12 +9,14 @@ angular
     'service.auth',
     'service.localStorage'
   ])
-  .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider,
-    $urlRouterProvider) {
+  .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider,
+    $urlRouterProvider, $locationProvider) {
+    $locationProvider.hashPrefix('!');
+    $locationProvider.html5Mode(true);
     $stateProvider
       .state('login', {
         title: 'Đăng nhập & Đăng ký',
-        url: '',
+        url: '/login',
         templateUrl: 'views/student/login.html',
         controller: 'LoginController'
       })
@@ -24,5 +26,17 @@ angular
         templateUrl: 'views/student/verified.html',
         controller: 'LoginController'
       })
+      .state('loginAdmin', {
+        title: 'Đăng nhập tài khoản admin',
+        url: '/admin',
+        templateUrl: 'views/admin/login.html',
+        controller: 'LoginController'
+      })
+      .state('profile', {
+        title: 'Đăng nhập tài khoản admin',
+        url: '/student/profile',
+        templateUrl: 'views/student/profile.html',
+        controller: 'LoginController'
+      });
     $urlRouterProvider.otherwise('login');
   }]);

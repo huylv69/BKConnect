@@ -45,7 +45,7 @@
   },
   "AccessTokenStudent": {
     "dataSource": "mysqlDs",
-    "public": true
+    "public": false
   },
   "admin": {
     "dataSource": "mysqlDs",
@@ -53,6 +53,6 @@
   },
   "AccessTokenAdmin": {
     "dataSource": "mysqlDs",
-    "public": true
+    "public": false
   }
 }
