@@ -26,23 +26,27 @@
     <section>
       <div id="container_demo">
         <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
-
+        <h1 class="text-notifi" ng-if="showNotifi"> {{textNotifi}} </h1>
         <div id="wrapper">
           <div id="login" class="animate form" ng-if="login">
-            <form action="mysuperscript.php" autocomplete="on">
+            <form ng-submit="signIn()" autocomplete="on">
               <h1>Log in</h1>
               <p>
-                <label for="username" class="uname"> Your email or username </label>
-                <input id="username" name="username" required="required" type="text" placeholder="myusername or mymail@mail.com" />
+                <label for="email" class="uname"> Your email </label>
+                <input id="email" ng-model="user.email" name="email" required="required" type="email" placeholder="20141943@student.hust.edu.vn"
+                />
               </p>
               <p>
                 <label for="password" class="youpasswd"> Your password </label>
-                <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" />
+                <input id="password" ng-model="user.password" name="password" required="required" type="password" placeholder="eg. X8df!90EO"
+                />
               </p>
-              <p class="keeplogin">
+              <!-- <p class="keeplogin">
                 <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" />
                 <label for="loginkeeping">Keep me logged in</label>
-              </p>
+              </p> -->
+              <p ng-show="errLogin" class="p_errorLogin" text> {{textLogin}} </p>              
+              
               <p class="login button">
                 <input type="submit" value="Signin" />
               </p>
@@ -53,8 +57,11 @@
             </form>
           </div>
 
+
+          
           <div id="register" class="animate form" ng-if="!login">
             <form ng-submit="register()" autocomplete="on">
+
               <h1> Sign up </h1>
               <p>
                 <label for="usernamesignup" class="uname">Your username</label>
@@ -63,7 +70,7 @@
               </p>
               <p>
                 <label for="emailsignup" class="youmail"> Your email</label>
-                <input id="emailsignup" name="emailsignup" ng-model="student.email" required="required" type="email" placeholder="mysupermail@mail.com"
+                <input id="emailsignup" name="emailsignup" ng-model="student.email" required="required" type="email" placeholder="20141943@student.hust.edu.vn"
                 />
               </p>
               <p>
@@ -76,16 +83,17 @@
                 <input id="passwordsignup_confirm" name="passwordsignup_confirm" ng-model="student.repass" required="required" type="password"
                   placeholder="eg. X8df!90EO" />
               </p>
+              <p ng-show="usernameIsExisting" class="p_errorLogin"> * Tài khoản đã tồn tại, vui lòng thử lại với email mới </p>                            
               <p class="signin button">
-                <input ng-submit="register()" type="submit" value="Sign up" />
+                <input  type="submit" value="Sign up" />
               </p>
               <p class="change_link">
                 Already a member ?
                 <a ng-click="show('login')" class="to_register"> Go and log in </a>
               </p>
+
             </form>
           </div>
-
         </div>
       </div>
     </section>

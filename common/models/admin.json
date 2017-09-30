@@ -1,0 +1,37 @@
+{
+  "name": "admin",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "emailVerified": false,
+    "verificationToken": false,
+    "realm": false,
+    "email": false,
+    "idadmin": {
+      "type": "number",
+      "id": true,
+      "required": false,
+      "doc": "This is the primary ID used to identify a contact"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "accessTokens": {
+      "type": "hasMany",
+      "model": "AccessTokenAdmin",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

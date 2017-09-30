@@ -22,5 +22,37 @@
   },
   "Email": {
     "dataSource": "emailDs"
+  },
+  "User": {
+    "dataSource": "mysqlDs",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "mysqlDs",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "mysqlDs",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "mysqlDs",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "mysqlDs",
+    "public": false
+  },
+  "AccessTokenStudent": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "admin": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "AccessTokenAdmin": {
+    "dataSource": "mysqlDs",
+    "public": true
   }
 }

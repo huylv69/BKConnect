@@ -6,16 +6,23 @@
 angular
   .module('app', [
     'ui.router',
-    //'service.auth'
+    'service.auth',
+    'service.localStorage'
   ])
-  .config(['$stateProvider', '$urlRouterProvider',function($stateProvider,
-      $urlRouterProvider) {
+  .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider,
+    $urlRouterProvider) {
     $stateProvider
       .state('login', {
         title: 'Đăng nhập & Đăng ký',
         url: '',
-        templateUrl: 'views/login.html',
+        templateUrl: 'views/student/login.html',
         controller: 'LoginController'
-      });
+      })
+      .state('verified', {
+        title: 'Kích hoạt thành công',
+        url: '/verified',
+        templateUrl: 'views/student/verified.html',
+        controller: 'LoginController'
+      })
     $urlRouterProvider.otherwise('login');
   }]);

@@ -2,8 +2,20 @@
 
 var loopback = require('loopback');
 var boot = require('loopback-boot');
+var bodyParser = require('body-parser');
+var path = require('path');
+
 
 var app = module.exports = loopback();
+
+// configure view handler
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+// configure body parser
+app.use(bodyParser.urlencoded({extended: true}));
+
+//app.use(loopback.token());
 
 app.start = function() {
   // start the web server
