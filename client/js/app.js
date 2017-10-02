@@ -7,7 +7,8 @@ angular
   .module('app', [
     'ui.router',
     'service.auth',
-    'service.localStorage'
+    'service.localStorage',
+    'service.student'
   ])
   .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider,
     $urlRouterProvider, $locationProvider) {
@@ -36,7 +37,12 @@ angular
         title: 'Đăng nhập tài khoản admin',
         url: '/student/profile',
         templateUrl: 'views/student/profile.html',
-        controller: 'LoginController'
+        controller: 'ProfileController'
       });
     $urlRouterProvider.otherwise('login');
+    
+    // $('#test').addClass('hide');
+    // $('#test').removeClass('hide');
+    
+
   }]);

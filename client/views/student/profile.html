@@ -8,7 +8,7 @@
   <!-- left column -->
   <div class="col-md-3">
     <div class="text-center">
-      <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+      <img src="//placehold.it/100" ng-model="user.photo" class="avatar img-circle" alt="avatar">
       <h6>Upload a different photo...</h6>
 
       <input type="file" class="form-control">
@@ -19,74 +19,108 @@
   <div class="col-md-9 personal-info">
     <div class="alert alert-info alert-dismissable">
       <a class="panel-close close" data-dismiss="alert">×</a>
-      <i class="fa fa-coffee"></i> This is an <strong>.alert</strong>. Use this to show important messages to the user.
+      <i class="fa fa-coffee"></i> Hãy cập nhật thông tin <strong>cẩn thận</strong>. Thông tin sẽ được sử dụng để gửi CV
+      khi bạn apply.
     </div>
     <h3>Personal info</h3>
 
     <form class="form-horizontal" role="form">
       <div class="form-group">
-        <label class="col-lg-3 control-label">First name:</label>
+        <label class="col-lg-3 control-label"><i class="glyphicon glyphicon-user"></i> Email </label>
         <div class="col-lg-8">
-          <input class="form-control" type="text" value="Jane">
+          <input class="form-control" disabled="disabled" type="email" ng-model="user.email" value="20141943@student.hust.edu.vn">
         </div>
       </div>
       <div class="form-group">
-        <label class="col-lg-3 control-label">Last name:</label>
+        <label class="col-lg-3 control-label">Họ tên: </i></label>
         <div class="col-lg-8">
-          <input class="form-control" type="text" value="Bishop">
+          <input class="form-control" type="text" ng-model="user.userName" value="HuyLV">
         </div>
       </div>
+
       <div class="form-group">
-        <label class="col-lg-3 control-label">Company:</label>
+        <label class="col-lg-3 control-label">Giới tính:</label>
         <div class="col-lg-8">
-          <input class="form-control" type="text" value="">
+
+          <label class="radio-inline"><input type="radio" name="male">Nam</label>
+          <label class="radio-inline"><input type="radio" name="female">Nữ</label>
+
         </div>
       </div>
+
       <div class="form-group">
-        <label class="col-lg-3 control-label">Email:</label>
-        <div class="col-lg-8">
-          <input class="form-control" type="text" value="janesemail@gmail.com">
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="col-lg-3 control-label">Time Zone:</label>
-        <div class="col-lg-8">
-          <div class="ui-select">
-            <select id="user_time_zone" class="form-control">
-                  <option value="Hawaii">(GMT-10:00) Hawaii</option>
-                  <option value="Alaska">(GMT-09:00) Alaska</option>
-                  <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
-                  <option value="Arizona">(GMT-07:00) Arizona</option>
-                  <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
-                  <option value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
-                  <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
-                  <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
-                </select>
+        <label class="col-md-3 control-label">Ngày sinh:</label>
+        <div class="col-md-8">
+          <div class='input-group date' id='datetimepicker2'>
+            <input type='text' class="form-control" ng-model="user.date" />
+            <span class="input-group-addon">
+             <span class="glyphicon glyphicon-calendar"></span>
+            </span>
           </div>
         </div>
       </div>
+      <script type="text/javascript">
+        $(function () {
+          $('#datetimepicker2').datetimepicker({
+            
+          });
+        });
+      </script>
+
       <div class="form-group">
-        <label class="col-md-3 control-label">Username:</label>
-        <div class="col-md-8">
-          <input class="form-control" type="text" value="janeuser">
+        <label class="col-lg-3 control-label">Số điện thoại</label>
+        <div class="col-lg-8">
+          <input class="form-control" ng-model="user.phone" type="text" value="0123456789">
         </div>
       </div>
+
       <div class="form-group">
-        <label class="col-md-3 control-label">Password:</label>
-        <div class="col-md-8">
-          <input class="form-control" type="password" value="11111122333">
+        <label class="col-lg-3 control-label">Địa chỉ:</label>
+        <div class="col-lg-8">
+          <textarea class="form-control" ng-model="user.address" rows="5"></textarea>
         </div>
       </div>
+
       <div class="form-group">
-        <label class="col-md-3 control-label">Confirm password:</label>
+        <label class="col-md-3 control-label">Kĩ năng:</label>
         <div class="col-md-8">
-          <input class="form-control" type="password" value="11111122333">
+          <textarea class="form-control" ng-model="user.skill" type="text" value=""></textarea>
         </div>
       </div>
+
+      <div class="form-group">
+        <label class="col-md-3 control-label">Kinh nghiệm:</label>
+        <div class="col-md-8">
+          <textarea class="form-control" ng-model="user.experience" type="text" value=""></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-3 control-label">Học vấn:</label>
+        <div class="col-md-8">
+          <textarea class="form-control" ng-model="user.education" type="text" value=""></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-3 control-label">Mục tiêu:</label>
+        <div class="col-md-8">
+          <textarea class="form-control" ng-model="user.objective" type="text" value=""></textarea>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label class="col-md-3 control-label">Thông tin bổ sung:</label>
+        <div class="col-md-8">
+          <textarea class="form-control" ng-model="user.other" type="text" value=""></textarea>
+        </div>
+      </div>
+
       <div class="form-group">
         <label class="col-md-3 control-label"></label>
         <div class="col-md-8">
-          <input type="button" class="btn btn-primary" value="Save Changes">
+          <input type="button" class="btn btn-primary" ng-click="updateInfo()" value="Save Changes">
           <span></span>
           <input type="reset" class="btn btn-default" value="Cancel">
         </div>

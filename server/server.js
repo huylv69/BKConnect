@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 //List here the paths you do not want to be redirected to the angular application (scripts, stylesheets, templates, loopback REST API, ...)
-var ignoredPaths = ['/vendor', '/css', '/js', '/views', '/api','/explorer'];
+var ignoredPaths = ['/vendor', '/css', '/js', '/views', '/api', '/explorer'];
 app.all('/*', function (req, res, next) {
   //Redirecting to index only the requests that do not start with ignored paths
   if (!startsWith(req.url, ignoredPaths))

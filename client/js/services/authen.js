@@ -69,10 +69,9 @@ angular
       $http.post(BASE_URL + 'admins/login', { username: username, password: password })
         .then(function (response) {
           callback(response);
-        })
-        .catch(function (response) {
+        }, function (response) {
           callback(response);
-        })
+        });
     }
     return service;
   }]);

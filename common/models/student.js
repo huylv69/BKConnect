@@ -60,4 +60,5 @@ module.exports = function (User) {
             redirectToLinkText: 'Log in'
         });
     });
+    
 };

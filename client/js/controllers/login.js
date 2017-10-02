@@ -45,12 +45,20 @@ angular.module('app').controller('LoginController', ['$scope', '$state', '$rootS
         $scope.signIn = function () {
             var email = $scope.user.email;
             var password = $scope.user.password;
-            console.log($scope.user);
             $mAuth.signin(email, password, function (response) {
                 console.log(response);
                 if (response.status == 200) {
+                    let user = {
+                        userId: response.data.userId,
+                        token: response.data.id
+                    }
+                    $rootScope.currentUser = user;
+                    $mLocalStorage.setItem('userInfo', user);
                     $rootScope.textNotifi = "Đăng nhập thành công";
                     $scope.showNotifi = true;
+                    setTimeout(function () {
+                        $state.go('profile', { "id": 1 });
+                    }, 3000);
                 } else {
                     if (response.data.error.code == "LOGIN_FAILED_EMAIL_NOT_VERIFIED") {
                         $scope.textLogin = "Xác thực email trước khi đăng nhập";
@@ -62,7 +70,6 @@ angular.module('app').controller('LoginController', ['$scope', '$state', '$rootS
                 }
             });
         }
-
 
         //Admin 
         $scope.loginAdmin = function () {
@@ -77,7 +84,6 @@ angular.module('app').controller('LoginController', ['$scope', '$state', '$rootS
                 } else {
                     $scope.textAdmin = "*Login failed. Wrong username or password ";
                     $scope.adminNotifi = true;
-
                 }
             });
         }
