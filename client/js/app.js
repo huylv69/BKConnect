@@ -40,9 +40,14 @@ angular
         controller: 'ProfileController'
       });
     $urlRouterProvider.otherwise('login');
-    
+
     // $('#test').addClass('hide');
     // $('#test').removeClass('hide');
-    
+  }])
+  .run(["$rootScope", '$state', '$mAuth', '$mLocalStorage',
+    function ($rootScope, $state, $mAuth, $mLocalStorage) {
+      //get currentUser
+      $rootScope.currentUser = $mLocalStorage.getItem('userInfo');
 
-  }]);
+    }]);
+

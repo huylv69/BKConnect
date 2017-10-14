@@ -7,9 +7,8 @@ angular
       $http.post(BASE_URL + 'students/login', { email: username, password: password })
         .then(function (response) {
           callback(response);
-        })
-        .catch(function (response) {
-          callback(response);
+        }, function (err) {
+          callback(err);
         })
     }
 

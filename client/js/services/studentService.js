@@ -11,7 +11,7 @@ angular
         $rootScope.accessToken = userInfo.token;
         accessToken = $rootScope.accessToken;
       }
-      return BASE_URL + relativeUrl + "?access_token=" + accessToken;
+      return BASE_URL + relativeUrl + "&access_token=" + accessToken;
     }
 
     service.getInfo = function (userId, callback) {
@@ -24,13 +24,13 @@ angular
 
     service.updateInfo = function (user, callback) {
       console.log(user);
-      var url = buildQueryLink("students/" + user.idstudent);
-      $http.put(url,{email : user.email,name:user.name} ).then(function (res) {
+      var url = buildQueryLink("students/update?where[email]=" + user.email);
+      var params = {
+        where: { email: user.email },
+      }
+      $http.post(url, user).then(function (res) {
         callback(res);
       })
-      // $http.post(url, { where: { "email": user.email }, data: user }).then(function (res) {
-      //   callback(res);
-      // })
     }
     return service;
   }]);

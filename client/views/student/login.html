@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!-->
-<html lang="en" class="no-js">
-<!--<![endif]-->
-
 <head>
   <meta charset="UTF-8" />
   <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
-  <title>Login and Registration Form with HTML5 and CSS3</title>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
   />
   <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
@@ -18,86 +8,86 @@
   <link href="views/student/css/login.css" rel="stylesheet" type="text/css">
 </head>
 
-<body>
-  <div class="container">
-    <header>
-      <h1>Login and Registration Form</h1>
-    </header>
-    <section>
-      <div id="container_demo">
-        <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
-        <h1 class="text-notifi" ng-if="showNotifi"> {{textNotifi}} </h1>
-        <div id="wrapper">
-          <div id="login" class="animate form" ng-if="login">
-            <form ng-submit="signIn()" autocomplete="on">
-              <h1>Log in</h1>
-              <p>
-                <label for="email" class="uname"> Your email </label>
-                <input id="email" ng-model="user.email" name="email" required="required" type="email" placeholder="20141943@student.hust.edu.vn"
-                />
-              </p>
-              <p>
-                <label for="password" class="youpasswd"> Your password </label>
-                <input id="password" ng-model="user.password" name="password" required="required" type="password" placeholder="eg. X8df!90EO"
-                />
-              </p>
-              <!-- <p class="keeplogin">
+<div class="container">
+  <header>
+    <h1>Login and Registration Form</h1>
+  </header>
+  <section>
+    <div id="container_demo">
+      <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+      <h1 class="text-notifi" ng-if="showNotifi"> {{textNotifi}} </h1>
+      <div id="wrapper">
+
+        <div id="login" class="animate form" ng-if="login">
+          <form name="loginForm" ng-submit="signIn()" novalidate>
+            <h1>Log in</h1>
+            <p>
+              <label for="email" class="uname"> Your email </label>
+              <input class="form-control" id="email" ng-model="user.email" name="email" ng-required=true ng-pattern="/[\d]+@student\.hust\.edu\.vn$/"
+                type="email" placeholder="20141943@student.hust.edu.vn" />
+              <span class="text-danger" ng-show="!loginForm.email.$error.required&&loginForm.email.$error.pattern"> * Hust email address is required</span>
+            </p>
+
+            <p>
+              <label for="password" class="youpasswd"> Your password </label>
+              <input id="password" ng-model="user.password" name="password" required="required" type="password" placeholder="eg. X8df!90EO"
+              />
+            </p>
+            <!-- <p class="keeplogin">
                 <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" />
                 <label for="loginkeeping">Keep me logged in</label>
               </p> -->
-              <p ng-show="errLogin" class="p_errorLogin" text> {{textLogin}} </p>
+            <p ng-show="errLogin" class="text-danger" text> {{textLogin}} </p>
+            <p class="login button">
+              <button type="submit" class="btn btn-primary" ng-disabled="loginForm.$invalid">Signin</button>
+            </p>
 
-              <p class="login button">
-                <input type="submit" value="Signin" />
-              </p>
-              <p class="change_link">
-                Not a member yet ?
-                <a ng-click="show('register')" class="to_register">Join us</a>
-              </p>
-            </form>
-          </div>
+            <p class="change_link">
+              Not a member yet ?
+              <a ng-click="show('register')" class="to_register">Join us</a>
+            </p>
+          </form>
+
+        </div>
 
 
 
-          <div id="register" class="animate form" ng-if="!login">
-            <form ng-submit="register()" autocomplete="on">
+        <div id="register" class="animate form" ng-if="!login">
+          <form name="registerForm" ng-submit="register()" autocomplete="on" novalidate>
+            <h1> Sign up </h1>
+            <p>
+              <label for="usernamesignup" class="uname">Your username</label>
+              <input id="usernamesignup" ng-model="student.name" name="usernamesignup" required="required" type="text" placeholder="Bạn tên là gì nhỉ ?"
+              />
+            </p>
+            <p>
+              <label for="emailsignup" class="youmail"> Your email</label>
+              <input id="emailsignup" name="emailsignup" ng-model="student.email" ng-required=true ng-pattern="/[\d]+@student\.hust\.edu\.vn$/"
+                placeholder="20141943@student.hust.edu.vn" />
+              <span class="text-danger" ng-show="!registerForm.emailsignup.$error.required&&registerForm.emailsignup.$error.pattern"> * Hust email address is required</span>
+            </p>
+            <p>
+              <label for="passwordsignup" class="youpasswd">Your password </label>
+              <input id="passwordsignup" name="passwordsignup" ng-model="student.password" required="required" type="password" placeholder="eg. X8df!90EO"
+              />
+            </p>
+            <p>
+              <label for="passwordsignup_confirm" class="youpasswd">Please confirm your password </label>
+              <input id="passwordsignup_confirm" name="passwordsignup_confirm" ng-model="student.repass" required="required" type="password"
+                placeholder="eg. X8df!90EO" />
+            </p>
+            <p ng-show="usernameIsExisting" class="p_errorLogin"> * Tài khoản đã tồn tại, vui lòng thử lại với email mới </p>
+            <p class="signin button">
+              <button type="submit" class="btn btn-primary" ng-disabled="registerForm.$invalid">Signup</button>
+            </p>
+            <p class="change_link">
+              Already a member ?
+              <a ng-click="show('login')" class="to_register"> Go and log in </a>
+            </p>
+          </form>
 
-              <h1> Sign up </h1>
-              <p>
-                <label for="usernamesignup" class="uname">Your username</label>
-                <input id="usernamesignup" ng-model="student.name" name="usernamesignup" required="required" type="text" placeholder="Bạn tên là gì nhỉ ?"
-                />
-              </p>
-              <p>
-                <label for="emailsignup" class="youmail"> Your email</label>
-                <input id="emailsignup" name="emailsignup" ng-model="student.email" required="required" type="email" placeholder="20141943@student.hust.edu.vn"
-                />
-              </p>
-              <p>
-                <label for="passwordsignup" class="youpasswd">Your password </label>
-                <input id="passwordsignup" name="passwordsignup" ng-model="student.password" required="required" type="password" placeholder="eg. X8df!90EO"
-                />
-              </p>
-              <p>
-                <label for="passwordsignup_confirm" class="youpasswd">Please confirm your password </label>
-                <input id="passwordsignup_confirm" name="passwordsignup_confirm" ng-model="student.repass" required="required" type="password"
-                  placeholder="eg. X8df!90EO" />
-              </p>
-              <p ng-show="usernameIsExisting" class="p_errorLogin"> * Tài khoản đã tồn tại, vui lòng thử lại với email mới </p>
-              <p class="signin button">
-                <input type="submit" value="Sign up" />
-              </p>
-              <p class="change_link">
-                Already a member ?
-                <a ng-click="show('login')" class="to_register"> Go and log in </a>
-              </p>
-
-            </form>
-          </div>
         </div>
       </div>
-    </section>
-  </div>
-</body>
-
-</html>
+    </div>
+  </section>
+</div>

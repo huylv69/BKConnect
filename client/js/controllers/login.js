@@ -54,11 +54,27 @@ angular.module('app').controller('LoginController', ['$scope', '$state', '$rootS
                     }
                     $rootScope.currentUser = user;
                     $mLocalStorage.setItem('userInfo', user);
-                    $rootScope.textNotifi = "Đăng nhập thành công";
-                    $scope.showNotifi = true;
-                    setTimeout(function () {
-                        $state.go('profile', { "id": 1 });
-                    }, 3000);
+                    swal(
+                        {
+                            title: "Đăng nhập thành công!",
+                            text: "Hệ thống tự chuyển trang sau 3s!",
+                            icon: "success",
+                            timer: 3000,
+                            button: false,
+                            onOpen: function () {
+                                swal.showLoading()
+                            }
+                        }).then(
+                        function () {
+                            $state.go('profile', { "id": 1 });
+                        },
+                        // handling the promise rejection
+                        function (dismiss) {
+                            if (dismiss === 'timer') {
+                                $state.go('profile', { "id": 1 });
+                            }
+                        }
+                        );
                 } else {
                     if (response.data.error.code == "LOGIN_FAILED_EMAIL_NOT_VERIFIED") {
                         $scope.textLogin = "Xác thực email trước khi đăng nhập";

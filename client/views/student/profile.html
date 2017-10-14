@@ -1,5 +1,6 @@
 <head>
   <link href="vendor/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+  <link type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <h1>Edit Profile</h1>
@@ -8,10 +9,12 @@
   <!-- left column -->
   <div class="col-md-3">
     <div class="text-center">
-      <img src="//placehold.it/100" ng-model="user.photo" class="avatar img-circle" alt="avatar">
-      <h6>Upload a different photo...</h6>
-
-      <input type="file" class="form-control">
+      <label for="avatarFile" style="cursor: pointer;">
+        <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+        <h6 id="fileName">Upload a different photo...</h6>
+      </label>
+      <input type="file" ng-focus="focusCallback($event)" id="avatarFile" style="display : none;" class="form-control" ng-model="user.photo"
+        ng-change="changeCallback()">
     </div>
   </div>
 
@@ -19,93 +22,84 @@
   <div class="col-md-9 personal-info">
     <div class="alert alert-info alert-dismissable">
       <a class="panel-close close" data-dismiss="alert">×</a>
-      <i class="fa fa-coffee"></i> Hãy cập nhật thông tin <strong>cẩn thận</strong>. Thông tin sẽ được sử dụng để gửi CV
-      khi bạn apply.
+      <i class="fa fa-coffee"></i> Hãy cập nhật thông tin
+      <strong>cẩn thận</strong>. Thông tin sẽ được sử dụng để gửi CV khi bạn apply.
     </div>
     <h3>Personal info</h3>
 
     <form class="form-horizontal" role="form">
       <div class="form-group">
-        <label class="col-lg-3 control-label"><i class="glyphicon glyphicon-user"></i> Email </label>
+        <label class="col-lg-3 control-label">
+          <i class="glyphicon glyphicon-user"></i> Email </label>
         <div class="col-lg-8">
           <input class="form-control" disabled="disabled" type="email" ng-model="user.email" value="20141943@student.hust.edu.vn">
         </div>
       </div>
       <div class="form-group">
-        <label class="col-lg-3 control-label">Họ tên: </i></label>
+        <label class="col-lg-3 control-label">Họ tên: </i>
+        </label>
         <div class="col-lg-8">
-          <input class="form-control" type="text" ng-model="user.userName" value="HuyLV">
+          <input class="form-control" type="text" ng-model="user.name" value="HuyLV">
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-lg-3 control-label">Giới tính:</label>
         <div class="col-lg-8">
-
-          <label class="radio-inline"><input type="radio" name="male">Nam</label>
-          <label class="radio-inline"><input type="radio" name="female">Nữ</label>
-
+          <label class="radio-inline">
+            <input type="radio" ng-value="true" ng-model="user.sex">Nam</label>
+          <label class="radio-inline">
+            <input type="radio" ng-value="false" ng-model="user.sex">Nữ</label>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-md-3 control-label">Ngày sinh:</label>
         <div class="col-md-8">
-          <div class='input-group date' id='datetimepicker2'>
-            <input type='text' class="form-control" ng-model="user.date" />
-            <span class="input-group-addon">
-             <span class="glyphicon glyphicon-calendar"></span>
-            </span>
-          </div>
+          <input type='date' class="form-control" ng-model="user.birthday" />
         </div>
       </div>
-      <script type="text/javascript">
-        $(function () {
-          $('#datetimepicker2').datetimepicker({
-            
-          });
-        });
-      </script>
+
 
       <div class="form-group">
         <label class="col-lg-3 control-label">Số điện thoại</label>
         <div class="col-lg-8">
-          <input class="form-control" ng-model="user.phone" type="text" value="0123456789">
+          <input class="form-control" ng-model="user.phone" type="string" value="0123456789">
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-lg-3 control-label">Địa chỉ:</label>
         <div class="col-lg-8">
-          <textarea class="form-control" ng-model="user.address" rows="5"></textarea>
+          <textarea class="form-control" ng-model="user.address" rows="3"></textarea>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-md-3 control-label">Kĩ năng:</label>
         <div class="col-md-8">
-          <textarea class="form-control" ng-model="user.skill" type="text" value=""></textarea>
+          <textarea class="form-control" ng-model="user.skill" type="text" rows="3"></textarea>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-md-3 control-label">Kinh nghiệm:</label>
         <div class="col-md-8">
-          <textarea class="form-control" ng-model="user.experience" type="text" value=""></textarea>
+          <textarea class="form-control" ng-model="user.experience" type="text" rows="3"></textarea>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-md-3 control-label">Học vấn:</label>
         <div class="col-md-8">
-          <textarea class="form-control" ng-model="user.education" type="text" value=""></textarea>
+          <textarea class="form-control" ng-model="user.education" type="text" rows="3"></textarea>
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-md-3 control-label">Mục tiêu:</label>
         <div class="col-md-8">
-          <textarea class="form-control" ng-model="user.objective" type="text" value=""></textarea>
+          <textarea class="form-control" ng-model="user.objective" type="text" rows="3"></textarea>
         </div>
       </div>
 
@@ -113,16 +107,20 @@
       <div class="form-group">
         <label class="col-md-3 control-label">Thông tin bổ sung:</label>
         <div class="col-md-8">
-          <textarea class="form-control" ng-model="user.other" type="text" value=""></textarea>
+          <textarea class="form-control" ng-model="user.other" type="text"></textarea>
         </div>
       </div>
+      <p class="text-center" ng-show="loading">
+        <span class="fa fa-spinner fa-spin fa-3x"></span>
+      </p>
 
       <div class="form-group">
         <label class="col-md-3 control-label"></label>
         <div class="col-md-8">
           <input type="button" class="btn btn-primary" ng-click="updateInfo()" value="Save Changes">
           <span></span>
-          <input type="reset" class="btn btn-default" value="Cancel">
+
+          <input type="reset" ng-click="reset()" class="btn btn-default" value="Cancel">
         </div>
       </div>
     </form>
