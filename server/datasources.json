@@ -1,12 +1,12 @@
 {
   "mysqlDs": {
-    "host": "sql12.freemysqlhosting.net",
+    "host": "localhost",
     "port": 3306,
     "url": "",
-    "database": "sql12199751",
-    "password": "i53m8KmTlE",
+    "database": "bkconnect",
+    "password": "",
     "name": "mysqlDs",
-    "user": "sql12199751",
+    "user": "root",
     "connector": "mysql"
   },
   "emailDs": {
