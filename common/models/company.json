@@ -1,0 +1,72 @@
+{
+  "name": "company",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "realm": false,
+    "username": false,
+    "emailVerified": false,
+    "verificationToken": false,
+    "idcompany": {
+      "type": "number",
+      "id": true,
+      "required": false,
+      "doc": "This is the primary ID used to identify a contact"
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "password": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string"
+    },
+    "activated": {
+      "type": "boolean"
+    },
+    "block": {
+      "type": "boolean"
+    },
+    "address": {
+      "type": "string"
+    },
+    "about": {
+      "type": "object"
+    },
+    "benefits": {
+      "type": "object"
+    },
+    "goal": {
+      "type": "object"
+    },
+    "mission": {
+      "type": "object"
+    },
+    "image": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "accessTokens": {
+      "type": "hasMany",
+      "model": "AccessTokenCompany",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

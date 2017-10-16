@@ -1,5 +1,5 @@
 {
-  "name": "AccessTokenAdmin",
+  "name": "AccessTokenCompany",
   "base": "AccessToken",
   "idInjection": true,
   "options": {
@@ -8,9 +8,9 @@
   "properties": {},
   "validations": [],
   "relations": {
-    "admin": {
+    "company": {
       "type": "belongsTo",
-      "model": "admin",
+      "model": "company",
       "foreignKey": "userId"
     }
   },

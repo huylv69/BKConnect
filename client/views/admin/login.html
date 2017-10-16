@@ -1,12 +1,11 @@
-<head>
-  <link href="views/admin/css/login.css" rel="stylesheet" type="text/css">
-  <script src="views/admin/js/login.js"></script>
-</head>
-<div class="container"></div>
+<link href="views/admin/css/login.css" rel="stylesheet" type="text/css">
+<script src="views/admin/js/login.js"></script>
+<h1 class="text-notifi" ng-if="adminNotifi"> {{textAdmin}} </h1>
 <div id="login-box">
   <div class="logo">
-    <img src="http://lorempixel.com/output/people-q-c-100-100-1.jpg" class="img img-responsive img-circle center-block" />
-    <h1 class="logo-caption"><span class="tweak">L</span>ogin</h1>
+    <img src="views/admin/image/admin.jpg" class="img img-responsive img-circle center-block" />
+    <h1 class="logo-caption">
+      <span class="tweak">L</span>ogin</h1>
   </div>
   <!-- /.logo -->
   <div class="controls">
@@ -17,9 +16,5 @@
   <!-- /.controls -->
 </div>
 <!-- /#login-box -->
-<h1 class="text-notifi" ng-if="adminNotifi"> {{textAdmin}} </h1>
 
-</div>
-<!-- /.container -->
 <div id="particles-js"></div>
-<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>-->

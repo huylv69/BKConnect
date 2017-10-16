@@ -54,5 +54,13 @@
   "AccessTokenAdmin": {
     "dataSource": "mysqlDs",
     "public": false
+  },
+  "company": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "AccessTokenCompany": {
+    "dataSource": "mysqlDs",
+    "public": false
   }
 }

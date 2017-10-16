@@ -1,7 +1,7 @@
 {
   "name": "AccessTokenStudent",
   "base": "AccessToken",
-  "idInjection": false,
+  "idInjection": true,
   "options": {
     "validateUpsert": true
   },
