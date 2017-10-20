@@ -11,8 +11,7 @@ angular.module('app').controller('ProfileController', ['$scope', '$state', '$roo
             }
             $mStudent.getInfo(currentUser.userId,function(res){
                 $scope.user = res;
-            });
-            
+            });            
         }
         $scope.updateInfo = function(){
             $mStudent.updateInfo($scope.user,function(res){
