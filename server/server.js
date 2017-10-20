@@ -15,7 +15,9 @@ app.set('views', path.join(__dirname, 'views'));
 // configure body parser
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//app.use(loopback.token());
+// app.use(loopback.token({
+//   model: app.models.AccessTokenAdmin
+// }));
 
 
 //List here the paths you do not want to be redirected to the angular application (scripts, stylesheets, templates, loopback REST API, ...)
