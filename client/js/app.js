@@ -40,11 +40,19 @@ angular
         controller: 'LoginController'
       })
       .state('profile', {
-        title: 'Đăng nhập tài khoản admin',
+        title: 'Profile Student',
         url: '/student/profile',
         templateUrl: 'views/student/profile.html',
         controller: 'ProfileController'
-      });
+      })
+      .state('admin',{
+        title: 'Trang chủ Admin ',
+        url: '/admin/home',
+        templateUrl: 'views/admin/home.html',
+        controller: 'LoginController'
+      })
+      ; 
+      
     $urlRouterProvider.otherwise('login');
 
     // $('#test').addClass('hide');
