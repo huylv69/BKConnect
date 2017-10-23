@@ -39,11 +39,17 @@ angular
         templateUrl: 'views/student/profile.html',
         controller: 'ProfileController'
       })
-      .state('admin',{
+      .state('request',{
         title: 'Trang chủ Admin ',
         url: '/admin/home',
         templateUrl: 'views/admin/home.html',
-        controller: 'LoginController'
+        controller: 'RequestController'
+      })
+      .state('company',{
+        title: 'Trang chủ Admin ',
+        url: '/admin/company',
+        templateUrl: 'views/admin/company.html',
+        controller: 'ListCompanyController'
       })
       ; 
       
