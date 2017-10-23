@@ -33,6 +33,12 @@ angular
         templateUrl: 'views/admin/login.html',
         controller: 'LoginController'
       })
+      .state('loginCompany', {
+        title: 'Đăng nhập tài khoản company',
+        url: '/company',
+        templateUrl: 'views/company/login.html',
+        controller: 'LoginController'
+      })
       .state('profile', {
         title: 'Profile Student',
         url: '/student/profile',

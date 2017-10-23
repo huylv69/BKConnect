@@ -43,9 +43,54 @@ angular.module('app').controller('LoginController', ['$scope', '$state', '$rootS
 
         //signin student
         $scope.signIn = function () {
+            var email = $scope.company.email;
+            var password = $scope.company.password;
+            $mAuth.signin(email, password, function (response) {
+                console.log(response);
+                if (response.status == 200) {
+                    let user = {
+                        userId: response.data.userId,
+                        token: response.data.id
+                    }
+                    $rootScope.currentUser = user;
+                    $mLocalStorage.setItem('userInfo', user);
+                    swal(
+                        {
+                            title: "Đăng nhập thành công!",
+                            text: "Hệ thống tự chuyển trang sau 3s!",
+                            icon: "success",
+                            timer: 3000,
+                            button: false,
+                            onOpen: function () {
+                                swal.showLoading()
+                            }
+                        }).then(
+                        function () {
+                            $state.go('profile', { "id": 1 });
+                        },
+                        // handling the promise rejection
+                        function (dismiss) {
+                            if (dismiss === 'timer') {
+                                $state.go('profile', { "id": 1 });
+                            }
+                        }
+                        );
+                } else {
+                    if (response.data.error.code == "LOGIN_FAILED_EMAIL_NOT_VERIFIED") {
+                        $scope.textLogin = "Xác thực email trước khi đăng nhập";
+                        $scope.errLogin = true;
+                    } else {
+                        $scope.textLogin = "*Login failed. Wrong username or password ";
+                        $scope.errLogin = true;
+                    }
+                }
+            });
+        }
+
+        $scope.loginCompany = function () {
             var email = $scope.user.email;
             var password = $scope.user.password;
-            $mAuth.signin(email, password, function (response) {
+            $mAuth.loginCompany(email, password, function (response) {
                 console.log(response);
                 if (response.status == 200) {
                     let user = {
