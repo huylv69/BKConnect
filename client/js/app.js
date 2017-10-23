@@ -8,7 +8,9 @@ angular
     'ui.router',
     'service.auth',
     'service.localStorage',
-    'service.student'
+    'service.student',
+    'service.company',
+    'service.admin'
   ])
   .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider,
     $urlRouterProvider, $locationProvider) {
@@ -45,20 +47,20 @@ angular
         templateUrl: 'views/student/profile.html',
         controller: 'ProfileController'
       })
-      .state('request',{
+      .state('request', {
         title: 'Trang chủ Admin ',
         url: '/admin/home',
         templateUrl: 'views/admin/home.html',
         controller: 'RequestController'
       })
-      .state('company',{
+      .state('admin', {
         title: 'Trang chủ Admin ',
         url: '/admin/company',
         templateUrl: 'views/admin/company.html',
         controller: 'ListCompanyController'
       })
-      ; 
-      
+      ;
+
     $urlRouterProvider.otherwise('login');
 
     // $('#test').addClass('hide');
@@ -68,6 +70,7 @@ angular
     function ($rootScope, $state, $mAuth, $mLocalStorage) {
       //get currentUser
       $rootScope.currentUser = $mLocalStorage.getItem('userInfo');
-
+      $rootScope.currentCompany = $mLocalStorage.getItem('companyInfo');
+      $rootScope.currentAdmin = $mLocalStorage.getItem('adminInfo');
     }]);
 

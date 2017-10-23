@@ -72,9 +72,18 @@ angular
           callback(response);
         });
     }
+
     // company login
-    service.loginCompany = function (username, password, callback) {
-      $http.post(BASE_URL + 'companies/login', { username: username, password: password })
+    service.loginCompany = function (email, password, callback) {
+      $http.post(BASE_URL + 'companies/login', { email: email, password: password })
+        .then(function (response) {
+          callback(response);
+        }, function (response) {
+          callback(response);
+        });
+    }
+    service.registerCompany = function (email, password, name, introduce, callback) {
+      $http.post(BASE_URL + 'companies', { email: email, password: password, name: name, about: introduce })
         .then(function (response) {
           callback(response);
         }, function (response) {

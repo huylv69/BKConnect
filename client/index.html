@@ -8,10 +8,10 @@
   <title>BKConnect </title>
 
   <!-- Bootstrap -->
-  <!-- <link href="vendor/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+  <link href="vendor/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
   <link href="views/styles.css" rel="stylesheet" />
   <link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
- -->
+
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,18 +22,15 @@
 </head>
 
 <body ng-app="app">
-  <!-- <div class="navbar navbar-inverse navbar-fixed-top" id="test" role="navigation">
+  <div class="navbar navbar-inverse navbar-fixed-top" id="test" role="navigation">
     <div class="container">
       <div class="navbar-header">
         <a class="navbar-brand" href="/home">BKConnect - Cơ hội tuyển dụng</a>
       </div>
     </div>
-  </div> -->
+  </div>
   <base href="/">
-
-
   <div ui-view class="view"></div>
-
 
   <script src="vendor/sweetaleart/sweetalert.min.js"></script>
   <script src="vendor/jquery/dist/jquery.js"></script>
@@ -43,16 +40,23 @@
   <script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
   <script type="text/javascript" src="vendor/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+  
 
   <script src="js/config.js"></script>
   <script src="js/app.js"></script>
 
+  <!-- services  -->
   <script src="js/services/studentService.js"></script>
   <script src="js/services/authen.js"></script>
   <script src="js/services/localStorage.js"></script>
+  <script src="js/services/adminService.js"></script>
+  <script src="js/services/companyService.js"></script>
+  
+  <!-- Controller -->
   <script src="js/controllers/login.js"></script>
   <script src="js/controllers/student/profile.js"></script>
-
+  <script src="js/controllers/admin/listCompany.js"></script>
+  <script src="js/controllers/admin/reqCompany.js"></script>
 </body>
 
 </html>

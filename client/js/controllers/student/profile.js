@@ -17,7 +17,6 @@ angular.module('app').controller('ProfileController', ['$scope', '$state', '$roo
             });
 
         };
-
         $scope.targetField = null;
         
         $scope.changeCallback = function() {

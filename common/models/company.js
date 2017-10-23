@@ -13,8 +13,7 @@ module.exports = function (Company) {
             let defaultError = new Error('login failed');
             defaultError.statusCode = 401;
             defaultError.code = 'LOGIN_FAILED';
-            if (err) {
-                debug('An error is reported from User.findOne: %j', err);
+            if (err || company == null) {
                 next(defaultError);
             } else {
                 if (!company.activated) {
@@ -29,6 +28,41 @@ module.exports = function (Company) {
         })
     })
 
+    //Get List Request 
+    Company.getListReq = function (fn) {
+        fn = fn || utils.createPromiseCallback();
+        Company.find({
+            where: {
+                activated: false
+            }
+        }, fn);
+        return fn.promise;
+    };
+    Company.remoteMethod('getListReq',
+        {
+            description: 'Get list company request .',
+            returns: { arg: 'companies', type: 'array' },
+            http: { verb: 'get', path: '/getListReq' }
+        }
+    );
+
+     //Get List Activated 
+     Company.getListActivated = function (fn) {
+        fn = fn || utils.createPromiseCallback();
+        Company.find({
+            where: {
+                activated: true
+            }
+        }, fn);
+        return fn.promise;
+    };
+    Company.remoteMethod('getListActivated',
+        {
+            description: 'Get list company request .',
+            returns: { arg: 'companies', type: 'array' },
+            http: { verb: 'get', path: '/getListActivated' }
+        }
+    );
     //Confirm by Admin
     Company.confirmByAdmin = function (email, fn) {
         fn = fn || utils.createPromiseCallback();
@@ -51,7 +85,7 @@ module.exports = function (Company) {
                     });
                 } else if (company) {
                     let err = new Error('Company has been Activated');
-                    err.statusCode = 400;
+                    err.statusCode = 409;
                     err.code = 'HAS_ACTIVATED';
                     fn(err);
                 } else {
@@ -112,7 +146,7 @@ module.exports = function (Company) {
                     });
                 } else if (company) {
                     let err = new Error('Company has been Blocked');
-                    err.statusCode = 400;
+                    err.statusCode = 409;
                     err.code = 'HAS_BLOCKED';
                     fn(err);
                 } else {
@@ -173,7 +207,7 @@ module.exports = function (Company) {
                     });
                 } else if (company) {
                     let err = new Error('Company has been Reactivated');
-                    err.statusCode = 400;
+                    err.statusCode = 409;
                     err.code = 'HAS_ACTIVATED';
                     fn(err);
                 } else {

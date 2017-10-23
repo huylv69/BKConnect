@@ -1,97 +1,109 @@
-
-
-<title>Login Form</title>
-
-<!-- Meta-Tags -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="keywords" content="Existing Login Form Widget Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- //Meta-Tags -->
-
-<link href="views/company/css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
-
-<!-- Style --> <link rel="stylesheet" href="views/company/css/style.css" type="text/css" media="all">
-
-<!-- Fonts -->
-<link href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
-<!-- //Fonts -->
-
+<head>
+	<title>Login Company</title>
+	<!-- Meta-Tags -->
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- //Meta-Tags -->
+	<link href="views/company/css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- Style -->
+	<link rel="stylesheet" href="views/company/css/style.css" type="text/css" media="all">
+	<!-- Fonts -->
+	<link href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+	<!-- //Fonts -->
 </head>
 
+<h1>LOGIN FORM</h1>
 
-	<h1>LOGIN FORM</h1>
-
-	<div class="w3layoutscontaineragileits">
+<div class="w3layoutscontaineragileits">
 	<h2>Login here</h2>
-		<form ng-submit = "loginCompany()">
-			<input type="Email" Name="Email" placeholder="EMAIL" required="" ng-model="company.email">
-			<input type="password" Name="Password" placeholder="PASSWORD" required="" ng-model="company.password">
-			<ul class="agileinfotickwthree">
-				<li>
-					<input type="checkbox" id="brand1" value="">
-					<label for="brand1"><span></span>Remember me</label>
-					<a href="#">Forgot password?</a>
-				</li>
-			</ul>
-			<div class="aitssendbuttonw3ls">
-				<input type="submit" value="LOGIN">
-				<p> To register new account <span>→</span> <a class="w3_play_icon1" href="#small-dialog1"> Click Here</a></p>
-				<div class="clear"></div>
-			</div>
-		</form>
-	</div>
-	
-	<!-- for register popup -->
-	<div id="small-dialog1" class="mfp-hide">
-		<div class="contact-form1">
-			<div class="contact-w3-agileits">
-				<h3>Register Form</h3>
-				<form action="#" method="post">
-						<div class="form-sub-w3ls">
-							<input placeholder="Company Name"  type="text" required="">
-							<div class="icon-agile">
-								<i class="fa fa-user" aria-hidden="true"></i>
-							</div>
-						</div>
-						<div class="form-sub-w3ls">
-							<input placeholder="Email" class="mail" type="email" required="">
-							<div class="icon-agile">
-								<i class="fa fa-envelope-o" aria-hidden="true"></i>
-							</div>
-						</div>
-						<div class="form-sub-w3ls">
-							<input placeholder="Password"  type="password" required="">
-							<div class="icon-agile">
-								<i class="fa fa-unlock-alt" aria-hidden="true"></i>
-							</div>
-						</div>
-						<div class="form-sub-w3ls">
-							<input placeholder="Confirm Password"  type="password" required="">
-							<div class="icon-agile">
-								<i class="fa fa-unlock-alt" aria-hidden="true"></i>
-							</div>
-						</div>
-						<div class="form-sub-w3ls">
-							<textarea placeholder="" rows="2" required="">Introduce about your company
-							</textarea>
-						</div>
-					<div class="submit-w3l">
-						<input type="submit" value="Register">
-					</div>
-				</form>
-			</div>
-		</div>	
-	</div>
-	<!-- //for register popup -->
-	
-	<script type="text/javascript" src="views/company/js/jquery-2.1.4.min.js"></script>
+	<form ng-submit="loginCompany()" autocomplete="on">
+		<input type="email" Name="Email" placeholder="EMAIL" required="required" ng-model="company.email">
+		<input type="password" Name="Password" placeholder="PASSWORD" required="required" ng-model="company.password">
+		<!-- <ul class="agileinfotickwthree">
+			<li>
+				<input type="checkbox" id="brand1" value="">
+				<label for="brand1">
+					<span></span>Remember me</label>
+				<a href="#">Forgot password?</a>
+			</li>
+		</ul> -->
+		<p ng-show="errLogin" class="text-danger" text> {{textLogin}} </p>
+		<div class="aitssendbuttonw3ls">
+			<input type="submit" value="LOGIN">
+			<p> To register new account
+				<span>→</span>
+				<a class="w3_play_icon1" href="#small-dialog1"> Click Here</a>
+			</p>
+			<div class="clear"></div>
+		</div>
+	</form>
+</div>
 
-	<!-- pop-up-box-js-file -->  
-		<script src="views/company/js/jquery.magnific-popup.js" type="text/javascript"></script>
-	<!--//pop-up-box-js-file -->
-	<script>
-		$(document).ready(function() {
+<!-- for register popup -->
+<div id="small-dialog1" class="mfp-hide">
+	<div class="contact-form1">
+		<div class="contact-w3-agileits">
+			<h3>Register Form</h3>
+			<h1 class="text-notifi" ng-if="showNotifi"> {{textNotifi}} </h1>
+			<form ng-submit="registerCompany()" autocomplete="on">
+				<div class="form-sub-w3ls">
+					<input placeholder="Company Name" ng-model="company.name" type="text" required>
+					<div class="icon-agile">
+						<i class="fa fa-user" aria-hidden="true"></i>
+					</div>
+				</div>
+				<div class="form-sub-w3ls">
+					<input type="email" Name="Email" placeholder="EMAIL" required="required" ng-model="company.email">
+					<div class="icon-agile">
+						<i class="fa fa-envelope-o" aria-hidden="true"></i>
+					</div>
+				</div>
+				<div class="form-sub-w3ls">
+					<input placeholder="Password" id="regpass" type="password" ng-model="company.password" required="required">
+					<div class="icon-agile">
+						<i class="fa fa-unlock-alt" aria-hidden="true"></i>
+					</div>
+				</div>
+				<div class="form-sub-w3ls">
+					<input placeholder="Confirm Password" id="confirmpass" ng-model="company.repass" type="password" required="required">
+					<div class="icon-agile">
+						<i class="fa fa-unlock-alt" aria-hidden="true"></i>
+					</div>
+				</div>
+				<div class="form-sub-w3ls">
+					<textarea placeholder="Introduce about your company" rows="2" required="required" ng-model="company.introduce">
+							</textarea>
+				</div>
+				<p ng-show="usernameIsExisting" class="p_errorLogin"> * Tài khoản đã tồn tại, vui lòng thử lại với email mới </p>
+				<div class="submit-w3l">
+					<button type="submit" value="Register">submit</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<!-- //for register popup -->
+<script>
+	var password = document.getElementById("regpass")
+		, confirm_password = document.getElementById("confirmpass");
+
+	function validatePassword() {
+		if (password.value != confirm_password.value) {
+			confirm_password.setCustomValidity("Passwords Don't Match");
+		} else {
+			confirm_password.setCustomValidity('');
+		}
+	}
+	password.onchange = validatePassword;
+	confirm_password.onkeyup = validatePassword;
+</script>
+
+<script type="text/javascript" src="views/company/js/jquery-2.1.4.min.js"></script>
+
+<!-- pop-up-box-js-file -->
+<script src="views/company/js/jquery.magnific-popup.js" type="text/javascript"></script>
+<!--//pop-up-box-js-file -->
+<script>
+	$(document).ready(function () {
 		$('.w3_play_icon,.w3_play_icon1,.w3_play_icon2').magnificPopup({
 			type: 'inline',
 			fixedContentPos: false,
@@ -103,7 +115,6 @@
 			removalDelay: 300,
 			mainClass: 'my-mfp-zoom-in'
 		});
-																		
-		});
-	</script>
 
+	});
+</script>

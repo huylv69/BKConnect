@@ -31,7 +31,7 @@
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<div class="wrapper hold-transition skin-blue sidebar-mini">
+<div class="hold-transition skin-blue sidebar-mini">
     <header class="main-header">
         <!-- Logo -->
         <a href="index.html" class="logo">
@@ -246,11 +246,11 @@
                     </a>
                     <ul class="treeview-menu">
                         <li class="active">
-                            <a href="index.html">
+                            <a href="/admin/home">
                                 <i class="fa fa-circle-o text-red"></i> Đăng Ký Mới</a>
                         </li>
                         <li>
-                            <a href="index2.html">
+                            <a href="/admin/company">
                                 <i class="fa fa-circle-o text-aqua"></i> Quản lý tài khoản Công Ty</a>
                         </li>
                     </ul>
@@ -324,7 +324,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Yêu cầu tạo tài khoản
+                Quản lý tài khoản công ty
             </h1>
             <ol class="breadcrumb">
                 <li>
@@ -334,7 +334,7 @@
                 <li>
                     <a href="#">Công ty</a>
                 </li>
-                <li class="active">Yêu cầu</li>
+                <li class="active">List</li>
             </ol>
         </section>
 
@@ -344,16 +344,17 @@
                 <div class="col-xs-12">
                     <div class="box">
                         <div class="box-header">
-                            <h3 class="box-title">Yêu cầu tạo tài khoản</h3>
+                            <h3 class="box-title">Danh sách tài khoản công ty</h3>
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
-                            <table id="example2" class="table table-bordered table-hover">
+                            <table id="example1" class="table table-bordered bordered table-striped table-condensed datatable">
                                 <thead>
                                     <tr>
+                                        <th>#</th>
                                         <th>Tên công ty</th>
                                         <th>Email</th>
-                                        <th>Mật khẩu</th>
+                                        <th>Địa chỉ</th>
                                         <th>Lời giới thiệu</th>
                                         <th>Ngày đăng ký</th>
                                         <th>Actions</th>
@@ -361,29 +362,34 @@
                                 </thead>
 
                                 <tbody>
-                                    <tr class="gradeA">
-                                        <td>QuangDoan</td>
-                                        <td>quangdoan@gmail.com</td>
-                                        <td>quangdoan</td>
-                                        <td>Không có</td>
-                                        <td>12/10/2017</td>
+                                    <tr ng-repeat="n in listCompany">
+                                        <td>{{$index+1}}</td>
+                                        <td>{{n.name}}</td>
+                                        <td>{{n.email}}</td>
+                                        <td>{{n.address}}</td>
+                                        <td>{{n.about}}</td>
+                                        <td>{{n.created_at }}</td>
                                         <td class="actions">
-                                            <a href="#" class=" btn btn-primary btn-sm ">
+                                            <a href="#" class=" btn btn-danger btn-sm " ng-disabled="n.block" ng-click="blockCompany(n)">
                                                 Block </a>
+                                            <a href="#" class=" btn btn-primary btn-sm " ng-disabled="!n.block" ng-click="activateCompany(n)">
+                                                Activate </a>
                                         </td>
                                     </tr>
                                 </tbody>
                                 <tfoot>
                                     <tr>
+                                        <th>#</th>
                                         <th>Tên công ty</th>
                                         <th>Email</th>
-                                        <th>Mật khẩu</th>
+                                        <th>Địa chỉ</th>
                                         <th>Lời giới thiệu</th>
                                         <th>Ngày đăng ký</th>
                                         <th>Actions</th>
                                     </tr>
                                 </tfoot>
                             </table>
+
                         </div>
                         <!-- /.box-body -->
                     </div>
@@ -418,6 +424,10 @@
 </script>
 <!-- Bootstrap 3.3.7 -->
 <script src="../../vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-utils/0.1.1/angular-ui-utils.min.js"></script>
+<!-- DataTables -->
+<script src="../../vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../../vendor/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <!-- Morris.js charts -->
 <script src="../../vendor/raphael/raphael.min.js"></script>
 <script src="../../vendor/morris.js/morris.min.js"></script>
@@ -445,3 +455,4 @@
 <script src="views/admin/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="views/admin/dist/js/demo.js"></script>
+<!-- page script -->

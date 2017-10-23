@@ -50,6 +50,9 @@
     },
     "image": {
       "type": "string"
+    },
+    "created_at": {
+      "type": "date"
     }
   },
   "validations": [],
