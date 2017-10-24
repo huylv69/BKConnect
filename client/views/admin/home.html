@@ -352,7 +352,6 @@
                     <th>#</th>
                     <th>Tên công ty</th>
                     <th>Email</th>
-                    <th>Địa chỉ</th>
                     <th>Lời giới thiệu</th>
                     <th>Ngày đăng ký</th>
                     <th>Actions</th>
@@ -364,9 +363,8 @@
                     <td>{{$index+1}}</td>
                     <td>{{n.name}}</td>
                     <td>{{n.email}}</td>
-                    <td>{{n.address}}</td>
                     <td>{{n.about}}</td>
-                    <td>{{n.created_at }}</td>
+                    <td >{{n.created_at | date:'dd/MM/yyyy HH:mm:ss'}}</td>
                     <td class="actions">
                       <a href="#" class=" btn btn-danger btn-sm" ng-disabled="n.activated" ng-click="confirmbyadmin(n)">
                         <b>Activate</b>
@@ -380,7 +378,6 @@
                     <th>#</th>
                     <th>Tên công ty</th>
                     <th>Email</th>
-                    <th>Địa chỉ</th>
                     <th>Lời giới thiệu</th>
                     <th>Ngày đăng ký</th>
                     <th>Actions</th>
