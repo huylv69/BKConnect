@@ -17,28 +17,19 @@ angular
     $locationProvider.hashPrefix('!');
     $locationProvider.html5Mode(true);
     $stateProvider
+    //anonymous 
+    .state('home', {
+      title: 'Trang chủ Website',
+      url: '/home',
+      templateUrl: 'views/home/index.html',
+      controller: 'LoginController'
+    })
+
+    //student
       .state('login', {
         title: 'Đăng nhập & Đăng ký',
         url: '/login',
         templateUrl: 'views/student/login.html',
-        controller: 'LoginController'
-      })
-      .state('verified', {
-        title: 'Kích hoạt thành công',
-        url: '/verified',
-        templateUrl: 'views/student/verified.html',
-        controller: 'LoginController'
-      })
-      .state('loginAdmin', {
-        title: 'Đăng nhập tài khoản admin',
-        url: '/admin',
-        templateUrl: 'views/admin/login.html',
-        controller: 'LoginController'
-      })
-      .state('loginCompany', {
-        title: 'Đăng nhập tài khoản company',
-        url: '/company',
-        templateUrl: 'views/company/login.html',
         controller: 'LoginController'
       })
       .state('profile', {
@@ -46,6 +37,33 @@ angular
         url: '/student/profile',
         templateUrl: 'views/student/profile.html',
         controller: 'ProfileController'
+      })
+      .state('verified', {
+        title: 'Kích hoạt thành công',
+        url: '/verified',
+        templateUrl: 'views/student/verified.html',
+        controller: 'LoginController'
+      })
+
+      //Company
+      .state('loginCompany', {
+        title: 'Đăng nhập tài khoản công ty',
+        url: '/company',
+        templateUrl: 'views/company/login.html',
+        controller: 'LoginController'
+      })
+      .state('homecompany',{
+        title: 'Trang chủ công ty ',
+        url: '/company/home',
+        templateUrl: 'views/company/index.html',
+        controller: 'HomeCompanyController'
+      })
+      //Admin
+      .state('loginAdmin', {
+        title: 'Đăng nhập tài khoản admin',
+        url: '/admin',
+        templateUrl: 'views/admin/login.html',
+        controller: 'LoginController'
       })
       .state('request', {
         title: 'Trang chủ Admin ',
@@ -61,7 +79,7 @@ angular
       })
       ;
 
-    $urlRouterProvider.otherwise('login');
+    $urlRouterProvider.otherwise('home');
 
     // $('#test').addClass('hide');
     // $('#test').removeClass('hide');
@@ -72,5 +90,6 @@ angular
       $rootScope.currentUser = $mLocalStorage.getItem('userInfo');
       $rootScope.currentCompany = $mLocalStorage.getItem('companyInfo');
       $rootScope.currentAdmin = $mLocalStorage.getItem('adminInfo');
+
     }]);
 

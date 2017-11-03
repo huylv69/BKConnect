@@ -88,6 +88,7 @@ angular.module('app').controller('LoginController', ['$scope', '$state', '$rootS
             });
         }
 
+        //login Company
         $scope.loginCompany = function () {
             var email = $scope.company.email;
             var password = $scope.company.password;
@@ -112,12 +113,12 @@ angular.module('app').controller('LoginController', ['$scope', '$state', '$rootS
                             }
                         }).then(
                         function () {
-                            $state.go('profile', { "id": 1 });
+                            $state.go('homecompany', { "id": 1 });
                         },
                         // handling the promise rejection
                         function (dismiss) {
                             if (dismiss === 'timer') {
-                                $state.go('profile', { "id": 1 });
+                                $state.go('homecompany', { "id": 1 });
                             }
                         }
                         );

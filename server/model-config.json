@@ -62,5 +62,9 @@
   "AccessTokenCompany": {
     "dataSource": "mysqlDs",
     "public": false
+  },
+  "post": {
+    "dataSource": "mysqlDs",
+    "public": true
   }
 }

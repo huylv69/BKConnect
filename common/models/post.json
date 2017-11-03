@@ -1,0 +1,49 @@
+{
+  "name": "post",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "idpost": {
+      "type": "number",
+      "id": true,
+      "required": false,
+      "doc": "This is the primary ID used to identify a contact"
+    },
+    "idcompany": {
+      "type": "number",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "object"
+    },
+    "created": {
+      "type": "date"
+    },
+    "expired": {
+      "type": "date"
+    },
+    "category": {
+      "type": "string"
+    },
+    "require_skill": {
+      "type": "object"
+    },
+    "benefits": {
+      "type": "object"
+    },
+    "contact": {
+      "type": "object"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
