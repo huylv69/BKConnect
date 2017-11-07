@@ -348,7 +348,7 @@
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
-                            <table id="example1" class="table table-bordered bordered table-striped table-condensed datatable">
+                            <table id="example1" class="table table-bordered bordered table-striped  table-hover datatable">
                                 <thead>
                                     <tr>
                                         <th>#</th>
@@ -362,7 +362,7 @@
                                 </thead>
 
                                 <tbody>
-                                    <tr ng-repeat="n in listCompany">
+                                    <tr ng-repeat="n in listCompany" repeat-done="initDataTable()">
                                         <td>{{$index+1}}</td>
                                         <td>{{n.name}}</td>
                                         <td>{{n.email}}</td>
@@ -428,6 +428,8 @@
 <!-- DataTables -->
 <script src="../../vendor/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="../../vendor/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script data-require="angular-datatable.js@1.1.5" data-semver="1.1.5" src="views/admin/vendor/angular-datatables.min.js"></script>
+
 <!-- Morris.js charts -->
 <script src="../../vendor/raphael/raphael.min.js"></script>
 <script src="../../vendor/morris.js/morris.min.js"></script>
@@ -457,9 +459,8 @@
 <script src="views/admin/dist/js/demo.js"></script>
 <!-- page script -->
 <!-- page script -->
-<script>
+<!-- <script>
     $(function () {
-      $('#example1').DataTable();
-      
+      $('#example1').DataTable();     
     })
-  </script>
+  </script> -->

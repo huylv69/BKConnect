@@ -27,8 +27,20 @@ angular.module('app').controller('RequestController', ['$scope', '$state', '$roo
                 }
             })
         }
+        $scope.initDataTable = function () {
+            setTimeout(function () {
+                $("#example1").DataTable();
+            }, 10);
+        };
         $scope.reset = function () {
             $state.reload();
         }
         loadData();
-    }]);
+    }])
+    .directive('repeatDone', function () {
+        return function (scope, element, attrs) {
+            if (scope.$last) {
+                scope.$eval(attrs.repeatDone);
+            }
+        }
+    });

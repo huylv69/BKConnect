@@ -359,7 +359,7 @@
                 </thead>
 
                 <tbody>
-                  <tr ng-repeat="n in listCompany">
+                  <tr ng-repeat="n in listCompany" repeat-done="initDataTable()">
                     <td>{{$index+1}}</td>
                     <td>{{n.name}}</td>
                     <td>{{n.email}}</td>

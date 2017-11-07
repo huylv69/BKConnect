@@ -1,13 +1,13 @@
 angular.module('app').controller('ListCompanyController', ['$scope', '$state', '$rootScope', '$mAuth', '$mLocalStorage', '$mCompany',
-    function ($scope, $state, $rootScope, $mAuth, $mLocalStorage, $mCompany, DTOptionsBuilder, DTColumnBuilder) {
+    function ($scope, $state, $rootScope, $mAuth, $mLocalStorage, $mCompany) {
 
         var listCompany = [];
         var loadData = function () {
             $mCompany.getListActivated(function (res) {
                 $scope.listCompany = res.companies;
                 console.log(res);
-            });
-        }
+            })
+        };
 
         $scope.blockCompany = function (company) {
             var emailCompany = company.email;
@@ -49,8 +49,20 @@ angular.module('app').controller('ListCompanyController', ['$scope', '$state', '
                 }
             })
         }
+        $scope.initDataTable = function () {
+            setTimeout(function () {
+                $("#example1").DataTable();
+            }, 10);
+        };
         $scope.reset = function () {
             $state.reload();
         }
         loadData();
-    }]);
+    }])
+    .directive('repeatDone', function () {
+        return function (scope, element, attrs) {
+            if (scope.$last) {
+                scope.$eval(attrs.repeatDone);
+            }
+        }
+    });

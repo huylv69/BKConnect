@@ -66,5 +66,9 @@
   "post": {
     "dataSource": "mysqlDs",
     "public": true
+  },
+  "container": {
+    "dataSource": "storage",
+    "public": true
   }
 }

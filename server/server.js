@@ -7,7 +7,6 @@ var path = require('path');
 
 
 var app = module.exports = loopback();
-
 // configure view handler
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -58,4 +57,5 @@ boot(app, __dirname, function (err) {
   // start the server if `$ node server.js`
   if (require.main === module)
     app.start();
+    
 });

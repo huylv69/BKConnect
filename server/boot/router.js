@@ -6,5 +6,5 @@ module.exports = function(server) {
   router.get('/status', server.loopback.status());
   
   server.use(router);
-
+  
 };
