@@ -1,0 +1,128 @@
+<!-- START BREADCRUMB -->
+<ul class="breadcrumb">
+    <li>
+        <a href="#">Home</a>
+    </li>
+    <li class="active">Add post</li>
+</ul>
+<!-- END BREADCRUMB -->
+
+<!-- PAGE TITLE -->
+<div class="page-title">
+    <h2>
+        <span class="fa fa-arrow-circle-o-left"></span> Thêm bài đăng tuyển dụng mới</h2>
+</div>
+<!-- END PAGE TITLE -->
+
+<!-- PAGE CONTENT WRAPPER -->
+<div class="page-content-wrap">
+    <div class="block">
+        <div class="col-md-11">
+
+            <form class="form-horizontal center-block" ng-submit="createPost()">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Tiêu đề:</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control input-lg" ng-model="postDetail.name" placeholder="Tên công việc" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Hình thức:</label>
+                    <div class="col-md-4">
+                        <select class="form-control select" ng-model="postDetail.category" data-style="btn-success">
+                            <option>Partime</option>
+                            <option>Fulltime</option>
+                            <option>Partime/Fulltime</option>
+                        </select>
+                    </div>
+
+                    <label class="col-md-2 control-label">Hạn nộp hồ sơ:</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <ng-datepicker ng-required="true" native-class="form-control input-text" ng-model="postDetail.expired" dateFormat="dd/mm/yy"
+                                minDate="-15D" maxDate="+1M +10D"></ng-datepicker>
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Ngành nghề:</label>
+                    <div class="col-md-2">
+                        <select class="form-control select" ng-model="postDetail.career" data-style="btn-success">
+                            <option>Partime</option>
+                            <option>Fulltime</option>
+                            <option>Partime/Fulltime</option>
+                        </select>
+                    </div>
+
+                    <label class="col-md-1 control-label">Lương:</label>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control input-lg" ng-model="postDetail.salary" placeholder="8M-20M" />
+                    </div>
+
+                    <label class="col-md-1 control-label">Địa điểm:</label>
+                    <div class="col-md-3">
+                        <select class="form-control select" ng-model="postDetail.address" data-style="btn-success">
+                            <option>Option 1</option>
+                            <option>Option 2</option>
+                            <option>Option 3</option>
+                            <option>Option 4</option>
+                            <option>Option 5</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Kĩ năng:</label>
+                    <div class="col-md-10">
+                        <tags-input native-class="form-control input-lg" ng-model="postDetail.skill"></tags-input>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Giới thiệu công việc:</label>
+                    <div class="col-md-10">
+                        <summernote height="180" ng-model="postDetail.description"></summernote>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Quyền lợi:</label>
+                    <div class="col-md-10">
+                        <summernote height="180" ng-model="postDetail.benefits"></summernote>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Yêu cầu công việc:</label>
+                    <div class="col-md-10">
+                        <summernote height="200" ng-model="postDetail.require_skill"></summernote>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Nộp hồ sơ / Liên hệ:</label>
+                    <div class="col-md-10">
+                        <summernote height="200" ng-model="postDetail.contact"></summernote>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="pull-right btn btn-success btn-lg active">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<!-- THIS PAGE PLUGINS -->
+<script type="text/javascript" src="company/views/js/plugins/bootstrap/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="company/views/js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
+<script type="text/javascript" src="company/views/js/plugins/bootstrap/bootstrap-colorpicker.js"></script>
+<script type="text/javascript" src="company/views/js/plugins/bootstrap/bootstrap-file-input.js"></script>
+<script type="text/javascript" src="company/views/js/plugins/bootstrap/bootstrap-select.js"></script>
+<script type="text/javascript" src="company/views/js/plugins/bootstrap/bootstrap-datepicker.js"></script>
+<script type='text/javascript' src='company/views/js/plugins/icheck/icheck.min.js'></script>
+<script type="text/javascript" src="company/views/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+
+
+<!-- END PAGE PLUGINS -->

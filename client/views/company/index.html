@@ -12,433 +12,316 @@
 
 </head>
 
-	<!-- header -->
-	<div class="header">
-		<div class="header-bottom">
-			<div class="container">
-				<div class="logo">
-					<a href="index.html">
-						<img src="views/company/images/logo1.png" class="img-responsive" alt="">
-					</a>
-				</div>
-				<div class="head-nav">
-					<span class="menu"> </span>
-					<ul class="cl-effect-3">
-						<li class="active">
-							<a href="index.html">Trang Chủ</a>
-						</li>
-						<li>
-							<a href="">Các công ty</a>
-						</li>
-						<li>
-							<a href="">Quản trị nội dung</a>
-						</li>
-					</ul>
-					<!-- script-for-nav -->
-					<script>
-						$("span.menu").click(function () {
-							$(".head-nav ul").slideToggle(300, function () {
-								// Animation complete.
-							});
-						});
-					</script>
-					<!-- script-for-nav -->
-				</div>
-				<div class="header-right1">
-					<li>
-						<a href="">Sinh viên</a>
-					</li>
-					<li>
-						<a href="">Công ty</a>
-					</li>
-				</div>
+<!-- header -->
+<div class="header">
+	<div class="header-bottom">
+		<div class="container">
+			<div class="logo">
+				<a href="index.html">
+					<img src="views/company/images/logo1.png" class="img-responsive" alt="">
+				</a>
 			</div>
-		</div>
-	</div>
-	<!-- header -->
-	<!-- body -->
-	<section id="home" class="cp_tab_content cp_herro_banner">
-		<div class="cp_herro_banner_gray" style="height: 100px;"></div>
-		<img src="views/company/images/banner.jpg" class="cp_herro_banner_image">
-	</section>
-	<div class="container">
-		<div class="row" style="border-bottom: 2px solid #F67011; padding-bottom: 30px">
-			<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 cp_logo  mobile-hide">
-				<div>
-					<img src="views/company/images/banner1.png" alt="">
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 cp_basic_info_details">
-				<h2 id="cp_company_name">FPT Software</h2>
-				<ul>
-					<li>
-						<span class="li-items-limit" title="Da Nang, Ha Noi, Ho Chi Minh">Da Nang, Ha Noi, Ho Chi Minh </span>
+			<div class="head-nav">
+				<span class="menu"> </span>
+				<ul class="cl-effect-3">
+					<li class="active">
+						<a href="index.html">Trang Chủ</a>
 					</li>
 					<li>
-						<span class="li-items-limit" title="IT - Software">IT - Software</span>
-						<span class="line">|</span>
-						<span class="company_type">Outsourcing</span>
+						<a href="">Các công ty</a>
+					</li>
+					<li>
+						<a href="">Quản trị nội dung</a>
 					</li>
 				</ul>
+				<!-- script-for-nav -->
+				<script>
+					$("span.menu").click(function () {
+						$(".head-nav ul").slideToggle(300, function () {
+							// Animation complete.
+						});
+					});
+				</script>
+				<!-- script-for-nav -->
 			</div>
-			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 cp_follow_survey text-right">
-				<a style="background-color:#F67011" class="btn-animation follow-company">
-					<span id="follow_text">Follow </span>
-				</a>
-				<!-- find us for mobile -->
+			<div class="header-right1">
+				<li>
+					<a href="">Sinh viên</a>
+				</li>
+				<li>
+					<a href="">Công ty</a>
+				</li>
 			</div>
 		</div>
 	</div>
+</div>
+<!-- header -->
+<!-- body -->
+<section id="home" class="cp_tab_content cp_herro_banner">
+	<div class="cp_herro_banner_gray" style="height: 100px;"></div>
+	<img src="views/company/images/banner.jpg" class="cp_herro_banner_image">
+</section>
+<div class="container">
+	<div class="row" style="border-bottom: 2px solid #F67011; padding-bottom: 30px">
+		<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 cp_logo  mobile-hide">
+			<div>
+				<img src="views/company/images/banner1.png" alt="">
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 cp_basic_info_details">
+			<h2 id="cp_company_name">FPT Software</h2>
+			<ul>
+				<li>
+					<span class="li-items-limit" title="Da Nang, Ha Noi, Ho Chi Minh">Da Nang, Ha Noi, Ho Chi Minh </span>
+				</li>
+				<li>
+					<span class="li-items-limit" title="IT - Software">IT - Software</span>
+					<span class="line">|</span>
+					<span class="company_type">Outsourcing</span>
+				</li>
+			</ul>
+		</div>
+		<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 cp_follow_survey text-right">
+			<a style="background-color:#F67011" class="btn-animation follow-company">
+				<span id="follow_text">Follow </span>
+			</a>
+			<!-- find us for mobile -->
+		</div>
+	</div>
+</div>
 
-	<!-- <div class="row">
+<!-- <div class="row">
 				            <div class="col-sm-12 cp_header_section">
 				                <h2>Our Job<span class="cp_under_line" style="background-color: #F67011"></span></h2>
 				            </div>
 				        </div> -->
-	<div id="jobsListing" class="panel-collapse cp_our_jobs_container collapse in" aria-expanded="true" >
-		<div class="panel-body">
-			<div class="cp_our_jobs_listing" id="ajax_cp_our_jobs_listing">
-				<h3 style="border-color: #F67011">We Have 4 Jobs For You</h3>
-				<div class="jobs_listing_block ">
-					<div class="cp_our_job_item  show ">
-						<div class="row">
-							<div class="col-xs-12 col-sm-10 cp_Job_summary_info">
-								<h4>
-									<a href="" target="_blank" onclick="">Lập Trình Viên Java</a>
-								</h4>
-								<ul>
-									<li>
-										<i class="fa fa-briefcase"></i>Experienced (non-manager)</li>
-									<li>
-										<i class="fa fa-calendar-o"></i>27/10/2017</li>
-								</ul>
-							</div>
-							<div class="col-xs-12 col-sm-2 cp_job_view_detail">
-								<a href="" target="_blank" onclick="">View</a>
-							</div>
+<div id="jobsListing" class="panel-collapse cp_our_jobs_container collapse in" aria-expanded="true">
+	<div class="panel-body">
+		<div class="cp_our_jobs_listing" id="ajax_cp_our_jobs_listing">
+			<h3 style="border-color: #F67011">We Have 4 Jobs For You</h3>
+			<div class="jobs_listing_block ">
+				<div class="cp_our_job_item  show ">
+					<div class="row">
+						<div class="col-xs-12 col-sm-10 cp_Job_summary_info">
+							<h4>
+								<a href="" target="_blank" onclick="">Lập Trình Viên Java</a>
+							</h4>
+							<ul>
+								<li>
+									<i class="fa fa-briefcase"></i>Experienced (non-manager)</li>
+								<li>
+									<i class="fa fa-calendar-o"></i>27/10/2017</li>
+							</ul>
+						</div>
+						<div class="col-xs-12 col-sm-2 cp_job_view_detail">
+							<a href="" target="_blank" onclick="">View</a>
 						</div>
 					</div>
-					<div class="cp_our_job_item  show ">
-						<div class="row">
-							<div class="col-xs-12 col-sm-10 cp_Job_summary_info">
-								<h4>
-									<a href="" target="_blank" onclick="">Br.se Làm Việc Dài Hạn Tại Nhật Bản</a>
-								</h4>
-								<ul>
-									<li>
-										<i class="fa fa-briefcase"></i>Experienced (non-manager)</li>
-									<li>
-										<i class="fa fa-calendar-o"></i>27/10/2017</li>
-								</ul>
-							</div>
-							<div class="col-xs-12 col-sm-2 cp_job_view_detail">
-								<a href="" target="_blank" onclick="">View</a>
-							</div>
+				</div>
+				<div class="cp_our_job_item  show ">
+					<div class="row">
+						<div class="col-xs-12 col-sm-10 cp_Job_summary_info">
+							<h4>
+								<a href="" target="_blank" onclick="">Br.se Làm Việc Dài Hạn Tại Nhật Bản</a>
+							</h4>
+							<ul>
+								<li>
+									<i class="fa fa-briefcase"></i>Experienced (non-manager)</li>
+								<li>
+									<i class="fa fa-calendar-o"></i>27/10/2017</li>
+							</ul>
+						</div>
+						<div class="col-xs-12 col-sm-2 cp_job_view_detail">
+							<a href="" target="_blank" onclick="">View</a>
 						</div>
 					</div>
-					<div class="cp_our_job_item  show ">
-						<div class="row">
-							<div class="col-xs-12 col-sm-10 cp_Job_summary_info">
-								<h4>
-									<a href="" target="_blank" onclick="">Xamarin Developer ( Up to 1000 USD )</a>
-								</h4>
-								<ul>
-									<li>
-										<i class="fa fa-briefcase"></i>Experienced (non-manager)</li>
-									<li>
-										<i class="fa fa-calendar-o"></i>26/10/2017</li>
-								</ul>
-							</div>
-							<div class="col-xs-12 col-sm-2 cp_job_view_detail">
-								<a href="" target="_blank" onclick="">View</a>
-							</div>
+				</div>
+				<div class="cp_our_job_item  show ">
+					<div class="row">
+						<div class="col-xs-12 col-sm-10 cp_Job_summary_info">
+							<h4>
+								<a href="" target="_blank" onclick="">Xamarin Developer ( Up to 1000 USD )</a>
+							</h4>
+							<ul>
+								<li>
+									<i class="fa fa-briefcase"></i>Experienced (non-manager)</li>
+								<li>
+									<i class="fa fa-calendar-o"></i>26/10/2017</li>
+							</ul>
+						</div>
+						<div class="col-xs-12 col-sm-2 cp_job_view_detail">
+							<a href="" target="_blank" onclick="">View</a>
 						</div>
 					</div>
-					<div class="cp_our_job_item  show ">
-						<div class="row">
-							<div class="col-xs-12 col-sm-10 cp_Job_summary_info">
-								<h4>
-									<a href="" target="_blank" onclick="">Java Developer Work in Singapore (Up to 6000 SGD)</a>
-								</h4>
-								<ul>
-									<li>
-										<i class="fa fa-briefcase"></i>Experienced (non-manager)</li>
-									<li>
-										<i class="fa fa-calendar-o"></i>25/10/2017</li>
-								</ul>
-							</div>
-							<div class="col-xs-12 col-sm-2 cp_job_view_detail">
-								<a href="" target="_blank" onclick="">
-									View</a>
-							</div>
+				</div>
+				<div class="cp_our_job_item  show ">
+					<div class="row">
+						<div class="col-xs-12 col-sm-10 cp_Job_summary_info">
+							<h4>
+								<a href="" target="_blank" onclick="">Java Developer Work in Singapore (Up to 6000 SGD)</a>
+							</h4>
+							<ul>
+								<li>
+									<i class="fa fa-briefcase"></i>Experienced (non-manager)</li>
+								<li>
+									<i class="fa fa-calendar-o"></i>25/10/2017</li>
+							</ul>
+						</div>
+						<div class="col-xs-12 col-sm-2 cp_job_view_detail">
+							<a href="" target="_blank" onclick="">
+								View</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	</div>
-	</div>
-	</div>
+</div>
+</div>
+</div>
+</div>
 
+<div class="row">
+	<div class="col-sm-12 cp_header_section">
+		<h2>Our Office
+			<span class="cp_under_line" style="background-color: #F67011"></span>
+		</h2>
+		<div class="about" id="welcome">
+			<div class="container">
+				<div class="col-md-6 aboutleft">
+					<h3>corporation is a legal entity that is separate and distinct from its owners</h3>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+						dummy text ever since the 1500s but also the leap into electronic typesetting dolor amet.</p>
+					<p>when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only
+						five centuries, but also the leap into electronic typesetting.</p>
+					<p>Vestibulum dictum porta nisl non lacinia. Integer laoreet ultricies nunc, vitae eleifend elit rutrum sit amet. In elementum,
+						magna id pellentesque auctor, risus dolor congue urna, nec dapibus eros magna a odio. Duis laoreet risus eget malesuada
+						consequat. Nunc et tortor dignissim, laoreet est eget</p>
+					<p>Duis commodo auctor libero at ultrices. Quisque mi dui, condimentum ac tellus vel, gravida aliquam nunc. Ut ac auctor
+						velit.
+					</p>
+				</div>
+				<div class="col-md-6 aboutright">
+					<img src="images/about.jpg" alt="" />
+					<div class="aboutimg">
+						<img src="images/aboutimg.jpg" alt="" />
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="cp_tab_content cp_our_story_section" id="stories">
 	<div class="row">
 		<div class="col-sm-12 cp_header_section">
-			<h2>Our Office
+			<h2>Our Story
 				<span class="cp_under_line" style="background-color: #F67011"></span>
 			</h2>
-			<div class="about" id="welcome">
-				<div class="container">
-					<div class="col-md-6 aboutleft">
-						<h3>corporation is a legal entity that is separate and distinct from its owners</h3>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-							dummy text ever since the 1500s but also the leap into electronic typesetting dolor amet.</p>
-						<p>when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only
-							five centuries, but also the leap into electronic typesetting.</p>
-						<p>Vestibulum dictum porta nisl non lacinia. Integer laoreet ultricies nunc, vitae eleifend elit rutrum sit amet. In elementum,
-							magna id pellentesque auctor, risus dolor congue urna, nec dapibus eros magna a odio. Duis laoreet risus eget malesuada
-							consequat. Nunc et tortor dignissim, laoreet est eget</p>
-						<p>Duis commodo auctor libero at ultrices. Quisque mi dui, condimentum ac tellus vel, gravida aliquam nunc. Ut ac auctor
-							velit.</p>
-					</div>
-					<div class="col-md-6 aboutright">
-						<img src="images/about.jpg" alt="" />
-						<div class="aboutimg">
-							<img src="images/aboutimg.jpg" alt="" />
-						</div>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</div>
 		</div>
 	</div>
-
-	<div class="cp_tab_content cp_our_story_section" id="stories">
-		<div class="row">
-			<div class="col-sm-12 cp_header_section">
-				<h2>Our Story
-					<span class="cp_under_line" style="background-color: #F67011"></span>
-				</h2>
-			</div>
-		</div>
-		<div class="row">
-			<div class="cp_container_section">
-				<div class="container">
-					<div class="row cp_our_story_item_option cp_our_story_item_option3">
-						<div class="cp_story_item_3 cp_story_item">
-							<div class="col-xs-12 col-sm-4 cp_story_item_content" style="border-color: #F67011">
-								<h2 style="color: #F67011">WHAT WE DO</h2>
-								<p>Being a leading Software Outsourcing Service Provider, we provide high quality services including Software Development
-									and Maintenance, ERP Implementation, Quality Assurance Testing, Migration, Embedded Systems, etc. to cater diversified
-									domains such as Banking &amp; Finance, Telecoms, Manufacturing, Insurance, Government and Public, Retail, Infrastructure,
-									IT services and Utilities.</p>
-							</div>
+	<div class="row">
+		<div class="cp_container_section">
+			<div class="container">
+				<div class="row cp_our_story_item_option cp_our_story_item_option3">
+					<div class="cp_story_item_3 cp_story_item">
+						<div class="col-xs-12 col-sm-4 cp_story_item_content" style="border-color: #F67011">
+							<h2 style="color: #F67011">WHAT WE DO</h2>
+							<p>Being a leading Software Outsourcing Service Provider, we provide high quality services including Software Development
+								and Maintenance, ERP Implementation, Quality Assurance Testing, Migration, Embedded Systems, etc. to cater diversified
+								domains such as Banking &amp; Finance, Telecoms, Manufacturing, Insurance, Government and Public, Retail, Infrastructure,
+								IT services and Utilities.</p>
 						</div>
-						<div class="cp_story_item_3 cp_story_item">
-							<div class="col-xs-12 col-sm-4 cp_story_item_content" style="border-color: #F67011">
-								<h2 style="color: #F67011">OUR GOAL</h2>
-								<p>FPT Software is the #1 IT Service Provider in Southeast Asia and the biggest Global provider of Software Services
-									in Vietnam.</p>
+					</div>
+					<div class="cp_story_item_3 cp_story_item">
+						<div class="col-xs-12 col-sm-4 cp_story_item_content" style="border-color: #F67011">
+							<h2 style="color: #F67011">OUR GOAL</h2>
+							<p>FPT Software is the #1 IT Service Provider in Southeast Asia and the biggest Global provider of Software Services
+								in Vietnam.</p>
 
-								<p>Our goal is to become one of the&nbsp;top&nbsp;global software outsourcing&nbsp;service providers in the world by
-									developing multi-national staffs with English and Japanese language proficiency and&nbsp; experts on IT service
-									Research &amp; Development.</p>
-							</div>
+							<p>Our goal is to become one of the&nbsp;top&nbsp;global software outsourcing&nbsp;service providers in the world by
+								developing multi-national staffs with English and Japanese language proficiency and&nbsp; experts on IT service Research
+								&amp; Development.</p>
 						</div>
-						<div class="cp_story_item_3 cp_story_item">
-							<div class="col-xs-12 col-sm-4 cp_story_item_content" style="border-color: #F67011">
-								<h2 style="color: #F67011">TECHNOLOGY STRATEGY</h2>
-								<p>SMAC is the key of FPT Software's globalization strategy, becoming a major player in the Global ICT.</p>
+					</div>
+					<div class="cp_story_item_3 cp_story_item">
+						<div class="col-xs-12 col-sm-4 cp_story_item_content" style="border-color: #F67011">
+							<h2 style="color: #F67011">TECHNOLOGY STRATEGY</h2>
+							<p>SMAC is the key of FPT Software's globalization strategy, becoming a major player in the Global ICT.</p>
 
-								<p>Apart from the traditional technology we provide to different markets across the globe, FSOFT aims to include new
-									technologies and services including Social, Mobile, Analytics and Cloud (SMAC) domains.</p>
-							</div>
+							<p>Apart from the traditional technology we provide to different markets across the globe, FSOFT aims to include new
+								technologies and services including Social, Mobile, Analytics and Cloud (SMAC) domains.</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
 
 
-	<div class="cp_tab_content cp_our_people_section" id="people">
-		<div class="row">
-			<div class="col-sm-12 cp_header_section">
-				<h2>Our People
-					<span class="cp_under_line" style="background-color: #F67011"></span>
-				</h2>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-12 cp_container_section">
-				<div class="container">
-					<div class="cp_our_people_container">
-						<div class="row">
-							<div class="cp_our_people_option_1">
-								<div class="cp_our_people_item">
-									<div class="col-xs-12 col-sm-4 cp_our_people_item_content">
-										<h2>Hoang Anh Minh</h2>
-										<h3>R&amp;D
-											<br>
-										</h3>
-										<p>I choose FPT Software to develop R&amp;D career for new technologies: computer vision, voice control,&nbsp;natural
-											language processing...</p>
-
-										<p>Although there are many interesting challenges, I love living and working&nbsp;in many countries. It's interesting
-											to do things that haven't been done before.</p>
-										<p>&nbsp;</p>
-									</div>
-									<div class="col-xs-12 col-sm-8 cp_our_people_item_media">
-										<img src="./images/FPT-people2.png" alt="">
-									</div>
-								</div>
-							</div>
-							<div class="cp_our_people_option_0">
-								<div class="cp_our_people_item">
-									<div class="col-xs-12 col-sm-4 cp_our_people_item_content">
-										<h2>Ngo Thu Huyen</h2>
-										<h3>BrSE
-											<br>
-										</h3>
-										<p>FPT Software has trained me to be a professional BrSE. With this job, I have the chance to contact with&nbsp;many
-											difficult Japanese customers and by that, understand a lot about their world class working style and procedure.</p>
-									</div>
-									<div class="col-xs-12 col-sm-8 cp_our_people_item_media">
-										<img src="./images/FPT-people3.jpg" alt="">
-									</div>
-								</div>
-							</div>
-							<div class="cp_our_people_option_1">
-								<div class="cp_our_people_item">
-									<div class="col-xs-12 col-sm-4 cp_our_people_item_content">
-										<h2> Ha Minh Tuan</h2>
-										<h3>Project Manager
-											<br>
-										</h3>
-										<p>Over the years in FPT Software, I have had chances to work with multi-national companies located in&nbsp;different
-											parts of the world. The task of dispatching personnel to various foreign offices, managing their&nbsp;performance
-											while maintaining close communications with both clients and people is not only a challenge&nbsp;but simultaneously
-											also an opportunity to learn from overcoming them.</p>
-									</div>
-									<div class="col-xs-12 col-sm-8 cp_our_people_item_media">
-										<img src="./images/FPT-people1.jpg" alt="">
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+<div class="cp_tab_content cp_our_people_section" id="people">
+	<div class="row">
+		<div class="col-sm-12 cp_header_section">
+			<h2>Our People
+				<span class="cp_under_line" style="background-color: #F67011"></span>
+			</h2>
 		</div>
 	</div>
-
-	<div class="cp_tab_content cp_our_benefits_section" id="benefits">
-		<div class="row">
-			<div class="col-sm-12 cp_header_section">
-				<h2>Our Benefits
-					<span class="cp_under_line" style="background-color: #F67011"></span>
-				</h2>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-12 cp_container_section">
-				<div class="container">
+	<div class="row">
+		<div class="col-sm-12 cp_container_section">
+			<div class="container">
+				<div class="cp_our_people_container">
 					<div class="row">
-						<div class="cp_our_benefits_container">
-							<div class="col-xs-12 col-sm-4 cp_our_benefit_item ">
-								<div class="cp_our_benefit_item_container">
-									<div class="cp_benefit_icon">
-										<span style="background-color: #F67011">
-											<i class="fa fa-graduation-cap"></i>
-										</span>
-									</div>
-									<div class="cp_benefit_name">
-										<h3>TRAINING AND DEVELOPMENT</h3>
-										<span class="under-line" style="background-color: #F67011"></span>
-									</div>
-									<div class="cp_benefit_description">
-										<p>We believe that coping with challenges and learning from experiences are essential factors for continuous development.</p>
-									</div>
+						<div class="cp_our_people_option_1">
+							<div class="cp_our_people_item">
+								<div class="col-xs-12 col-sm-4 cp_our_people_item_content">
+									<h2>Hoang Anh Minh</h2>
+									<h3>R&amp;D
+										<br>
+									</h3>
+									<p>I choose FPT Software to develop R&amp;D career for new technologies: computer vision, voice control,&nbsp;natural
+										language processing...</p>
+
+									<p>Although there are many interesting challenges, I love living and working&nbsp;in many countries. It's interesting
+										to do things that haven't been done before.</p>
+									<p>&nbsp;</p>
+								</div>
+								<div class="col-xs-12 col-sm-8 cp_our_people_item_media">
+									<img src="./images/FPT-people2.png" alt="">
 								</div>
 							</div>
-							<div class="col-xs-12 col-sm-4 cp_our_benefit_item ">
-								<div class="cp_our_benefit_item_container">
-									<div class="cp_benefit_icon">
-										<span style="background-color: #F67011">
-											<i class="fa fa-plane"></i>
-										</span>
-									</div>
-									<div class="cp_benefit_name">
-										<h3>GLOBAL CAREER</h3>
-										<span class="under-line" style="background-color: #F67011"></span>
-									</div>
-									<div class="cp_benefit_description">
-										<p>We aim to have the best of everything! Experience the world with FPT Software!</p>
-									</div>
+						</div>
+						<div class="cp_our_people_option_0">
+							<div class="cp_our_people_item">
+								<div class="col-xs-12 col-sm-4 cp_our_people_item_content">
+									<h2>Ngo Thu Huyen</h2>
+									<h3>BrSE
+										<br>
+									</h3>
+									<p>FPT Software has trained me to be a professional BrSE. With this job, I have the chance to contact with&nbsp;many
+										difficult Japanese customers and by that, understand a lot about their world class working style and procedure.</p>
+								</div>
+								<div class="col-xs-12 col-sm-8 cp_our_people_item_media">
+									<img src="./images/FPT-people3.jpg" alt="">
 								</div>
 							</div>
-							<div class="col-xs-12 col-sm-4 cp_our_benefit_item ">
-								<div class="cp_our_benefit_item_container">
-									<div class="cp_benefit_icon">
-										<span style="background-color: #F67011">
-											<i class="fa fa-glass"></i>
-										</span>
-									</div>
-									<div class="cp_benefit_name">
-										<h3>UNIQUE CULTURE</h3>
-										<span class="under-line" style="background-color: #F67011"></span>
-									</div>
-									<div class="cp_benefit_description">
-										<p>A culture is form from its people. All FSOFTers, from the leaders to every developer, have created a culture that
-											is distinctly FSOFT. Surely you will feel the heart of FSOFT in your own way.</p>
-									</div>
+						</div>
+						<div class="cp_our_people_option_1">
+							<div class="cp_our_people_item">
+								<div class="col-xs-12 col-sm-4 cp_our_people_item_content">
+									<h2> Ha Minh Tuan</h2>
+									<h3>Project Manager
+										<br>
+									</h3>
+									<p>Over the years in FPT Software, I have had chances to work with multi-national companies located in&nbsp;different
+										parts of the world. The task of dispatching personnel to various foreign offices, managing their&nbsp;performance
+										while maintaining close communications with both clients and people is not only a challenge&nbsp;but simultaneously
+										also an opportunity to learn from overcoming them.</p>
 								</div>
-							</div>
-							<div class="col-xs-12 col-sm-4 cp_our_benefit_item ">
-								<div class="cp_our_benefit_item_container">
-									<div class="cp_benefit_icon">
-										<span style="background-color: #F67011">
-											<i class="fa fa-user-md"></i>
-										</span>
-									</div>
-									<div class="cp_benefit_name">
-										<h3>COMPETITIVE REWARDS AND BENEFITS</h3>
-										<span class="under-line" style="background-color: #F67011"></span>
-									</div>
-									<div class="cp_benefit_description">
-										<p>FPT Software goal is to ensure our employees’ physical and mental health.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-xs-12 col-sm-4 cp_our_benefit_item ">
-								<div class="cp_our_benefit_item_container">
-									<div class="cp_benefit_icon">
-										<span style="background-color: #F67011">
-											<i class="fa fa-dollar"></i>
-										</span>
-									</div>
-									<div class="cp_benefit_name">
-										<h3>INTERESTING AND DIVERSIFIED JOBS</h3>
-										<span class="under-line" style="background-color: #F67011"></span>
-									</div>
-									<div class="cp_benefit_description">
-										<p>Whoever you are, you can find a place in FPT Software. Let's conquer all obstacles with the help of our colleagues.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-xs-12 col-sm-4 cp_our_benefit_item ">
-								<div class="cp_our_benefit_item_container">
-									<div class="cp_benefit_icon">
-										<span style="background-color: #F67011">
-											<i class="fa fa-laptop"></i>
-										</span>
-									</div>
-									<div class="cp_benefit_name">
-										<h3>TECHNOLOGY</h3>
-										<span class="under-line" style="background-color: #F67011"></span>
-									</div>
-									<div class="cp_benefit_description">
-										<p>Being a leading Software Outsourcing Service Provider, we provide high quality services to cater diversified domains.</p>
-									</div>
+								<div class="col-xs-12 col-sm-8 cp_our_people_item_media">
+									<img src="./images/FPT-people1.jpg" alt="">
 								</div>
 							</div>
 						</div>
@@ -447,30 +330,143 @@
 			</div>
 		</div>
 	</div>
-	<!-- body -->
-	<!-- footer -->
-	<div class="footer-top">
-		<div class="container">
-			<div class="col-md-8 footerleft">
-				<h3>BkConnect</h3>
-				<p>BkConnect là hệ thống cho phép các doanh nghiệp có thể cập nhật các thông tin của công ty, đăng bài tuyển dụng và nhận
-					trực tiếp đơn apply của sinh viên</p>
-				<p>Các sinh viên tham gia vào hệ thống có thể cập nhật thông tin profile và gửi profile cho các nhà tuyển dụng để apply
-					công việc mình mong muốn.</p>
-			</div>
-			<div class="col-md-4 footerright">
-				<h3>Nhóm phát triển</h3>
-				<p class="phone">phone: +0(21) 334 5678</p>
-				<p class="phone">Fax: +0(21) 334 5678</p>
-				<p class="phone">Mail:
-					<a href="mailto:bkconnect@gmail.com">bkconnect@gmail.com</a>
-				</p>
+</div>
+
+<div class="cp_tab_content cp_our_benefits_section" id="benefits">
+	<div class="row">
+		<div class="col-sm-12 cp_header_section">
+			<h2>Our Benefits
+				<span class="cp_under_line" style="background-color: #F67011"></span>
+			</h2>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12 cp_container_section">
+			<div class="container">
+				<div class="row">
+					<div class="cp_our_benefits_container">
+						<div class="col-xs-12 col-sm-4 cp_our_benefit_item ">
+							<div class="cp_our_benefit_item_container">
+								<div class="cp_benefit_icon">
+									<span style="background-color: #F67011">
+										<i class="fa fa-graduation-cap"></i>
+									</span>
+								</div>
+								<div class="cp_benefit_name">
+									<h3>TRAINING AND DEVELOPMENT</h3>
+									<span class="under-line" style="background-color: #F67011"></span>
+								</div>
+								<div class="cp_benefit_description">
+									<p>We believe that coping with challenges and learning from experiences are essential factors for continuous development.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-4 cp_our_benefit_item ">
+							<div class="cp_our_benefit_item_container">
+								<div class="cp_benefit_icon">
+									<span style="background-color: #F67011">
+										<i class="fa fa-plane"></i>
+									</span>
+								</div>
+								<div class="cp_benefit_name">
+									<h3>GLOBAL CAREER</h3>
+									<span class="under-line" style="background-color: #F67011"></span>
+								</div>
+								<div class="cp_benefit_description">
+									<p>We aim to have the best of everything! Experience the world with FPT Software!</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-4 cp_our_benefit_item ">
+							<div class="cp_our_benefit_item_container">
+								<div class="cp_benefit_icon">
+									<span style="background-color: #F67011">
+										<i class="fa fa-glass"></i>
+									</span>
+								</div>
+								<div class="cp_benefit_name">
+									<h3>UNIQUE CULTURE</h3>
+									<span class="under-line" style="background-color: #F67011"></span>
+								</div>
+								<div class="cp_benefit_description">
+									<p>A culture is form from its people. All FSOFTers, from the leaders to every developer, have created a culture that
+										is distinctly FSOFT. Surely you will feel the heart of FSOFT in your own way.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-4 cp_our_benefit_item ">
+							<div class="cp_our_benefit_item_container">
+								<div class="cp_benefit_icon">
+									<span style="background-color: #F67011">
+										<i class="fa fa-user-md"></i>
+									</span>
+								</div>
+								<div class="cp_benefit_name">
+									<h3>COMPETITIVE REWARDS AND BENEFITS</h3>
+									<span class="under-line" style="background-color: #F67011"></span>
+								</div>
+								<div class="cp_benefit_description">
+									<p>FPT Software goal is to ensure our employees’ physical and mental health.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-4 cp_our_benefit_item ">
+							<div class="cp_our_benefit_item_container">
+								<div class="cp_benefit_icon">
+									<span style="background-color: #F67011">
+										<i class="fa fa-dollar"></i>
+									</span>
+								</div>
+								<div class="cp_benefit_name">
+									<h3>INTERESTING AND DIVERSIFIED JOBS</h3>
+									<span class="under-line" style="background-color: #F67011"></span>
+								</div>
+								<div class="cp_benefit_description">
+									<p>Whoever you are, you can find a place in FPT Software. Let's conquer all obstacles with the help of our colleagues.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-4 cp_our_benefit_item ">
+							<div class="cp_our_benefit_item_container">
+								<div class="cp_benefit_icon">
+									<span style="background-color: #F67011">
+										<i class="fa fa-laptop"></i>
+									</span>
+								</div>
+								<div class="cp_benefit_name">
+									<h3>TECHNOLOGY</h3>
+									<span class="under-line" style="background-color: #F67011"></span>
+								</div>
+								<div class="cp_benefit_description">
+									<p>Being a leading Software Outsourcing Service Provider, we provide high quality services to cater diversified domains.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-		<br>
 	</div>
-	<!-- footer -->
+</div>
+<!-- body -->
+<!-- footer -->
+<div class="footer-top">
+	<div class="container">
+		<div class="col-md-8 footerleft">
+			<h3>BkConnect</h3>
+			<p>BkConnect là hệ thống cho phép các doanh nghiệp có thể cập nhật các thông tin của công ty, đăng bài tuyển dụng và nhận
+				trực tiếp đơn apply của sinh viên</p>
+			<p>Các sinh viên tham gia vào hệ thống có thể cập nhật thông tin profile và gửi profile cho các nhà tuyển dụng để apply công
+				việc mình mong muốn.</p>
+		</div>
+		<div class="col-md-4 footerright">
+			<h3>Nhóm phát triển</h3>
+			<p class="phone">phone: +0(21) 334 5678</p>
+			<p class="phone">Fax: +0(21) 334 5678</p>
+			<p class="phone">Mail:
+				<a href="mailto:bkconnect@gmail.com">bkconnect@gmail.com</a>
+			</p>
+		</div>
 	</div>
-	</div>
-	</div>
-
+	<br>
+</div>

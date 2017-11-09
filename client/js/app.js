@@ -17,15 +17,15 @@ angular
     $locationProvider.hashPrefix('!');
     $locationProvider.html5Mode(true);
     $stateProvider
-    //anonymous 
-    .state('home', {
-      title: 'Trang chủ Website',
-      url: '/home',
-      templateUrl: 'views/home/index.html',
-      controller: 'LoginController'
-    })
+      //anonymous 
+      .state('home', {
+        title: 'Trang chủ Website',
+        url: '/home',
+        templateUrl: 'views/home/index.html',
+        controller: 'LoginController'
+      })
 
-    //student
+      //student
       .state('login', {
         title: 'Đăng nhập & Đăng ký',
         url: '/login',
@@ -46,18 +46,27 @@ angular
       })
 
       //Company
-      .state('loginCompany', {
-        title: 'Đăng nhập tài khoản công ty',
-        url: '/company',
-        templateUrl: 'views/company/login.html',
-        controller: 'LoginController'
-      })
-      .state('homecompany',{
-        title: 'Trang chủ công ty ',
-        url: '/company/home',
-        templateUrl: 'views/company/index.html',
-        controller: 'HomeCompanyController'
-      })
+      // .state('loginCompany', {
+      //   title: 'Đăng nhập tài khoản công ty',
+      //   url: '/company',
+      //   templateUrl: 'views/company/login.html',
+      //   controller: 'LoginController'
+      // })
+      // .state('homecompany', {
+      //   title: 'Trang chủ công ty ',
+      //   url: '/company/home',
+      //   templateUrl: 'views/company/index.html',
+      //   controller: 'HomeCompanyController'
+      // })
+
+      // .state('admincompany', {
+      //   title: 'Quản trị công ty ',
+      //   url: '/company/admin',
+      //   templateUrl: 'views/companytest/admin.html',
+      //   controller: 'AdminCompanyController'
+      // })
+
+
       //Admin
       .state('loginAdmin', {
         title: 'Đăng nhập tài khoản admin',

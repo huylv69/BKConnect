@@ -1,0 +1,38 @@
+{
+  "name": "ng.datepicker-ui",
+  "description": "Angular Module Datepicker based on jQuery UI",
+  "keywords": [
+    "datepicker",
+    "jQuery",
+    "UI",
+    "js",
+    "front-end",
+    "web"
+  ],
+  "homepage": "https://github.com/miamarti/ng-datepicker",
+  "main": "dist/ngDatepicker.js",
+  "ignore": [
+    "/.*",
+    "**/.*",
+    "build",
+    "speed",
+    "test",
+    "*.md"
+  ],
+  "dependencies": {
+    "jquery": ">= 1.9.1",
+    "jquery-ui": "~1.11.4",
+    "fontawesome": "~4.3.0",
+    "jquery-ui-bootstrap": "~0.2.5"
+  },
+  "_release": "4bdf5fd594",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "4bdf5fd594839820aabc5850360ed6a64643f916"
+  },
+  "_source": "https://github.com/miamarti/ng-datepicker.git",
+  "_target": "*",
+  "_originalSource": "ng.datepicker-ui",
+  "_direct": true
+}
