@@ -61,11 +61,20 @@
                         <span class="xn-text">Dashboard</span>
                     </a>
                 </li>
-                <li>
-                    <a href="#post">
+                <li class="xn-openable">
+                    <a href="">
                         <span class="fa fa-bell"></span>
-                        <span class="xn-text">Quản lý bài đăng</span>
+                        <span class="xn-text">Bài đăng tuyển dụng</span>
                     </a>
+
+                    <ul>
+                        <li>
+                            <a href="#post">Tạo bài đăng mới</a>
+                        </li>
+                        <li>
+                            <a href="#postmanagement">Quản lý bài đăng</a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="xn-openable">
                     <a href="#">
@@ -261,16 +270,28 @@
     <script type='text/javascript' src="vendor/angular/angular.js"></script>
     <script type='text/javascript' src="vendor/angular-resource/angular-resource.js"></script>
     <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <!-- END PLUGINS -->
+    <!-- App -->
     <script src="company/app.js"></script>
     <script src="company/controllers/post.js"></script>
-    <!-- END PLUGINS -->
+    <script src="company/controllers/postmanager.js"></script>
+    <script src="js/services/postService.js"></script>
+    <script src="js/config.js"></script>
+
+    <script src="views/admin/vendor/angular-datatables.min.js"></script>
+    <!-- DataTables -->
+    <script src="vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script data-require="angular-datatable.js@1.1.5" data-semver="1.1.5" src="views/admin/vendor/angular-datatables.min.js"></script>
+
     <script type="text/javascript" src="vendor/ng.datepicker-ui/dist/ngDatepicker.js"></script>
+
     <script type="text/javascript" src="vendor/ng-tags-input/ng-tags-input.js"></script>
     <link rel="stylesheet" type="text/css" href="vendor/ng-tags-input/ng-tags-input.bootstrap.min.css" />
-    
+
     <script type="text/javascript" src="company/views/js/angular-summernote.min.js"></script>
     <script type="text/javascript" src="company/views/js/summernote.min.js"></script>
-
+    <!-- End App -->
     <!-- START THIS PAGE PLUGINS-->
     <script type='text/javascript' src='company/views/js/plugins/icheck/icheck.min.js'></script>
     <script type="text/javascript" src="company/views/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>

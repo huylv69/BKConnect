@@ -7,7 +7,7 @@ comApp.config(['$routeProvider','$locationProvider',function ($routeProvider,$lo
     $routeProvider
         // route for the home page
         .when('/', {
-            templateUrl: 'company/views/post.html',
+            templateUrl: 'company/views/home.html',
             controller: 'PostController'
         })
 
@@ -18,9 +18,9 @@ comApp.config(['$routeProvider','$locationProvider',function ($routeProvider,$lo
         })
 
         // route for the contact page
-        .when('/login', {
-            templateUrl: 'pages/contact.html',
-            controller: 'contactController'
+        .when('/postmanagement', {
+            templateUrl: 'company/views/postmanager.html',
+            controller: 'ManagerPostController'
         });
 }]);
 
@@ -36,4 +36,5 @@ comApp.controller('aboutController', function ($scope) {
 
 comApp.controller('contactController', function ($scope) {
     $scope.message = 'Contact us! JK. This is just a demo.';
-});
+})
+;

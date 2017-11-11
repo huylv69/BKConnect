@@ -16,6 +16,10 @@
       "type": "number",
       "required": true
     },
+    "idcareer": {
+      "type": "number",
+      "required": true
+    },
     "title": {
       "type": "string",
       "required": true
@@ -40,6 +44,12 @@
     },
     "contact": {
       "type": "object"
+    },
+    "salary": {
+      "type": "string"
+    },
+    "address": {
+      "type": "number"
     }
   },
   "validations": [],
