@@ -25,31 +25,39 @@
       "required": true
     },
     "description": {
-      "type": "object"
+      "type": "object",
+      "required": true
     },
     "created": {
       "type": "date"
     },
     "expired": {
-      "type": "date"
+      "type": "date",
+      "required": true
     },
     "category": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "require_skill": {
-      "type": "object"
+      "type": "object",
+      "required": true
     },
     "benefits": {
-      "type": "object"
+      "type": "object",
+      "required": true
     },
     "contact": {
-      "type": "object"
+      "type": "object",
+      "required": true
     },
     "salary": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "address": {
-      "type": "number"
+      "type": "object",
+      "required": true
     }
   },
   "validations": [],

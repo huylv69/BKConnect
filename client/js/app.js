@@ -52,12 +52,13 @@ angular
       //   templateUrl: 'views/company/login.html',
       //   controller: 'LoginController'
       // })
-      // .state('homecompany', {
-      //   title: 'Trang chủ công ty ',
-      //   url: '/company/home',
-      //   templateUrl: 'views/company/index.html',
-      //   controller: 'HomeCompanyController'
-      // })
+      
+      .state('homeCompany', {
+        title: 'Trang chủ công ty ',
+        url: '/companies/:id',
+        templateUrl: 'views/company/index.html',
+        controller: 'HomeCompanyController'
+      })
 
       // .state('admincompany', {
       //   title: 'Quản trị công ty ',

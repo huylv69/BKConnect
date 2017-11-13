@@ -1,3 +1,14 @@
+<!-- THIS PAGE PLUGINS -->
+<script type="text/javascript" src="company/views/js/plugins/bootstrap/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="company/views/js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
+<script type="text/javascript" src="company/views/js/plugins/bootstrap/bootstrap-colorpicker.js"></script>
+<script type="text/javascript" src="company/views/js/plugins/bootstrap/bootstrap-file-input.js"></script>
+<script type="text/javascript" src="company/views/js/plugins/bootstrap/bootstrap-select.js"></script>
+<script type="text/javascript" src="company/views/js/plugins/bootstrap/bootstrap-datepicker.js"></script>
+<script type='text/javascript' src='company/views/js/plugins/icheck/icheck.min.js'></script>
+<script type="text/javascript" src="company/views/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+<!-- END PAGE PLUGINS -->
+
 <!-- START BREADCRUMB -->
 <ul class="breadcrumb">
     <li>
@@ -18,8 +29,7 @@
 <div class="page-content-wrap">
     <div class="block">
         <div class="col-md-11">
-
-            <form class="form-horizontal center-block" ng-submit="createPost()">
+            <form class="form-horizontal center-block" ng-submit="updatePost()">
                 <div class="form-group">
                     <label class="col-md-2 control-label">Tiêu đề:</label>
                     <div class="col-md-10">
@@ -39,7 +49,7 @@
                     <label class="col-md-2 control-label">Hạn nộp hồ sơ:</label>
                     <div class="col-md-4">
                         <div class="input-group">
-                            <ng-datepicker ng-required="true" native-class="form-control input-text" ng-model="postDetail.expired" dateFormat="dd/MM/yy"
+                            <ng-datepicker ng-required="true" native-class="form-control input-text" ng-model="postDetail.expired" datetime="yyyy/mm/dd"
                                 minDate="-15D" maxDate="+1M +10D"></ng-datepicker>
                             <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-calendar"></span>
@@ -114,15 +124,3 @@
 
 </div>
 <!-- END PAGE CONTENT WRAPPER -->
-<!-- THIS PAGE PLUGINS -->
-<script type="text/javascript" src="company/views/js/plugins/bootstrap/bootstrap-datepicker.js"></script>
-<script type="text/javascript" src="company/views/js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
-<script type="text/javascript" src="company/views/js/plugins/bootstrap/bootstrap-colorpicker.js"></script>
-<script type="text/javascript" src="company/views/js/plugins/bootstrap/bootstrap-file-input.js"></script>
-<script type="text/javascript" src="company/views/js/plugins/bootstrap/bootstrap-select.js"></script>
-<script type="text/javascript" src="company/views/js/plugins/bootstrap/bootstrap-datepicker.js"></script>
-<script type='text/javascript' src='company/views/js/plugins/icheck/icheck.min.js'></script>
-<script type="text/javascript" src="company/views/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
-
-
-<!-- END PAGE PLUGINS -->
