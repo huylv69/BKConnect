@@ -1,0 +1,119 @@
+<!-- START BREADCRUMB -->
+<ul class="breadcrumb">
+    <li>
+        <a href="#">Home</a>
+    </li>
+    <li class="active">Update profile</li>
+</ul>
+<!-- END BREADCRUMB -->
+
+<!-- PAGE TITLE -->
+<div class="page-title">
+    <h2>
+        <span class="fa fa-arrow-circle-o-left"></span> Cập nhật thông tin công ty</h2>
+    <ul class="panel-controls">
+        <li class="label-control">
+            <span class="btn btn-info">
+                <a href="/companies/{{id}}" target="_blank" style="color: #faf9f9;">
+                    <b>Xem Trang Công Ty</b>
+                </a>
+            </span>
+        </li>
+    </ul>
+</div>
+<!-- END PAGE TITLE -->
+
+<!-- PAGE CONTENT WRAPPER -->
+<div class="page-content-wrap">
+    <div class="">
+        <div class="col-md-11">
+
+            <form class="form-horizontal center-block" ng-submit="updateProfile()">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Tên công ty:</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control input-lg" ng-model="companyDetail.name" placeholder="Tên công ty" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Địa chỉ:</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control input-lg" ng-model="companyDetail.address" placeholder="Địa chỉ công ty" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Website:</label>
+                    <div class="col-md-5">
+                        <input class="form-control" ng-model="companyDetail.website" placeholder="Website công ty" />
+                    </div>
+
+                    <label class="col-md-2 control-label">Email:</label>
+                    <div class="col-md-3">
+                        <input class="form-control" disabled="disabled" type="email" ng-model="companyDetail.email" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Logo:</label>
+                    <div class="col-md-10">
+                        <input type="file" class="fileinput btn-success" ngf-select ng-model="companyDetail.logo" name="file" ngf-pattern="'image/*'"
+                            accept="image/*" ngf-max-size="20MB" />
+                        <img style="width:200px;cursor: pointer;" ng-show="!!companyDetail.logo" ngf-thumbnail="companyDetail.logo || 'company/views/img/upload-empty.png'"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Ảnh bìa:</label>
+                    <div class="col-md-10">
+                        <input type="file" class="fileinput btn-success" ngf-select ng-model="companyDetail.image" name="file" ngf-pattern="'image/*'"
+                            accept="image/*" ngf-max-size="20MB" />
+                        <img style="width :90% ; cursor: pointer;" ng-show="!!companyDetail.image" ngf-thumbnail="companyDetail.image || 'company/views/img/upload-empty.png'"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Giới thiệu công ty:</label>
+                    <div class="col-md-10">
+                        <summernote height="180" ng-model="companyDetail.about"></summernote>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Mục tiêu công ty :</label>
+                    <div class="col-md-10">
+                        <summernote height="200" ng-model="companyDetail.goal"></summernote>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Sứ mệnh công ty:</label>
+                    <div class="col-md-10">
+                        <summernote height="200" ng-model="companyDetail.mission"></summernote>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Phúc lợi công ty:</label>
+                    <div class="col-md-10">
+                        <summernote height="180" ng-model="companyDetail.benefits"></summernote>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="pull-right btn btn-success btn-lg active">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
+<!-- THIS PAGE PLUGINS -->
+<script type="text/javascript" src="company/views/js/plugins/bootstrap/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="company/views/js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
+<script type="text/javascript" src="company/views/js/plugins/bootstrap/bootstrap-colorpicker.js"></script>
+<script type="text/javascript" src="company/views/js/plugins/bootstrap/bootstrap-file-input.js"></script>
+<script type="text/javascript" src="company/views/js/plugins/bootstrap/bootstrap-select.js"></script>
+<script type="text/javascript" src="company/views/js/plugins/bootstrap/bootstrap-datepicker.js"></script>
+<script type='text/javascript' src='company/views/js/plugins/icheck/icheck.min.js'></script>
+<script type="text/javascript" src="company/views/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+
+<!-- END PAGE PLUGINS -->

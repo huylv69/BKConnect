@@ -16,7 +16,7 @@
     <!-- EOF CSS INCLUDE -->
 
 
-    
+
 </head>
 
 <body>
@@ -236,7 +236,7 @@
         <base href="/company">
         <!-- END PAGE CONTENT -->
         <ng-view id="main" ng-if="location.path() == '/login'"></ng-view>
-        
+
     </div>
     <!-- END PAGE CONTAINER -->
 
@@ -279,15 +279,20 @@
     <!-- END PLUGINS -->
     <!-- APP -->
     <script src="company/app.js"></script>
-    <script src="js/config.js"></script>    
+    <script src="js/config.js"></script>
     <script src="company/controllers/post.js"></script>
     <script src="company/controllers/postmanager.js"></script>
     <script src="company/controllers/editpost.js"></script>
     <script src="company/controllers/login.js"></script>
+    <script src="company/controllers/editprofile.js"></script>
 
     <script src="company/services/authen.js"></script>
     <script src="company/services/post.js"></script>
     <script src="company/services/localStorage.js"></script>
+    <script src="company/services/company.js"></script>
+
+    <script type="text/javascript" src="vendor/ng-file-upload/ng-file-upload.min.js"></script>
+    <script type="text/javascript" src="vendor/ng-file-upload/ng-file-upload-shim.min.js"></script>
 
     <script src="views/admin/vendor/angular-datatables.min.js"></script>
     <!-- DataTables -->

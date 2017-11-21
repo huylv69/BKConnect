@@ -6,5 +6,4 @@ module.exports = function(app) {
           var newFilename = (new Date()).getTime()+'_'+parts[parts.length-2]+'.'+extension;
           return newFilename;
     }
-    
   };

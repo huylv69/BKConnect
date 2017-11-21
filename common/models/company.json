@@ -48,11 +48,17 @@
     "mission": {
       "type": "object"
     },
+    "logo": {
+      "type": "string"
+    },
     "image": {
       "type": "string"
     },
     "created_at": {
       "type": "date"
+    },
+    "website": {
+      "type": "string"
     }
   },
   "validations": [],
@@ -68,6 +74,12 @@
       "accessType": "READ",
       "principalType": "ROLE",
       "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
       "permission": "ALLOW"
     }
   ],

@@ -1,5 +1,5 @@
 // create the module and name it comApp
-var comApp = angular.module('comApp', ['ngRoute', 'summernote', 'ngDatepicker', 'ngTagsInput']);
+var comApp = angular.module('comApp', ['ngRoute', 'summernote', 'ngDatepicker', 'ngTagsInput','ngFileUpload']);
 
 // configure our routes
 comApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
@@ -31,20 +31,21 @@ comApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, 
         })
         .when('/editprofile', {
             templateUrl: 'company/views/editprofile.html',
-            controller: 'ManagerPostController'
-
+            controller: 'ProfileController'
         })
-        .        otherwise({
+       
+        .otherwise({
             redirectTo: '/login'
         });
 }]);
+
 comApp.run(function ($rootScope, $location, $mLocalStorage, AuthenService) {
     $rootScope.location = $location;
     $rootScope.companyName = "HuyDZ";
     $rootScope.currentCompany = $mLocalStorage.getItem('companyInfo');
     $rootScope.$on('$routeChangeStart', function (event, next, current) {
         if ($rootScope.currentCompany == null) {
-            if (next.templateUrl != "company/views/login.html"){
+            if (next.templateUrl == "company/views/login.html"){
             }
             else{
                 $location.path("/login");

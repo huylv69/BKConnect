@@ -45,28 +45,12 @@ angular
         controller: 'LoginController'
       })
 
-      //Company
-      // .state('loginCompany', {
-      //   title: 'Đăng nhập tài khoản công ty',
-      //   url: '/company',
-      //   templateUrl: 'views/company/login.html',
-      //   controller: 'LoginController'
-      // })
-      
       .state('homeCompany', {
         title: 'Trang chủ công ty ',
         url: '/companies/:id',
         templateUrl: 'views/company/index.html',
         controller: 'HomeCompanyController'
       })
-
-      // .state('admincompany', {
-      //   title: 'Quản trị công ty ',
-      //   url: '/company/admin',
-      //   templateUrl: 'views/companytest/admin.html',
-      //   controller: 'AdminCompanyController'
-      // })
-
 
       //Admin
       .state('loginAdmin', {
