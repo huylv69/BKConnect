@@ -28,5 +28,15 @@ comApp.service('companyService', ['$http', '$rootScope', function ($http, $rootS
                 callback(err);
             })
     }
+    service.deleteLogo = function (fileLogo) {
+        var url = BASE_URL + "containers/logo/files/" + fileLogo;
+        $http.delete(url).then(function (res) {
+        });
+    }
+    service.deleteCover = function (fileCover) {
+        var url = BASE_URL + "containers/cover/files/" + fileCover;
+        $http.delete(url).then(function (res) {
+        });
+    }
     return service;
 }]);

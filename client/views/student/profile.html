@@ -10,11 +10,11 @@
   <div class="col-md-3">
     <div class="text-center">
       <label for="avatarFile" style="cursor: pointer;">
-        <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
-        <h6 id="fileName">Upload a different photo...</h6>
+        <img style="width:200px;" class="avatar img-circle" alt="avatar" ngf-thumbnail="chosenPhoto || user.photo || 'views/student/images/100.png'"
+        />
       </label>
-      <input type="file" ng-focus="focusCallback($event)" id="avatarFile" style="display : none;" class="form-control" ng-model="user.photo"
-        ng-change="changeCallback()">
+      <input type="file" id="avatarFile" style="display : none;" class="form-control" ngf-pattern="'image/*'" accept="image/*"
+        ngf-max-size="20MB" ngf-select ng-model="chosenPhoto" />
     </div>
   </div>
 
@@ -119,7 +119,6 @@
         <div class="col-md-8">
           <input type="button" class="btn btn-primary" ng-click="updateInfo()" value="Save Changes">
           <span></span>
-
           <input type="reset" ng-click="reset()" class="btn btn-default" value="Cancel">
         </div>
       </div>

@@ -32,5 +32,11 @@ angular
         callback(res);
       })
     }
+    service.deletePhoto = function (fileName) {
+      var url = BASE_URL + "containers/student/files/" + fileName;
+      $http.delete(url).then(function (res) {
+
+      });
+    }
     return service;
   }]);

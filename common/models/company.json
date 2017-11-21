@@ -51,7 +51,7 @@
     "logo": {
       "type": "string"
     },
-    "image": {
+    "cover": {
       "type": "string"
     },
     "created_at": {
@@ -79,7 +79,7 @@
     {
       "accessType": "WRITE",
       "principalType": "ROLE",
-      "principalId": "$authenticated",
+      "principalId": "$everyone",
       "permission": "ALLOW"
     }
   ],

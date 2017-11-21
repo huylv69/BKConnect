@@ -54,7 +54,7 @@
 <!-- body -->
 <section id="home" class="cp_tab_content cp_herro_banner">
 	<div class="cp_herro_banner_gray" style="height: 100px;"></div>
-	<img src="{{companyInfo.image}}" class="cp_herro_banner_image">
+	<img src="{{companyInfo.cover}}" class="cp_herro_banner_image">
 </section>
 <div class="container">
 	<div class="row" style="border-bottom: 2px solid #F67011; padding-bottom: 30px">
@@ -87,11 +87,6 @@
 	</div>
 </div>
 
-<!-- <div class="row">
-				<div class="col-sm-12 cp_header_section">
-					<h2>Our Job<span class="cp_under_line" style="background-color: #F67011"></span></h2>
-				</div>
-			</div> -->
 <div id="jobsListing" class="panel-collapse cp_our_jobs_container collapse in" aria-expanded="true" style="">
 	<div class="panel-body">
 		<div class="cp_our_jobs_listing" id="ajax_cp_our_jobs_listing">
@@ -186,8 +181,7 @@
 			<div class="cp_story_item">
 				<div class="col-xs-12 col-sm-4 cp_story_item_content" style="border-color: #F05A22">
 					<h2 style="color: #F05A22">GIỚI THIỆU CÔNG TY</h2>
-					<p>
-						{{companyInfo.about}}
+					<p ng-bind-html="companyInfo.about" style="text-align:left;">
 					</p>
 				</div>
 				<div class="col-xs-12 col-sm-8 cp_story_item_media" style="border-color: #F05A22">
@@ -223,7 +217,7 @@
 								<span class="under-line" style="background-color: #F67011"></span>
 							</div>
 							<div class="cp_benefit_description">
-								<p>{{companyInfo.goal}}</p>
+								<p ng-bind-html="companyInfo.goal"></p>
 							</div>
 						</div>
 					</div>
@@ -239,7 +233,7 @@
 								<span class="under-line" style="background-color: #F67011"></span>
 							</div>
 							<div class="cp_benefit_description">
-								<p>{{companyInfo.mission}}</p>
+								<p ng-bind-html="companyInfo.mission"></p>
 							</div>
 						</div>
 					</div>
@@ -255,7 +249,7 @@
 								<span class="under-line" style="background-color: #F67011"></span>
 							</div>
 							<div class="cp_benefit_description">
-								<p>{{companyInfo.benefits}}</p>
+								<p ng-bind-html="companyInfo.benefits"></p>
 							</div>
 						</div>
 					</div>

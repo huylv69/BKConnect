@@ -1,5 +1,5 @@
-angular.module('app').controller('ProfileController', ['$scope', '$state', '$rootScope', '$mStudent', '$mLocalStorage',
-    function ($scope, $state, $rootScope, $mStudent, $mLocalStorage) {
+angular.module('app').controller('ProfileController', ['$scope', '$state', '$rootScope', '$mStudent', '$mLocalStorage', 'Upload',
+    function ($scope, $state, $rootScope, $mStudent, $mLocalStorage, Upload) {
 
         var user = {};
         $scope.myDate = {
@@ -17,38 +17,6 @@ angular.module('app').controller('ProfileController', ['$scope', '$state', '$roo
             });
 
         };
-        $scope.targetField = null;
-        
-        $scope.changeCallback = function() {
-            console.log($scope.targetField);
-        };
-        
-        $scope.focusCallback = function($event) {
-          if($event.target === null) {
-            return;
-          }
-          $scope.targetField = $event.target;
-        };
-        $scope.change = function (obj,$event) {
-            console.log($event.target);
-            getBase64(e.target.files[0], function (data) {
-                console.log('File', e.target.files[0]);
-                console.log(data.length);
-                console.log(data.substr(0, 100));
-            });
-        }
-        // Convert image to base64
-        function getBase64(file, callback) {
-            var reader = new FileReader();
-            reader.readAsDataURL(file);
-            reader.onload = function () {
-                callback(reader.result);
-            };
-            reader.onerror = function (error) {
-                console.log('Error: ', error);
-            };
-        }
-
 
         let click = false;
         $scope.updateInfo = function () {
@@ -57,24 +25,61 @@ angular.module('app').controller('ProfileController', ['$scope', '$state', '$roo
             } else {
                 click = true;
                 $scope.loading = true;
-                $mStudent.updateInfo($scope.user, function (res) {
-                    if (res.status == 200) {
+                if ($scope.chosenPhoto) {
+                    Upload.upload({
+                        url: BASE_URL + 'containers/student/upload', //webAPI exposed to upload the file
+                        data: { file: $scope.chosenPhoto } //pass file as data, should be user ng-model
+                    }).then(function (res) { //upload function returns a promise
+                        var photo = "/api/containers/" + res.data.result.files['file'][0].container + "/download/" + res.data.result.files['file'][0].name;
+                        var del = $scope.user.photo;
+                        var index = del.lastIndexOf('download/');
+                        var subDes = del.slice(index + 9);
+                        $mStudent.deletePhoto(subDes);
+                        $scope.user.photo = photo;
+                        $mStudent.updateInfo($scope.user, function (res) {
+                            if (res.status == 200) {
+                                $scope.loading = false;
+                                swal({
+                                    title: "Thành công!",
+                                    text: "Cập nhật dữ liệu thành công!",
+                                    icon: "success",
+                                });
+                            } else {
+                                $scope.loading = false;
+                                swal({
+                                    title: "Thất bại!",
+                                    text: "Đã xảy ra lỗi, xin thử lại!",
+                                    icon: "error",
+                                });
+                            }
+                            click = false;
+                        });
+                    }, function (res) { //catch error
+                        click = false;
                         $scope.loading = false;
-                        swal({
-                            title: "Thành công!",
-                            text: "Cập nhật dữ liệu thành công!",
-                            icon: "success",
-                        });
-                    } else {
-                        swal({
-                            title: "Thất bại!",
-                            text: "Đã xảy ra lỗi, xin thử lại!",
-                            icon: "error",
-                        });
-                    }
-                    click = false;
-                    console.log(res);
-                });
+                        console.log('Error status: ' + res.status);
+                    });
+                } else {
+                    $mStudent.updateInfo($scope.user, function (res) {
+                        if (res.status == 200) {
+                            $scope.loading = false;
+                            swal({
+                                title: "Thành công!",
+                                text: "Cập nhật dữ liệu thành công!",
+                                icon: "success",
+                            });
+                        } else {
+                            $scope.loading = false;
+                            swal({
+                                title: "Thất bại!",
+                                text: "Đã xảy ra lỗi, xin thử lại!",
+                                icon: "error",
+                            });
+                        }
+                        click = false;
+                    });
+                }
+
             }
         }
 

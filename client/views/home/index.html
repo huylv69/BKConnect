@@ -8,7 +8,8 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 	<script src="vendor/jquery/dist/jquery.min.js"></script>
 	<link rel="stylesheet" href="views/home/css/flexslider.css" type="text/css" media="screen" />
-
+	<script type="text/javascript" src="views/home/js/jquery.flexisel.js"></script>
+	
 </head>
 
 <!-- header -->
@@ -57,6 +58,7 @@
 	<div class="banner">
 		<h1>l'm looking for...</h1>
 		<form>
+			<span class="input-group-addon" id="basic-addon1"><i class="fa fa-search fa-3" aria-hidden="true"></i></span>
 			<input type="text" value="Enter a Job Description" onfocus="this.value = '';" onblur="if (this.value = 'Enter a Job Description') {this.value = 'Enter a Job Description';}">
 			<input type="submit" class="ser" value="Search">
 			<br>
@@ -166,10 +168,9 @@
 
 				});
 			</script>
-			<script type="text/javascript" src="views/home/js/jquery.flexisel.js"></script>
 		</div>
 		<div class="single1">
-			<div class="col-md-6">
+			<div class="col-md-9">
 				<div class="col_3">
 					<h3>Việc làm gần đây</h3>
 					<ul class="list_1">
@@ -210,7 +211,7 @@
 				</div>
 
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-3">
 				<div class="col_3">
 					<h3>Việc làm theo các ngành nghề</h3>
 					<ul class="list_2">
@@ -284,7 +285,6 @@
 	<script type="text/javascript">
 				 // When the user scrolls down 20px from the top of the document, show the button
 				 window.onscroll = function () { scrollFunction() };
-
 				 function scrollFunction() {
 					 if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
 						 document.getElementById("myBtn").style.display = "block";
@@ -292,11 +292,9 @@
 						 document.getElementById("myBtn").style.display = "none";
 					 }
 				 }
-
 				 // When the user clicks on the button, scroll to the top of the document
 				 function topFunction() {
 					 document.body.scrollTop = 0; // For Chrome, Safari and Opera 
 					 document.documentElement.scrollTop = 0; // For IE and Firefox
 				 }
-
 	</script>

@@ -58,18 +58,18 @@
                 <div class="form-group">
                     <label class="col-md-2 control-label">Logo:</label>
                     <div class="col-md-10">
-                        <input type="file" class="fileinput btn-success" ngf-select ng-model="companyDetail.logo" name="file" ngf-pattern="'image/*'"
-                            accept="image/*" ngf-max-size="20MB" />
-                        <img style="width:200px;cursor: pointer;" ng-show="!!companyDetail.logo" ngf-thumbnail="companyDetail.logo || 'company/views/img/upload-empty.png'"
+                        <input type="file" class="fileinput btn-success" ngf-select ng-model="chosenLogo" name="file" ngf-pattern="'image/*'" accept="image/*"
+                            ngf-max-size="20MB" />
+                        <img style="width:200px;cursor: pointer;" ngf-thumbnail="chosenLogo || companyDetail.logo || 'company/views/img/upload-empty.png'"
                         />
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-2 control-label">Ảnh bìa:</label>
                     <div class="col-md-10">
-                        <input type="file" class="fileinput btn-success" ngf-select ng-model="companyDetail.image" name="file" ngf-pattern="'image/*'"
-                            accept="image/*" ngf-max-size="20MB" />
-                        <img style="width :90% ; cursor: pointer;" ng-show="!!companyDetail.image" ngf-thumbnail="companyDetail.image || 'company/views/img/upload-empty.png'"
+                        <input type="file" class="fileinput btn-success" ngf-select ng-model="chosenCover" name="file" ngf-pattern="'image/*'" accept="image/*"
+                            ngf-max-size="20MB" />
+                        <img style="width :90% ; cursor: pointer;" ngf-thumbnail="chosenCover|| companyDetail.cover || 'company/views/img/upload-empty.png'"
                         />
                     </div>
                 </div>

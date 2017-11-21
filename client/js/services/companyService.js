@@ -15,10 +15,12 @@ angular
         }
 
         service.getInfo = function (userId, callback) {
-            var url = buildQueryLink("companies/" + userId)
+            var url = BASE_URL + "companies/" + userId;
             $http.get(url)
                 .then(function (res) {
                     callback(res.data);
+                },function(err){
+                    callback(err.data);
                 });
         }
 

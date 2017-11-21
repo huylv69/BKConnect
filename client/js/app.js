@@ -6,6 +6,8 @@
 angular
   .module('app', [
     'ui.router',
+    'ngSanitize',
+    'ngFileUpload',
     'service.auth',
     'service.localStorage',
     'service.student',
@@ -82,7 +84,6 @@ angular
     function ($rootScope, $state, $mAuth, $mLocalStorage) {
       //get currentUser
       $rootScope.currentUser = $mLocalStorage.getItem('userInfo');
-      $rootScope.currentCompany = $mLocalStorage.getItem('companyInfo');
       $rootScope.currentAdmin = $mLocalStorage.getItem('adminInfo');
 
     }]);
