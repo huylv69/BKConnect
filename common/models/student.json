@@ -62,8 +62,14 @@
   "relations": {
     "accessTokens": {
       "type": "hasMany",
-      "model": "AccessTokenStudent",
-      "foreignKey": "userId"
+      "model": "MultiAccessToken",
+      "polymorphic": {
+        "foreignKey": "userId",
+        "discriminator": "principalType"
+      },
+      "options": {
+        "disableInclude": true
+      }
     }
   },
   "acls": [

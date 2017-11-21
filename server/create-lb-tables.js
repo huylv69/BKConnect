@@ -1,6 +1,6 @@
 var server = require('./server');
 var ds = server.dataSources.mysqlDs;
-var lbTables = ['ACL'];
+var lbTables = ['MultiAccessToken'];
 ds.automigrate(lbTables, function(er) {
   if (er) throw er;
   console.log('Loopback tables [' - lbTables - '] created in ', ds.adapter.name);

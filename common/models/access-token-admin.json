@@ -8,11 +8,7 @@
   "properties": {},
   "validations": [],
   "relations": {
-    "admin": {
-      "type": "belongsTo",
-      "model": "admin",
-      "foreignKey": "userId"
-    }
+    
   },
   "acls": [],
   "methods": {}

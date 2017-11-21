@@ -8,11 +8,7 @@
   "properties": {},
   "validations": [],
   "relations": {
-    "company": {
-      "type": "belongsTo",
-      "model": "company",
-      "foreignKey": "userId"
-    }
+   
   },
   "acls": [],
   "methods": {}

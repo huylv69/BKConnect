@@ -21,8 +21,14 @@
   "relations": {
     "accessTokens": {
       "type": "hasMany",
-      "model": "AccessTokenAdmin",
-      "foreignKey": "userId"
+      "model": "MultiAccessToken",
+      "polymorphic": {
+        "foreignKey": "userId",
+        "discriminator": "principalType"
+      },
+      "options": {
+        "disableInclude": true
+      }
     }
   },
   "acls": [

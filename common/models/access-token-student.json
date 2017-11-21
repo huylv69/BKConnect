@@ -8,11 +8,7 @@
   "properties": {},
   "validations": [],
   "relations": {
-    "student": {
-      "type": "belongsTo",
-      "model": "student",
-      "foreignKey": "userId"
-    }
+    
   },
   "acls": [],
   "methods": {}
