@@ -1,0 +1,484 @@
+h4, h5, h6,
+h1, h2, h3 {margin-top: 0;}
+ul, ol {margin: 0;}
+p {margin: 0;}
+html,body{
+	font-family: 'Open Sans', sans-serif;
+  background-color: #F5FDFC;
+}
+body a{
+    transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+/* Job */
+.title-detail{
+	margin: 10px 0;
+	color: #353535;
+	font-size: 30px;
+  }
+  .detail-description{
+	font-size: 18px;
+	font-family: "Times New Roman", Georgia, Serif;
+	text-align: justify;
+	line-height: 1.5em;
+  }
+  .apply a{
+    display: inline-block;
+    text-align: center;
+    font-size: 30px;
+    background: red;
+    padding: 10px;
+    color: white;
+    margin-top: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  .apply a:hover{
+	background: #D82727;
+	text-decoration: none;
+  }
+.head-nav {
+  float: left;
+  width: 50%;
+  margin-left: 6%;
+}
+.head-nav ul{
+	margin:0;
+	padding:0;
+}
+.head-nav ul li{
+	display:inline-block; 
+	
+}
+.head-nav ul li a {
+  position: relative;
+  display: inline-block;
+  margin: 0px 5px;
+  outline: none;
+  padding: 0.5em 0.1em 1.5em;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-weight: 400;
+  text-shadow: 0 0 1px rgba(255,255,255,0.3);
+  font-size: 1.2em;
+}
+.head-nav a:hover,
+.head-nav a:focus {
+	outline: none;
+}
+.head-nav ul{
+	padding:0;
+	margin: 0;
+}
+*,
+*:after,
+*::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.head-nav ul li {
+	display: inline-block;
+	margin: 0 .5em;
+	outline: none;
+	text-decoration: none;
+	letter-spacing: 1px;
+	font-weight: 400;
+	font-size: 16px;
+}
+.head-nav ul li a:hover, .head-nav ul li.active a{
+	color:#fff;
+}
+.footer-top {
+  background: #222222; 
+  padding: 2em 0;
+}
+.footer-top p {
+  color: #eeeeee;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5em;
+  margin: 1em 0;
+}
+.footer-top h6 {
+  color: #ffffff;
+  font-size: 1em;
+  font-weight: 700;
+  margin: 0;
+}
+.footer-top h3 {
+  color: #ffffff;
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 1em 0;
+}
+.footer-top li {
+  display: block;
+  line-height: 1em;
+}
+.footer-top ul {
+  padding: 0;
+}
+.footer-top li a {
+  color: #6d7a83;
+  font-size: 1em;
+}
+.footer-top li a:hover{
+  color: #42E4d8;
+}
+.logo {
+  float: left;
+  width: 42%;
+}
+.logo a {
+  display: block;
+}
+ul a:hover,
+ul a:focus {
+	outline: none;
+	color: #202020;
+	text-decoration: none;
+}
+/* Effect 3: bottom line slides/fades in */
+.cl-effect-3 a {
+	padding: 8px 0;
+}
+
+.cl-effect-3 a::after {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 50%;
+	height: 4px;
+	background: #42E4d8;
+	content: '';
+	opacity: 0;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	-moz-transition: opacity 0.3s, -moz-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+	-webkit-transform: translateY(10px);
+	-moz-transform: translateY(10px);
+	transform: translateY(10px);
+}
+.cl-effect-3 a:hover::after,
+.cl-effect-3 a:focus::after {
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	transform: translateY(0px);
+}
+.logo {
+  float: left;
+  width: 14%;
+}
+.logo a {
+	display: block;
+}
+.header1{
+     background:url(../images/banner.jpg)no-repeat;
+     background-size:cover;
+     min-height:500px;
+}
+.header-bottom {
+  border-bottom: 2px solid #eeeeee;
+  background-color: #222222; 
+}
+
+.header-right1 li {
+  display: inline-block;
+  padding: 0.5em; 
+}
+.header-right1 li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1em;
+  background: #42E4d8;
+  padding: 0.5em 1.5em;
+  border-radius: 3px;
+}
+.header-right1 li a:hover{
+  color: #fff;
+  background: #666666;
+}
+.header-right1 {
+  float: right;
+  vertical-align: middle;
+  margin: 1em 0;
+}
+.job-desc ul,
+.more-jobs ul,
+.company-custom-fields ul {
+  list-style: none;
+  padding-left: 0;
+  position: relative;
+}
+.job-desc ul li,
+.more-jobs ul li,
+.company-custom-fields ul li {
+  line-height: 2.25em;
+  padding-left: 20px;
+}
+.job-desc ul li:before {
+  font-family: FontAwesome;
+  content: "\f118";
+  position: absolute;
+  color: #e6b706;
+  margin-left: -20px;
+}
+
+.company-custom-fields ul li:before,
+.more-jobs ul li:before{
+  font-family: FontAwesome;
+  content: "\f058";
+  position: absolute;
+  color: #e6b706;
+  margin-left: -20px;
+}
+.job-desc ol li,
+.more-jobs ol li,
+.company-custom-fields ol li {
+  line-height: 2.25em;
+}
+.noo-main.left-sidebar {
+  float: right;
+}
+.noo-page-heading.noo-page-heading-company-2 .page-heading-info {
+     display: none;
+       }
+.page-heading-info h1 {
+     font-weight: 700;
+}
+body .noo-page-heading.noo-page-heading-bg > div:first-child {
+    margin-top: 70px;
+  }
+.noo-page-heading {
+  position: relative;
+  background: url(../images/heading-bg.png) no-repeat scroll 0 0;
+  padding: 80px 0;
+  background-repeat: repeat;
+  color: white;
+  width: 100%;
+}
+.noo-page-heading .job-type a{
+  text-decoration: none;
+  padding: 0px 13px;
+}
+.noo-page-heading .job-location a{
+  text-decoration: none;
+  padding-right:13px;
+  color: white;
+}
+.noo-page-heading .job-date{
+  padding-right:13px;
+}
+.noo-page-heading .job-category a{
+  text-decoration: none;
+  color: white;
+}
+.noo-page-heading,
+.page-template-page-post-job .noo-page-heading,
+.page-template-page-post-resume .noo-page-heading {
+  text-align: center;
+}
+.container-boxed.max {
+  width: 100%;
+}
+.container-wrap{
+  margin: 60px 100px;
+  background-color: #fff;
+  padding: 30px;
+}
+
+.job-desc h4{
+  font-weight: bold;
+  padding-top: 30px;
+}
+.job-desc p{
+  padding-top: 10px;
+}
+.applications{
+  font-weight: 500;
+  font-size: 0.5em;
+  border: 1px solid #eeeeee;
+  background-color: #ee5b4c;
+  border-radius: 18px;
+  padding: 1px 10px;
+}
+.fa-bookmark:before {
+    content: "\f02e";
+}
+.fa-map-marker:before {
+    content: "\f041";
+}
+.fa-folder:before {
+    content: "\f07b";
+}
+.fa-calendar:before {
+    content: "\f073";
+}
+.job-custom-fields h3{
+  padding-top: 40px;
+   font-weight: bold;
+}
+.company-info{
+  background-color: #ebeeef;
+}
+.company-featured{
+  padding-top: 30px;
+}
+.company-featured img{
+  width: 110px;
+    height: auto;
+    background-color: #fff;
+    overflow: hidden;
+    float: left;
+    border-radius: 50%;
+    padding: 20px;
+}
+.company-header h3 a{
+  padding: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #2e2e2e;
+  float: left;
+    text-decoration: none;
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+.company-info-content{
+  padding: 10px;
+  line-height: 200%;
+  transition: height 75ms;
+    overflow: hidden;
+    display: block;
+    width: 100%;
+}
+.company-custom-fields{
+  padding-top: 10px;
+}
+.more-jobs{
+  padding: 40px 0px;
+}
+.more-jobs a{
+  text-decoration: none;
+  color: black;
+}
+.more-job-title:hover{
+  color: red;
+}
+@media(max-width:1024px){
+.head-nav {
+  float: left;
+  margin-left: 3%;
+}
+.header-right1 li a {
+  font-size: 1em;
+}
+.head-nav ul li a {
+  margin: 0px 4px;
+  padding: 0.5em 0.1em 1em;
+  font-size: 1em;
+}
+.logo {
+  float: left;
+  width: 15%;
+}
+}
+/*-- responsive --*/
+@media(max-width:768px){
+.head-nav ul li{
+	display:block;
+	float:none;
+}
+.head-nav ul li a{
+	border-right:none;
+	color:#fff;
+	padding:0.4em 1.5em;
+	display:block;
+	font-size:0.875em;
+	font-weight:500;
+}
+.head-nav ul{
+	position:absolute;
+	margin: 0;
+	padding: 2% 0;
+	z-index: 9999;
+	width: 100%;
+	display: none;
+	text-align: center;
+	background:#42E4d8;
+	left:0em;
+	top:6em;
+}
+.head-nav span.menu {
+  display: block;
+  background: none;
+  position: absolute;
+  top: 36px;
+  right: 250px;
+  font-size: 10px;
+}
+.head-nav span.menu:before{
+	content:url(../images/menu.png);
+	color:#FFF;
+	text-align:right;
+	cursor:pointer;
+}
+ul.number li a, ul.number li span {
+  font-size: 1em;
+}
+.header-bottom {
+  padding: 1em 0 0.6em;
+}
+.logo {
+  float: left;
+  width: 15%;
+}
+
+/*-- responsive --*/
+@media(max-width:640px){
+ul.number li {
+  margin: 0 0.5em;
+}
+.logo {
+  float: left;
+  width: 20%;
+}
+.head-nav span.menu {
+  top: 36px;
+  right: 250px;
+}
+}
+/*-- responsive --*/
+@media(max-width:480px){
+.head-nav span.menu {
+  top: 36px;
+  right: 250px;
+}
+.logo {
+  float: left;
+  width: 20%;
+}
+}
+/*-- responsive --*/
+@media(max-width:320px){
+.header-bottom {
+  padding: 1em 0;
+}
+.logo {
+  float: left;
+  width: 42%;
+}
+.head-nav span.menu {
+  top: 36px;
+  right: 100px;
+}
+.header-right1 {
+  display: none;
+}
+}

@@ -1,5 +1,4 @@
 <head>
-	<title>Trang Chủ</title>
 	<link href="vendor/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 	<link href="views/home/css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,65 +8,11 @@
 	<script src="vendor/jquery/dist/jquery.min.js"></script>
 	<link rel="stylesheet" href="views/home/css/flexslider.css" type="text/css" media="screen" />
 	<script type="text/javascript" src="views/home/js/jquery.flexisel.js"></script>
-	
+
 </head>
 
-<!-- header -->
-<div class="header">
-	<div class="header-bottom">
-		<div class="container">
-			<div class="logo">
-				<a href="index.html">
-					<img src="views/home/images/logo1.png" class="img-responsive" alt="">
-				</a>
-			</div>
-			<div class="head-nav">
-				<span class="menu"> </span>
-				<ul class="cl-effect-3">
-					<li class="active">
-						<a href="index.html">Trang Chủ</a>
-					</li>
-					<li>
-						<a href="">Các công ty</a>
-					</li>
-				</ul>
-				<!-- script-for-nav -->
-				<script>
-					$("span.menu").click(function () {
-						$(".head-nav ul").slideToggle(300, function () {
-							// Animation complete.
-						});
-					});
-				</script>
-				<!-- script-for-nav -->
-			</div>
-			<div class="header-right1">
-				<li>
-					<a href="">Sinh viên</a>
-				</li>
-				<li>
-					<a href="">Công ty</a>
-				</li>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- header -->
-<!-- banner -->
-<div class="header1">
-	<div class="banner">
-		<h1>l'm looking for...</h1>
-		<form>
-			<span class="input-group-addon" id="basic-addon1"><i class="fa fa-search fa-3" aria-hidden="true"></i></span>
-			<input type="text" value="Enter a Job Description" onfocus="this.value = '';" onblur="if (this.value = 'Enter a Job Description') {this.value = 'Enter a Job Description';}">
-			<input type="submit" class="ser" value="Search">
-			<br>
-		</form>
-	</div>
-</div>
-<!-- banner -->
-<!-- banner -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
+	<!-- Indicators -->
 	<ol class="carousel-indicators">
 		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 		<li data-target="#myCarousel" data-slide-to="1" class=""></li>
@@ -78,7 +23,12 @@
 		<div class="item active">
 			<div class="container">
 				<div class="carousel-caption">
+					<h3>Improving workplace
+						<span>Productivity.</span>
+					</h3>
+					<p>Hire. Train. Retain.</p>
 					<div class="agileits-button top_ban_agile">
+						<a class="btn btn-primary btn-lg" href="single.html">Read More »</a>
 					</div>
 				</div>
 			</div>
@@ -86,215 +36,311 @@
 		<div class="item item2">
 			<div class="container">
 				<div class="carousel-caption">
-					<div class="agileits-button top_ban_agile"></div>
+
 				</div>
 			</div>
 		</div>
 		<div class="item item3">
 			<div class="container">
 				<div class="carousel-caption">
-					<div class="agileits-button top_ban_agile"></div>
+
 				</div>
 			</div>
 		</div>
 		<div class="item item4">
 			<div class="container">
 				<div class="carousel-caption">
-					<div class="agileits-button top_ban_agile"></div>
+
 				</div>
 			</div>
 		</div>
 	</div>
 	<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		<span class="fa fa-chevron-left" aria-hidden="true"></span>
 		<span class="sr-only">Previous</span>
 	</a>
 	<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		<span class="fa fa-chevron-right" aria-hidden="true"></span>
 		<span class="sr-only">Next</span>
 	</a>
+	<!-- The Modal -->
 </div>
 <!--//banner -->
-<!-- feature company -->
-<div class="single">
+
+<!--/search_form -->
+<div id="search_form" class="search_top">
+	<h2>Start your job search</h2>
+	<form action="#" method="post">
+		<input type="text" name="Enter Keyword(s)" placeholder="Enter Keyword(s)" required="">
+		<select id="country12" onchange="change_country(this.value)" class="frm-field required">
+			<option value="null"> Select Category</option>
+			<option value="city">Banking</option>
+			<option value="city">Finance</option>
+			<option value="city">It</option>
+			<option value="city">Specialists</option>
+
+		</select>
+		<input type="submit" value="Find Jobs">
+		<div class="clearfix"></div>
+	</form>
+</div>
+<div class="inner_content_info_agileits">
 	<div class="container">
-		<div class="grid_1">
-			<h3>Các công ty nổi bật</h3>
-			<ul id="flexiselDemo3">
-				<li>
-					<img src="views/home/images/c1.gif" class="img-responsive" />
-				</li>
-				<li>
-					<img src="views/home/images/c2.gif" class="img-responsive" />
-				</li>
-				<li>
-					<img src="views/home/images/c3.gif" class="img-responsive" />
-				</li>
-				<li>
-					<img src="views/home/images/c4.gif" class="img-responsive" />
-				</li>
-				<li>
-					<img src="views/home/images/c5.gif" class="img-responsive" />
-				</li>
-				<li>
-					<img src="views/home/images/c6.gif" class="img-responsive" />
-				</li>
-			</ul>
-
-			<script type="text/javascript">
-				$(window).load(function () {
-					$("#flexiselDemo3").flexisel({
-						visibleItems: 6,
-						animationSpeed: 1000,
-						autoPlay: true,
-						autoPlaySpeed: 2500,
-						pauseOnHover: true,
-						enableResponsiveBreakpoints: true,
-						responsiveBreakpoints: {
-							portrait: {
-								changePoint: 480,
-								visibleItems: 1
-							},
-							landscape: {
-								changePoint: 640,
-								visibleItems: 2
-							},
-							tablet: {
-								changePoint: 768,
-								visibleItems: 3
-							}
-						}
-					});
-
-				});
-			</script>
+		<div class="tittle_head_w3ls">
+			<h3 class="tittle">Hiện có {{listPost.length}} công việc </h3>
 		</div>
-		<div class="single1">
-			<div class="col-md-9">
-				<div class="col_3">
-					<h3>Việc làm gần đây</h3>
-					<ul class="list_1">
-						<li>
-							<a href="#">Department of Health - Western Australia</a>
-						</li>
-						<li>
-							<a href="#">Australian Nursing Agency currently require experiences</a>
-						</li>
-						<li>
-							<a href="#">Russia Nursing Agency currently require experiences</a>
-						</li>
-						<li>
-							<a href="#">The Government of Western Saudi Arbia</a>
-						</li>
-						<li>
-							<a href="#">Department of Health - Western Australia</a>
-						</li>
-						<li>
-							<a href="#">Australian Nursing Agency currently require experiences</a>
-						</li>
-						<li>
-							<a href="#">Russia Nursing Agency currently require experiences</a>
-						</li>
-						<li>
-							<a href="#">The Scientific Publishing Services in Saudi Arbia</a>
-						</li>
-						<li>
-							<a href="#">BPO Private Limited in Canada</a>
-						</li>
-						<li>
-							<a href="#">Executive Tracks Associates in Pakistan</a>
-						</li>
-						<li>
-							<a href="#">Pyramid IT Consulting Pvt. Ltd. in Pakistan</a>
-						</li>
+		<div class="inner_sec_grids_info_w3ls">
+			<div class="col-md-9 job_info_left">
+				<div class="but_list">
+					<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+						<ul id="myTab" class="nav nav-tabs" role="tablist">
+							<li role="presentation" class="active">
+								<a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Công việc gần đây</a>
+							</li>
+							<li role="presentation">
+								<a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Việc bạn đang theo dõi</a>
+							</li>
+						</ul>
+						<div id="myTabContent" class="tab-content">
+							<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+								<div ng-repeat="post in listPost">
+									<div class="tab_grid">
+										<div class="col-sm-3 loc_1">
+											<a href="/companies/{{post.idcompany}}">
+												<img src="{{post.logoCom}}" alt="">
+											</a>
+										</div>
+										<div class="col-sm-9">
+											<div class="location_box1">
+												<h6>
+													<a href="/post/{{post.idpost}}"> {{post.title}}</a>
+												</h6>
+												<p>
+													<span class="m_2">Công ty : </span>
+													<a href="/companies/{{post.idcompany}}">
+														<strong>{{post.nameCom}} </strong>
+													</a>|
+													<span class="m_2">Loại công việc: </span>{{post.category}}
+												</p>
+												<p>
+												</p>
+												<p>
+													<span class="m_2">Lương : </span>{{post.salary}}
+												</p>
+												<p>
+													<span class="m_2">Hạn đăng ký : </span>{{post.expired | date:'dd/MM/yyyy'}}
+												</p>
+												<ul class="links_bottom">
+													<li>
+														<a href="location_single.html">
+															<i class="fa fa-envelope-o icon_1"> </i>
+															<span class="icon_text"> Nộp CV </span>
+														</a>
+													</li>
+													<li>
+														<a href="/post/{{post.idpost}}">
+															<i class="fa fa-eye icon_1"> </i>
+															<span class="icon_text">Xem chi tiết bài đăng</span>
+														</a>
+													</li>
+													<li class="last">
+														<a href="/post/{{post.idpost}}">
+															<span class="icon_text">MORE
+																<i class="fa fa-caret-right icon_1"> </i>
+															</span>
+														</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="clearfix"> </div>
+									</div>
+								</div>
+							</div>
+
+							<div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
+
+								<div class="tab_grid">
+									<div class="col-sm-3 loc_1">
+										<a href="location_single.html">
+											<img src="images/loc3.jpg" alt="">
+										</a>
+									</div>
+									<div class="col-sm-9">
+										<div class="location_box1">
+											<h6>
+												<a href="location_single.html">Icorrupti quos </a>
+												<span class="m_1">Posted 5 hours ago</span>
+											</h6>
+											<p>
+												<span class="m_2">Location : </span>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled
+												and demoralized by the charms of pleasure</p>
+											<ul class="links_bottom">
+												<li>
+													<a href="location_single.html">
+														<i class="fa fa-envelope-o icon_1"> </i>
+														<span class="icon_text"> Email this Job</span>
+													</a>
+												</li>
+												<li>
+													<a href="location_single.html">
+														<i class="fa fa-eye icon_1"> </i>
+														<span class="icon_text">View full Job Description</span>
+													</a>
+												</li>
+												<li class="last">
+													<a href="location_single.html">
+														<span class="icon_text">More
+															<i class="fa fa-caret-right icon_1"> </i>
+														</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="clearfix"> </div>
+								</div>
+								<div class="tab_grid">
+									<div class="col-sm-3 loc_1">
+										<a href="location_single.html">
+											<img src="views/company/images/logo1.png" alt="">
+										</a>
+									</div>
+									<div class="col-sm-9">
+										<div class="location_box1">
+											<h6>
+												<a href="location_single.html">therefore always </a>
+												<span class="m_1">Posted 5 hours ago</span>
+											</h6>
+											<p>
+												<span class="m_2">Location : </span>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled
+												and demoralized by the charms of pleasure</p>
+											<ul class="links_bottom">
+												<li>
+													<a href="location_single.html">
+														<i class="fa fa-envelope-o icon_1"> </i>
+														<span class="icon_text"> Email this Job</span>
+													</a>
+												</li>
+												<li>
+													<a href="location_single.html">
+														<i class="fa fa-eye icon_1"> </i>
+														<span class="icon_text">View full Job Description</span>
+													</a>
+												</li>
+												<li class="last">
+													<a href="location_single.html">
+														<span class="icon_text">More
+															<i class="fa fa-caret-right icon_1"> </i>
+														</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="clearfix"> </div>
+								</div>
+
+								<div class="tab_grid last">
+									<div class="col-sm-3 loc_1">
+										<a href="location_single.html">
+											<img src="views/company/images/banner1.png" alt="">
+										</a>
+									</div>
+									<div class="col-sm-9">
+										<div class="location_box1">
+											<h6>
+												<a href="#"> blame belongs </a>
+												<span class="m_1">Posted 5 hours ago</span>
+											</h6>
+											<p>
+												<span class="m_2">Location : </span>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled
+												and demoralized by the charms of pleasure</p>
+											<ul class="links_bottom">
+												<li>
+													<a href="location_single.html">
+														<i class="fa fa-envelope-o icon_1"> </i>
+														<span class="icon_text"> Email this Job</span>
+													</a>
+												</li>
+												<li>
+													<a href="location_single.html">
+														<i class="fa fa-eye icon_1"> </i>
+														<span class="icon_text">View full Job Description</span>
+													</a>
+												</li>
+												<li class="last">
+													<a href="location_single.html">
+														<span class="icon_text">More
+															<i class="fa fa-caret-right icon_1"> </i>
+														</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="clearfix"> </div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3 job_info_right">
+
+			<div class="widget_search">
+				<h5 class="widget-title">Công ty nổi bật</h5>
+				<div class="widget-content">
+					<ul>
+						<img src="views/home/images/c1.gif" class="img-responsive" />
+						<img src="views/home/images/c2.gif" class="img-responsive" />
+						<img src="views/home/images/c3.gif" class="img-responsive" />
+						<img src="views/home/images/c4.gif" class="img-responsive" />
+						<img src="views/home/images/c5.gif" class="img-responsive" />
+						<img src="views/home/images/c6.gif" class="img-responsive" />
 					</ul>
 				</div>
+			</div>
+			<div class="col_3 permit">
+				<h3>Jobs by Category</h3>
+				<ul class="list_2">
+					<li>
+						<a href="#">Railway Recruitment</a>
+					</li>
+					<li>
+						<a href="#">Air Force Jobs</a>
+					</li>
+					<li>
+						<a href="#">Police Jobs</a>
+					</li>
+					<li>
+						<a href="#">Intelligence Bureau Jobs</a>
+					</li>
+					<li>
+						<a href="#">Army Jobs</a>
+					</li>
+					<li>
+						<a href="#">Navy Jobs</a>
+					</li>
+					<li>
+						<a href="#">BSNL Jobs</a>
+					</li>
+					<li>
+						<a href="#">Software Jobs</a>
+					</li>
+					<li>
+						<a href="#">Research Jobs</a>
+					</li>
+				</ul>
+			</div>
 
-			</div>
-			<div class="col-md-3">
-				<div class="col_3">
-					<h3>Việc làm theo các ngành nghề</h3>
-					<ul class="list_2">
-						<li>
-							<a href="#">Railway Recruitment</a>
-						</li>
-						<li>
-							<a href="#">Air Force Jobs</a>
-						</li>
-						<li>
-							<a href="#">Police Jobs</a>
-						</li>
-						<li>
-							<a href="#">Intelligence Bureau Jobs</a>
-						</li>
-						<li>
-							<a href="#">Army Jobs</a>
-						</li>
-						<li>
-							<a href="#">Navy Jobs</a>
-						</li>
-						<li>
-							<a href="#">BSNL Jobs</a>
-						</li>
-						<li>
-							<a href="#">Software Jobs</a>
-						</li>
-						<li>
-							<a href="#">Research Jobs</a>
-						</li>
-					</ul>
-				</div>
-			</div>
 		</div>
+		<div class="clearfix"></div>
 	</div>
-	<!-- feature company -->
-	<!-- footer-top -->
-	<div class="backtotop">
-		<button onclick="topFunction()" id="myBtn" title="Go to top"></button>
-	</div>
-	<div class="footer-top">
-		<div class="container">
-			<div class="col-md-8 footerleft">
-				<h3>BkConnect</h3>
-				<p>BkConnect là hệ thống cho phép các doanh nghiệp có thể cập nhật các thông tin của công ty, đăng bài tuyển dụng và nhận
-					trực tiếp đơn apply của sinh viên</p>
-				<p>Các sinh viên tham gia vào hệ thống có thể cập nhật thông tin profile và gửi profile cho các nhà tuyển dụng để apply
-					công việc mình mong muốn.</p>
-			</div>
-			<div class="col-md-4 footerright">
-				<h3>Nhóm phát triển</h3>
-				<p class="phone">phone: +0(21) 334 5678</p>
-				<p class="phone">Fax: +0(21) 334 5678</p>
-				<p class="phone">Mail:
-					<a href="mailto:bkconnect.huylv@gmail.com">bkconnect.huylv@gmail.com</a>
-				</p>
-			</div>
-		</div>
-		<br>
-		<div class="container">
-		<div class="col-md-2"></div>
-		<div class="col-md-8 foo-left">
-			<a href="index.html"><img src="images/logo.png" class="img-responsive logo" alt=""></a>
-			<p>&nbsp BkConnect - Hệ thống cung cấp thông tin tuyển dụng kết nối các doanh nghiệp với sinh viên</p>
-		</div>
-	</div>
-
-	</div>
-	<!-- footer-top -->
-
-	<script type="text/javascript">
-				 // When the user scrolls down 20px from the top of the document, show the button
-				 window.onscroll = function () { scrollFunction() };
-				 function scrollFunction() {
-					 if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-						 document.getElementById("myBtn").style.display = "block";
-					 } else {
-						 document.getElementById("myBtn").style.display = "none";
-					 }
-				 }
-				 // When the user clicks on the button, scroll to the top of the document
-				 function topFunction() {
-					 document.body.scrollTop = 0; // For Chrome, Safari and Opera 
-					 document.documentElement.scrollTop = 0; // For IE and Firefox
-				 }
-	</script>
+</div>
+<!-- footer-top -->
+<div class="backtotop">
+	<button onclick="topFunction()" id="myBtn" title="Go to top"></button>
+</div>

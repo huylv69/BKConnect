@@ -14,22 +14,24 @@ comApp.controller('EditPostController', ['$scope', '$location', '$routeParams', 
         if (click) {
             return;
         } else {
-        postService.updateById(id, $scope.postDetail, function (res) {
-            if (res.status == 200) {
-                $scope.loading = false;
-                swal({
-                    title: "Thành công!",
-                    text: "Cập nhật dữ liệu thành công!",
-                    icon: "success",
-                });
-            } else {
-                swal({
-                    title: "Thất bại!",
-                    text: "Đã xảy ra lỗi, xin thử lại!",
-                    icon: "error",
-                });
-            }
-            click = false;
-        })
-    }}
+            click = true;
+            postService.updateById(id, $scope.postDetail, function (res) {
+                if (res.status == 200) {
+                    $scope.loading = false;
+                    swal({
+                        title: "Thành công!",
+                        text: "Cập nhật dữ liệu thành công!",
+                        icon: "success",
+                    });
+                } else {
+                    swal({
+                        title: "Thất bại!",
+                        text: "Đã xảy ra lỗi, xin thử lại!",
+                        icon: "error",
+                    });
+                }
+                click = false;
+            })
+        }
+    }
 }]);

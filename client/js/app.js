@@ -12,7 +12,8 @@ angular
     'service.localStorage',
     'service.student',
     'service.company',
-    'service.admin'
+    'service.admin',
+    'service.post'
   ])
   .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider,
     $urlRouterProvider, $locationProvider) {
@@ -24,9 +25,15 @@ angular
         title: 'Trang chủ Website',
         url: '/home',
         templateUrl: 'views/home/index.html',
-        controller: 'LoginController'
+        controller: 'HomeController'
       })
 
+      .state('post',{
+        title: 'Chi tiết công việc',
+        url: '/post/:id',
+        templateUrl: 'views/home/post.html',
+        controller: 'PostController'
+      })
       //student
       .state('login', {
         title: 'Đăng nhập & Đăng ký',
