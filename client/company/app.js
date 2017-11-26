@@ -12,7 +12,8 @@ comApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, 
         })
         .when('/login', {
             templateUrl: 'company/views/login.html',
-            controller: 'LoginController'
+            controller: 'LoginController',
+            css : 'company/views/css/style.css'
         })
         .when('/post', {
             templateUrl: 'company/views/post.html',

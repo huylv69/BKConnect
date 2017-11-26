@@ -13,16 +13,14 @@
     <!-- CSS INCLUDE -->
     <link rel="stylesheet" type="text/css" id="theme" href="company/views/css/theme-default.css" />
     <link rel="stylesheet" type="text/css" href="vendor/ng-tags-input/ng-tags-input.css" />
+        <link rel="stylesheet" type="text/css" href="vendor/ng-tags-input/ng-tags-input.bootstrap.min.css" />
+
     <!-- EOF CSS INCLUDE -->
-
-
-
 </head>
 
 <body>
     <!-- START PAGE CONTAINER -->
     <div class="page-container">
-
         <!-- START PAGE SIDEBAR -->
         <div class="page-sidebar" ng-if="location.path() !== '/login'">
             <!-- START X-NAVIGATION -->
@@ -235,11 +233,10 @@
         </div>
         <base href="/company">
         <!-- END PAGE CONTENT -->
-        <ng-view id="main" ng-if="location.path() == '/login'"></ng-view>
-
     </div>
     <!-- END PAGE CONTAINER -->
-
+    <ng-view id="main" ng-if="location.path() == '/login'"></ng-view>
+    
     <!-- MESSAGE BOX-->
     <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
         <div class="mb-container">
@@ -303,7 +300,6 @@
     <script type="text/javascript" src="vendor/ng.datepicker-ui/dist/ngDatepicker.js"></script>
 
     <script type="text/javascript" src="vendor/ng-tags-input/ng-tags-input.js"></script>
-    <link rel="stylesheet" type="text/css" href="vendor/ng-tags-input/ng-tags-input.bootstrap.min.css" />
 
     <script type="text/javascript" src="company/views/js/angular-summernote.min.js"></script>
     <script type="text/javascript" src="company/views/js/summernote.min.js"></script>

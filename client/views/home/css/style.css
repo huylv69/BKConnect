@@ -1499,11 +1499,22 @@ span.icon_text:hover {
 }
 
 .tab_grid {
-	margin: 3em 0;
+	margin: 2em 0;
+	
+	background: #47b78414;
+	padding: 2em;
+}
+.tab_grid:hover{
+	background: #ffffff;
+	border-color: transparent;
+	box-shadow: 0 0 5px 1px #bcbcbc;
 }
 
 .loc_1 {
 	padding-left: 0;
+}
+.location_box1 {
+	padding-left: 3%;
 }
 
 .location_box1 h6 {

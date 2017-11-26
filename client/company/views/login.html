@@ -3,11 +3,11 @@
     <!-- Meta-Tags -->
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!-- //Meta-Tags -->
-    <link href="views/company/css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="company/views/css/popuo-box.css" rel="stylesheet" type="text/css" />
     <!-- Style -->
-    <link rel="stylesheet" href="views/company/css/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="company/views/css/style.css" type="text/css" />
     <!-- Fonts -->
-    <link href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet" />
     <!-- //Fonts -->
 </head>
 
@@ -43,7 +43,6 @@
     <div class="contact-form1">
         <div class="contact-w3-agileits">
             <h3>Register Form</h3>
-            <h1 class="text-notifi" ng-if="showNotifi"> {{textNotifi}} </h1>
             <form ng-submit="registerCompany()" autocomplete="on">
                 <div class="form-sub-w3ls">
                     <input placeholder="Company Name" ng-model="company.name" type="text" required>
@@ -73,32 +72,18 @@
                     <textarea placeholder="Introduce about your company" rows="2" required="required" ng-model="company.introduce">
 							</textarea>
                 </div>
-                <p ng-show="usernameIsExisting" class="p_errorLogin"> * Tài khoản đã tồn tại, vui lòng thử lại với email mới </p>
+                <p ng-show="usernameIsExisting" class="p_errorLogin" ng-if="!showNotifi"> * Tài khoản đã tồn tại, vui lòng thử lại với email mới </p>
                 <div class="submit-w3l">
                     <button type="submit" value="Register">submit</button>
                 </div>
+                <h1 class="text-notifi" ng-if="showNotifi"> {{textNotifi}} </h1>
+                
             </form>
         </div>
     </div>
 </div>
-<!-- //for register popup -->
-<script>
-    var password = document.getElementById("regpass")
-        , confirm_password = document.getElementById("confirmpass");
-
-    function validatePassword() {
-        if (password.value != confirm_password.value) {
-            confirm_password.setCustomValidity("Passwords Don't Match");
-        } else {
-            confirm_password.setCustomValidity('');
-        }
-    }
-    password.onchange = validatePassword;
-    confirm_password.onkeyup = validatePassword;
-</script>
 
 <script type="text/javascript" src="views/company/js/jquery-2.1.4.min.js"></script>
-
 <!-- pop-up-box-js-file -->
 <script src="views/company/js/jquery.magnific-popup.js" type="text/javascript"></script>
 <!--//pop-up-box-js-file -->
