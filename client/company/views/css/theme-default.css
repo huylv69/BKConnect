@@ -2212,7 +2212,7 @@ input[type=checkbox] {
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
-  -webkit-appearance: none;
+  /* -webkit-appearance: none; */
   border: 1px solid #D5D5D5;
   background: #F9F9F9;
 }

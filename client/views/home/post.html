@@ -4,11 +4,13 @@
     <link href="views/home/css/post.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 
-<div class="inner_page_agile">
+<div class="inner_page_agile " style="margin: auto">
     <h3>{{postDetail.title}}</h3>
-    <p class="col-md-4">{{postDetail.career}} | </p>
-    <p class="col-md-4">Lương: {{postDetail.salary}} | </p>
-    <p class="col-md-4"> {{postDetail.address}}</p>
+    <div class="container" style="width :80% ; margin-top: 13px; font-size:18px ">
+        <p class="col-md-4" style="text-align: right;">Ngành: {{career}} </p>
+        <p class="col-md-4" style="text-align: center; border-left: solid 1px;border-right: solid 1px; ">Lương: {{postDetail.salary}} </p>
+        <p class="col-md-4" style="text-align: left;"> Địa điểm: {{postDetail.address}}</p>
+    </div>
 
 </div>
 <div class="services-breadcrumb_w3layouts">

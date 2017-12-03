@@ -13,6 +13,9 @@ angular.module('app').controller('PostController', ['$scope', '$stateParams', '$
                         $scope.companyInfo = res;
                         console.log($scope.companyInfo);
                     })
+                    $mPost.getCareer($scope.postDetail.idcareer,function(res){
+                        $scope.career = res.name;
+                    })
                 }
             })
         }

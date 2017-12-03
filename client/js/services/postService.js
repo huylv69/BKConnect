@@ -21,5 +21,14 @@ angular
           callback(err.data);
         });
     }
+    service.getCareer = function(idCareer,callback){
+      var url = BASE_URL + "careers/"+idCareer;
+      $http.get(url)
+        .then(function (res) {
+          callback(res.data);
+        }, function (err) {
+          callback(err.data);
+        });
+    }
     return service;
   }]);

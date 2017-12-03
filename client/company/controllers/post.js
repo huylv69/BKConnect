@@ -1,4 +1,4 @@
-comApp.controller('PostController', ['$scope', '$location', 'postService', 'utilsService', function ($scope, $location, postService, utilsService) {
+comApp.controller('PostController', ['$scope', '$rootScope', '$location', 'postService', 'utilsService', function ($scope, $rootScope, $location, postService, utilsService) {
 
     $scope.postDetail = {};
     var click = false;
@@ -7,7 +7,7 @@ comApp.controller('PostController', ['$scope', '$location', 'postService', 'util
             return;
         } else {
             click = true;
-            $scope.postDetail.idcompany = 1;
+            $scope.postDetail.idcompany = $rootScope.currentCompany.userId;
             postService.create($scope.postDetail, function (response) {
                 console.log(response);
                 if (response.status == 200) {
@@ -29,13 +29,7 @@ comApp.controller('PostController', ['$scope', '$location', 'postService', 'util
             });
         }
     }
-    $scope.tags = [
-        { name: "Brazil", flag: "Brazil.png" },
-        { name: "Italy", flag: "Italy.png" },
-        { name: "Spain", flag: "Spain.png" },
-        { name: "Germany", flag: "Germany.png" },
-    ];
-
+    
     $scope.loadSkills = function ($query) {
         return listSkills.filter(function (skill) {
             return skill.name.toLowerCase().indexOf($query.toLowerCase()) != -1;

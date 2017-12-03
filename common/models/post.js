@@ -43,13 +43,6 @@ module.exports = function (Post) {
                 else console.log(res);
             });
         }, this);
-        // skill.create({
-        //     "testid": idtest,
-        //     "ranking": []
-        // }, function (err, res) {
-        //     if (err) console.log(err);
-        //     else console.log(res);
-        // });
         next();
     });
 
