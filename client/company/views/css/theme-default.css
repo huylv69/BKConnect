@@ -2206,8 +2206,8 @@ input[type=checkbox] {
   width: auto;
 }
 .form-control {
-  height: 30px;
-  font-size: 12px;
+  height: 35px;
+  font-size: 13px;
   line-height: 18px;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
@@ -7328,4 +7328,51 @@ li.ext_zip {
 }
 .x-navigation-minimized .xn-logo{
 display:none;
+}
+
+/* Ng-Input */
+.tag-template .left-panel {
+  float: left;
+}
+
+.tag-template .left-panel img {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+
+.tag-template .right-panel {
+  float: left;
+  margin-left: 5px;
+}
+
+.autocomplete-template .left-panel {
+  float: left;
+}
+
+.autocomplete-template .left-panel img {
+  width: 48px;
+  height: 48px;
+  vertical-align: middle;
+}
+
+.autocomplete-template .right-panel {
+  float: left;
+  margin-left: 5px;
+  margin-top: 7px;
+}
+
+.autocomplete-template .right-panel span:first-child {
+  font-size: 16px;
+}
+
+.autocomplete-template .right-panel span:nth-child(2) {
+  font-size: 14px;
+  color: gray;
+}
+
+.autocomplete-template .right-panel span:last-child {
+  display: block;
+  font-size: 14px;
+  font-style: italic;
 }

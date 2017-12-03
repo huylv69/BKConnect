@@ -1,1 +1,1 @@
-var BASE_URL = 'http://localhost:3000/api/';
+var BASE_URL = location.origin+'/api/';

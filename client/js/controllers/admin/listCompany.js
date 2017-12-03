@@ -52,7 +52,7 @@ angular.module('app').controller('ListCompanyController', ['$scope', '$state', '
         $scope.initDataTable = function () {
             setTimeout(function () {
                 $("#example1").DataTable();
-            }, 10);
+            }, 0);
         };
         $scope.reset = function () {
             $state.reload();

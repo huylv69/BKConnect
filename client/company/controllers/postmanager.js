@@ -1,4 +1,4 @@
-comApp.controller('ManagerPostController', ['$scope', '$location', '$http','$route', 'postService', function ($scope, $location, $http, $route ,postService) {
+comApp.controller('ManagerPostController', ['$scope', '$location', '$http', '$route', 'postService', function ($scope, $location, $http, $route, postService) {
 
     $scope.data = [];
     $http.get(BASE_URL + 'posts').then(function (data) {
@@ -6,14 +6,11 @@ comApp.controller('ManagerPostController', ['$scope', '$location', '$http','$rou
     })
 
     $scope.postDetail = {};
-    $scope.createPost = function () {
-        console.log($scope.postDetail);
-    }
 
     $scope.deletePost = function (id) {
         swal({
             title: "Bạn có thực sự muốn xóa bài đăng?",
-            text: "Một khi xóa , ứng viên sẽ không đọc tiếp cận được bài nữa!",
+            text: "Một khi xóa , ứng viên sẽ không được tiếp cận được bài nữa!",
             icon: "warning",
             buttons: true,
             dangerMode: true,
@@ -36,8 +33,7 @@ comApp.controller('ManagerPostController', ['$scope', '$location', '$http','$rou
                         $route.reload();
                     }
                 });
-
-            }else $route.reload();
+            }
         });
     };
 
@@ -47,9 +43,9 @@ comApp.controller('ManagerPostController', ['$scope', '$location', '$http','$rou
             $("#example1").DataTable();
         }, 10);
     };
-    $scope.reset = function () {
-        $state.reload();
-    }
+    // $scope.reset = function () {
+    //     $state.reload();
+    // }
 }])
     .directive('repeatDone', function () {
         return function (scope, element, attrs) {

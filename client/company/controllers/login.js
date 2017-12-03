@@ -1,4 +1,4 @@
-comApp.controller('LoginController', ['$rootScope', '$scope', '$location', 'AuthenService', '$mLocalStorage', function ($rootScope, $scope, $location, AuthenService,$mLocalStorage) {
+comApp.controller('LoginController', ['$rootScope', '$scope', '$location', 'AuthenService', '$mLocalStorage', '$window', function ($rootScope, $scope, $location, AuthenService, $mLocalStorage, $window) {
     //login Company
     $scope.loginCompany = function () {
         var email = $scope.company.email;

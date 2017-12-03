@@ -21,7 +21,7 @@
 <!-- PAGE TITLE -->
 <div class="page-title">
     <h2>
-        <span class="fa fa-arrow-circle-o-left"></span> Thêm bài đăng tuyển dụng mới</h2>
+        <span class="fa fa-arrow-circle-o-left"></span> Sửa bài đăng tuyển dụng </h2>
 </div>
 <!-- END PAGE TITLE -->
 
@@ -60,21 +60,19 @@
                 </div>
                 <div class="form-group">
                     <label class="col-md-2 control-label">Ngành nghề:</label>
-                    <div class="col-md-2">
-                        <select class="form-control select" ng-model="postDetail.career" data-style="btn-success">
-                            <option>Partime</option>
-                            <option>Fulltime</option>
-                            <option>Partime/Fulltime</option>
+                    <div class="col-md-4">
+                        <select class="form-control select" ng-model="postDetail.idcareer" data-style="btn-success">
+                            <option ng-selected="{{option.idcareer == postDetail.idcareer}}" ng-repeat="option in listCareer"  value="{{option.idcareer}}">{{option.name}}</option>
                         </select>
                     </div>
 
                     <label class="col-md-1 control-label">Lương:</label>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <input type="text" class="form-control input-lg" ng-model="postDetail.salary" placeholder="8M-20M" />
                     </div>
 
                     <label class="col-md-1 control-label">Địa điểm:</label>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <select class="form-control select" ng-model="postDetail.address" data-style="btn-success">
                             <option>Hà Nội</option>
                             <option>Hồ Chí Minh </option>
@@ -87,7 +85,33 @@
                 <div class="form-group">
                     <label class="col-md-2 control-label">Kĩ năng:</label>
                     <div class="col-md-10">
-                        <tags-input native-class="form-control input-lg" ng-model="postDetail.skill"></tags-input>
+                        <tags-input ng-model="postDetail.skill" display-property="name" placeholder="Thêm Kỹ Năng" replace-spaces-with-dashes="false"
+                            add-from-autocomplete-only="true" template="tag-template">
+                            <auto-complete source="loadSkills($query)" min-length="0" load-on-focus="true" load-on-empty="true" template="autocomplete-template"></auto-complete>
+                        </tags-input>
+
+                        <script type="text/ng-template" id="tag-template">
+                        <div class="tag-template">
+                          <div class="left-panel">
+                            <img ng-src="http://mbenford.github.io/ngTagsInput/images/flags/{{data.flag}}" ng-if="data.flag"/>
+                          </div>
+                          <div class="right-panel">
+                            <span>{{$getDisplayText()}}</span>
+                            <a class="remove-button" ng-click="$removeTag()">&#10006;</a>
+                          </div>
+                        </div>
+                      </script>
+
+                        <script type="text/ng-template" id="autocomplete-template">
+                        <div class="autocomplete-template">
+                          <!-- <div class="left-panel">
+                            <img ng-src="http://mbenford.github.io/ngTagsInput/images/flags/{{data.flag}}" />
+                          </div> -->
+                          <div class="right-panel">
+                            <span ng-bind-html="$highlight($getDisplayText())"></span>
+                          </div>
+                        </div>
+                      </script>
                     </div>
                 </div>
 

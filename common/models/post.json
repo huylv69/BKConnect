@@ -56,12 +56,19 @@
       "required": true
     },
     "address": {
-      "type": "object",
+      "type": "string",
       "required": true
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "skill": {
+      "type": "hasMany",
+      "model": "skill",
+      "foreignKey": "idpost",
+      "through": "post_skill"
+    }
+  },
   "acls": [],
   "methods": {}
 }

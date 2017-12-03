@@ -70,5 +70,17 @@
   "container": {
     "dataSource": "storage",
     "public": true
+  },
+  "career": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "skill": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "post_skill": {
+    "dataSource": "mysqlDs",
+    "public": true
   }
 }

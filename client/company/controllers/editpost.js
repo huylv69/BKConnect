@@ -1,12 +1,32 @@
-comApp.controller('EditPostController', ['$scope', '$location', '$routeParams', 'postService', function ($scope, $location, $routeParams, postService) {
+comApp.controller('EditPostController', ['$scope', '$location', '$routeParams', 'postService', 'utilsService', function ($scope, $location, $routeParams, postService, utilsService) {
 
     $scope.postDetail = {};
     var id = $routeParams.id;
+    var loadData = function () {
+        utilsService.getCareer((response) => {
+            $scope.listCareer = response;
+            console.log(response)
+        });
+        postService.getById(id, function (res) {
+            $scope.postDetail = res.data;
+            console.log(res);
+        });
+        utilsService.getSkill((res) => {
+            console.log(res);
+            listSkills = res;
+        });
+        postService.getSkillPost(id, function (res) {
+            $scope.postDetail.skill = res;
+            console.log(res);
+        });
+    }
 
-    postService.getById(id, function (res) {
-        $scope.postDetail = res.data;
-        console.log(res);
-    });
+    $scope.loadSkills = function ($query) {
+        return listSkills.filter(function (skill) {
+            return skill.name.toLowerCase().indexOf($query.toLowerCase()) != -1;
+        });
+
+    };
 
 
     let click = false;
@@ -34,4 +54,6 @@ comApp.controller('EditPostController', ['$scope', '$location', '$routeParams', 
             })
         }
     }
+    loadData();
+
 }]);

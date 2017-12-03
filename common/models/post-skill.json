@@ -1,0 +1,32 @@
+{
+  "name": "post_skill",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "idpost": {
+      "type": "number",
+      "id": true
+    },
+    "idskill": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "post": {
+      "type": "belongsTo",
+      "model": "post",
+      "foreignKey": "idpost"
+    },
+    "skill": {
+      "type": "belongsTo",
+      "model": "skill",
+      "foreignKey": "idskill"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

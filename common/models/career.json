@@ -1,0 +1,23 @@
+{
+  "name": "career",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "idcareer": {
+      "type": "number",
+      "id": true,
+      "required": false,
+      "doc": "This is the primary ID used to identify a contact"
+    },
+    "name": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

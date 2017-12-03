@@ -12,17 +12,84 @@
 
     <!-- CSS INCLUDE -->
     <link rel="stylesheet" type="text/css" id="theme" href="company/views/css/theme-default.css" />
-    <link rel="stylesheet" type="text/css" href="vendor/ng-tags-input/ng-tags-input.css" />
-        <link rel="stylesheet" type="text/css" href="vendor/ng-tags-input/ng-tags-input.bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/ng-tags-input/ng-tags-input.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="vendor/ng-tags-input/ng-tags-input.bootstrap.min.css" /> -->
 
+     <!-- START SCRIPTS -->
+    <!-- START PLUGINS -->
+    <!-- <script type="text/javascript" src="company/views/js/plugins/jquery/jquery.min.js"></script> -->
+    <script type="text/javascript" src="company/views/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="company/views/js/plugins/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="company/views/js/plugins/bootstrap/bootstrap.min.js"></script>
+    <!-- pop-up-box-js-file -->
+    <script src="company/views/js/jquery.magnific-popup.js" type="text/javascript"></script>
+    <script type='text/javascript' src="vendor/angular/angular.js"></script>
+    <script type='text/javascript' src="vendor/angular-resource/angular-resource.js"></script>
+    <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <!-- END PLUGINS -->
+    <!-- APP -->
+    <script src="company/app.js"></script>
+    <script src="js/config.js"></script>
+    <script src="company/controllers/post.js"></script>
+    <script src="company/controllers/postmanager.js"></script>
+    <script src="company/controllers/editpost.js"></script>
+    <script src="company/controllers/login.js"></script>
+    <script src="company/controllers/editprofile.js"></script>
+
+    <script src="company/services/authen.js"></script>
+    <script src="company/services/post.js"></script>
+    <script src="company/services/localStorage.js"></script>
+    <script src="company/services/company.js"></script>
+    <script src="company/services/utils.js"></script>
+    <script type="text/javascript" src="vendor/ng-file-upload/ng-file-upload.min.js"></script>
+    <script type="text/javascript" src="vendor/ng-file-upload/ng-file-upload-shim.min.js"></script>
+
+    <script src="views/admin/vendor/angular-datatables.min.js"></script>
+    <!-- DataTables -->
+    <script src="vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script data-require="angular-datatable.js@1.1.5" data-semver="1.1.5" src="views/admin/vendor/angular-datatables.min.js"></script>
+
+    <script type="text/javascript" src="company/views/js/plugins/ng.datepicker-ui/dist/ngDatepicker.js"></script>
+
+    <script type="text/javascript" src="vendor/ng-tags-input/ng-tags-input.min.js"></script>
+
+    <script type="text/javascript" src="company/views/js/angular-summernote.min.js"></script>
+    <script type="text/javascript" src="company/views/js/summernote.min.js"></script>
+    <!-- End App -->
+    <!-- START THIS PAGE PLUGINS-->
+    <script src="vendor/sweetaleart/sweetalert.min.js"></script>
+
+    <script type='text/javascript' src='company/views/js/plugins/icheck/icheck.min.js'></script>
+    <script type="text/javascript" src="company/views/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+    <script type="text/javascript" src="company/views/js/plugins/scrolltotop/scrolltopcontrol.js"></script>
+
+    <script type="text/javascript" src="company/views/js/plugins/morris/raphael-min.js"></script>
+    <script type="text/javascript" src="company/views/js/plugins/morris/morris.min.js"></script>
+    <script type="text/javascript" src="company/views/js/plugins/rickshaw/d3.v3.js"></script>
+    <script type="text/javascript" src="company/views/js/plugins/rickshaw/rickshaw.min.js"></script>
+    <script type='text/javascript' src='company/views/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js'></script>
+    <script type='text/javascript' src='company/views/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js'></script>
+    <script type='text/javascript' src='company/views/js/plugins/bootstrap/bootstrap-datepicker.js'></script>
+    <script type="text/javascript" src="company/views/js/plugins/owl/owl.carousel.min.js"></script>
+
+    <script type="text/javascript" src="company/views/js/plugins/moment.min.js"></script>
+    <script type="text/javascript" src="company/views/js/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- END THIS PAGE PLUGINS-->
+   
+    <!-- START TEMPLATE -->
+    <!-- <script type="text/javascript" src="company/views/js/settings.js"></script> -->
+    <script type="text/javascript" src="company/views/js/plugins.js"></script>
+    <script type="text/javascript" src="company/views/js/actions.js"></script>
+    <script type="text/javascript" src="company/views/js/demo_dashboard.js"></script>
     <!-- EOF CSS INCLUDE -->
 </head>
 
 <body>
     <!-- START PAGE CONTAINER -->
-    <div class="page-container">
+    <div class="page-container" ng-if="location.path() !== '/login'">
         <!-- START PAGE SIDEBAR -->
-        <div class="page-sidebar" ng-if="location.path() !== '/login'">
+        <div class="page-sidebar" >
             <!-- START X-NAVIGATION -->
             <ul class="x-navigation">
                 <li class="xn-logo">
@@ -101,7 +168,7 @@
         <!-- END PAGE SIDEBAR -->
 
         <!-- PAGE CONTENT -->
-        <div class="page-content" ng-if="location.path() !== '/login'">
+        <div class="page-content" >
             <!-- START X-NAVIGATION VERTICAL -->
             <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
                 <!-- TOGGLE NAVIGATION -->
@@ -228,15 +295,15 @@
             </ul>
             <!-- END X-NAVIGATION VERTICAL -->
             <!-- PAGE CONTENT WRAPPER -->
-            <ng-view id="main"></ng-view>
+            <ng-view ></ng-view>
+            <!-- <div ng-view id="main"></div> -->
             <!-- END PAGE CONTENT WRAPPER -->
         </div>
-        <base href="/company">
         <!-- END PAGE CONTENT -->
     </div>
     <!-- END PAGE CONTAINER -->
-    <ng-view id="main" ng-if="location.path() == '/login'"></ng-view>
-    
+    <ng-view ng-if="location.path() == '/login'"></ng-view>
+    <base href="/company">    
     <!-- MESSAGE BOX-->
     <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
         <div class="mb-container">
@@ -264,73 +331,12 @@
     <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio> -->
     <!-- END PRELOADS -->
 
-    <!-- START SCRIPTS -->
-    <!-- START PLUGINS -->
-    <script type="text/javascript" src="company/views/js/plugins/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="company/views/js/plugins/jquery/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="company/views/js/plugins/bootstrap/bootstrap.min.js"></script>
-
-    <script type='text/javascript' src="vendor/angular/angular.js"></script>
-    <script type='text/javascript' src="vendor/angular-resource/angular-resource.js"></script>
-    <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
-    <!-- END PLUGINS -->
-    <!-- APP -->
-    <script src="company/app.js"></script>
-    <script src="js/config.js"></script>
-    <script src="company/controllers/post.js"></script>
-    <script src="company/controllers/postmanager.js"></script>
-    <script src="company/controllers/editpost.js"></script>
-    <script src="company/controllers/login.js"></script>
-    <script src="company/controllers/editprofile.js"></script>
-
-    <script src="company/services/authen.js"></script>
-    <script src="company/services/post.js"></script>
-    <script src="company/services/localStorage.js"></script>
-    <script src="company/services/company.js"></script>
-
-    <script type="text/javascript" src="vendor/ng-file-upload/ng-file-upload.min.js"></script>
-    <script type="text/javascript" src="vendor/ng-file-upload/ng-file-upload-shim.min.js"></script>
-
-    <script src="views/admin/vendor/angular-datatables.min.js"></script>
-    <!-- DataTables -->
-    <script src="vendor/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-    <script data-require="angular-datatable.js@1.1.5" data-semver="1.1.5" src="views/admin/vendor/angular-datatables.min.js"></script>
-
-    <script type="text/javascript" src="vendor/ng.datepicker-ui/dist/ngDatepicker.js"></script>
-
-    <script type="text/javascript" src="vendor/ng-tags-input/ng-tags-input.js"></script>
-
-    <script type="text/javascript" src="company/views/js/angular-summernote.min.js"></script>
-    <script type="text/javascript" src="company/views/js/summernote.min.js"></script>
-    <!-- End App -->
-    <!-- START THIS PAGE PLUGINS-->
-    <script src="vendor/sweetaleart/sweetalert.min.js"></script>
-
-    <script type='text/javascript' src='company/views/js/plugins/icheck/icheck.min.js'></script>
-    <script type="text/javascript" src="company/views/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
-    <script type="text/javascript" src="company/views/js/plugins/scrolltotop/scrolltopcontrol.js"></script>
-
-    <script type="text/javascript" src="company/views/js/plugins/morris/raphael-min.js"></script>
-    <script type="text/javascript" src="company/views/js/plugins/morris/morris.min.js"></script>
-    <script type="text/javascript" src="company/views/js/plugins/rickshaw/d3.v3.js"></script>
-    <script type="text/javascript" src="company/views/js/plugins/rickshaw/rickshaw.min.js"></script>
-    <script type='text/javascript' src='company/views/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js'></script>
-    <script type='text/javascript' src='company/views/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js'></script>
-    <script type='text/javascript' src='company/views/js/plugins/bootstrap/bootstrap-datepicker.js'></script>
-    <script type="text/javascript" src="company/views/js/plugins/owl/owl.carousel.min.js"></script>
-
-    <script type="text/javascript" src="company/views/js/plugins/moment.min.js"></script>
-    <script type="text/javascript" src="company/views/js/plugins/daterangepicker/daterangepicker.js"></script>
-    <!-- END THIS PAGE PLUGINS-->
-
-    <!-- START TEMPLATE -->
-    <!-- <script type="text/javascript" src="company/views/js/settings.js"></script> -->
-    <script type="text/javascript" src="company/views/js/plugins.js"></script>
-    <script type="text/javascript" src="company/views/js/actions.js"></script>
-    <script type="text/javascript" src="company/views/js/demo_dashboard.js"></script>
+   
     <!-- END TEMPLATE -->
-
+    <script>
+        $.ajaxPrefilter(function (options, original_Options, jqXHR) {
+            options.async = true;
+        });</script>
     <!-- END SCRIPTS -->
 </body>
 
