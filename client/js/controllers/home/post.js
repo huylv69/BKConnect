@@ -8,10 +8,10 @@ angular.module('app').controller('PostController', ['$scope', '$stateParams', '$
                     $state.go('home');
                 } else {
                     $scope.postDetail = res;
-                    console.log(res);
+                    // console.log(res);
                     $mCompany.getInfo($scope.postDetail.idcompany, function (res) {
                         $scope.companyInfo = res;
-                        console.log($scope.companyInfo);
+                        // console.log($scope.companyInfo);
                     })
                     $mPost.getCareer($scope.postDetail.idcareer,function(res){
                         $scope.career = res.name;

@@ -25,14 +25,16 @@ comApp.controller('LoginController', ['$rootScope', '$scope', '$location', 'Auth
                         }
                     }).then(
                     function () {
-                        $location.path('/post');
-                        $scope.$apply();
+                        $scope.$apply(function () {
+                            $location.path('/post');
+                        });
                     },
                     // handling the promise rejection
                     function (dismiss) {
                         if (dismiss === 'timer') {
-                            $location.path('/post');
-                            $scope.$apply()
+                            $scope.$apply(function () {
+                                $location.path('/post');
+                            })
                         }
                     }
                     );

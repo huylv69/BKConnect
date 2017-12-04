@@ -2,6 +2,7 @@
     <link href="vendor/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <link href="views/home/css/style.css" rel="stylesheet" type="text/css" media="all" />
     <link href="views/home/css/post.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="views/home/css/cv.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 
 <div class="inner_page_agile " style="margin: auto">
@@ -16,7 +17,7 @@
 <div class="services-breadcrumb_w3layouts">
     <div class="inner_breadcrumb">
         <ul class="short_w3ls">
-            <li class="fa fa-star"> Thông tin chi tiết</li>
+            <li class="fa fa-star"> Thông tin chi tiết </li>
         </ul>
     </div>
 </div>
@@ -64,7 +65,7 @@
             </div>
             <div class="job-detail-description">
                 <div class="apply">
-                    <a href="#">Ứng tuyển</a>
+                    <a data-target="#applyJobModal" data-toggle="modal">Ứng tuyển</a>
                 </div>
             </div>
         </div>
@@ -99,6 +100,185 @@
                                 <span class="value-_jm_company_field_company-size cf-select-value" ng-bind-html="companyInfo.mission" style="display: inline-block;"></span>
                             </li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="applyJobModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="applyJobModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        <h4 class="modal-title" id="applyJobModalLabel">Application Form</h4>
+                        <div id="page" class="hfeed site grid-container container grid-parent">
+                            <div id="content" class="site-content">
+                                <div id="primary" class="content-area grid-parent mobile-grid-100 grid-100 tablet-grid-100">
+                                    <main id="main" class="site-main">
+
+                                        <div class="inside-article row">
+                                            <div class="page-header-image-single grid-container information col-md-2">
+                                                <img width="256" height="256" src="images/avt.jpg" class="attachment-full size-full wp-post-image" alt="" itemprop="image"
+                                                    srcset="" sizes="(max-width: 100px) 100vw, 100px" />
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="general" itemscope="" itemtype="http://schema.org/JobPosting">
+                                                    <h3 class="name" itemprop="headline">Nguyễn Dung</h3>
+                                                    <ul class="gen_info">
+                                                        <li class="classes">
+                                                            <strong>Lớp:</strong> CNTT 2.1</li>
+                                                        <li class="institute">
+                                                            <strong>Viện:</strong> Công Nghệ Thông tin và truyền thông</li>
+                                                        <li class="grade">
+                                                            <strong>Khóa:</strong> K59</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="personal information">
+                                            <div class="title">
+                                                <i class="fa fa-fw fa-list"></i>Thông tin cá nhân
+                                            </div>
+                                            <div id="section-contact-edit" class="content form-wrapper form-view relative box-md">
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="address">Email</label>
+                                                            <div class="view-field" style="display: block;">
+                                                                <input type="email" autofocus="" class="form-control edit-control" id="emailaddress" disabled="" placeholder="e.g. john.doe@navigosgroup.com"
+                                                                    value="ngdung28996@gmail.com">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="cell-number">
+                                                                Điện Thoại</label>
+                                                            <div class="view-field clearfix" style="display: block;">
+                                                                <input type="tel" class="form-control edit-control" name="cellphone" id="cell-number" placeholder="Ví dụ: 0903012825" value="0965647158">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="date-of-birth">
+                                                                Ngày sinh</label>
+                                                            <div class="view-field" style="display: block;">
+                                                                <input class="form-control edit-control" id="date-of-birth" name="birthday" placeholder="{ 'e.g. 28/04/1986'|trans }}" value="26/09/1996">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label>Địa chỉ</label>
+                                                            <div class="view-field" style="display: block;">
+                                                                <p class="form-control-static view-control"></p>
+                                                                <input type="text" class="form-control edit-control" id="address" name="address" placeholder="Ví dụ: 130 Sương Nguyệt Ánh"
+                                                                    value="2A8 Bùi Ngọc Dương, Thanh Nhàn, Hai Bà Trưng, Hà Nội">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label>Giới tính</label>
+                                                            <div class="view-field" style="display: block;">
+                                                                <div class="edit-field" style="display: block;">
+                                                                    <label class="radio-inline" for="gender-male">
+                                                                        <input class="edit-control" type="radio" name="gender" id="gender-nam" value="1" checked="checked" data-text-value="Nam"> Nam
+                                                                    </label>
+                                                                    <label class="radio-inline" for="gender-male">
+                                                                        <input class="edit-control" type="radio" name="gender" id="gender-nữ" value="2" data-text-value="Nữ"> Nữ
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="nationality">
+                                                                Quốc Tịch</label>
+                                                            <div class="view-field" style="display: block;">
+                                                                <input type="nationality" class="form-control edit-control" name="nationality" id="nationality" placeholder="" value="Việt Nam">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="skill information">
+                                            <div class="title">
+                                                <i class="fa fa-fw fa-flash"></i>Kỹ năng
+                                            </div>
+                                            <div class="content">
+                                                <form>
+                                                    <div class="form-group">
+                                                        <textarea class="form-control" rows="5" id="comment">- Strong knowledge of JavaScript and Experience with at least some of the following technologies: NoSQL, AngularJS, NodeJS, ExpressJS, graph databases, Ionic, Cordova.</textarea>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                        </div>
+                                        <div class="experience information">
+                                            <div class="title">
+                                                <i class="fa fa-fw fa-laptop"></i>Kinh nghiệm
+                                            </div>
+                                            <div class="content">
+                                                <form>
+                                                    <div class="form-group">
+                                                        <textarea class="form-control" rows="5" id="comment">6 tháng thực tập tại FPT</textarea>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="language information">
+                                            <div class="title">
+                                                <i class="fa fa-fw fa-star"></i>Ngoại ngữ</div>
+                                            <div class="content">
+                                                <form>
+                                                    <div class="form-group">
+                                                        <textarea class="form-control" rows="5" id="comment">700 Toeic và N4 tiếng Nhật
+                                                        </textarea>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="goal information">
+                                            <div class="title">
+                                                <i class="fa fa-fw fa-fighter-jet"></i>Mục tiêu</div>
+                                            <div class="content">
+                                                <form>
+                                                    <div class="form-group">
+                                                        <textarea class="form-control" rows="5" id="comment">Mục tiêu  </textarea>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="additonal information">
+                                            <div class="title">
+                                                <i class="fa fa-fw fa-adjust"></i>Thông tin bổ sung</div>
+                                            <div class="content">
+                                                <form>
+                                                    <div class="form-group">
+                                                        <textarea class="form-control" rows="5" id="comment">Đã từng tham gia câu lạc bộ tin học của trường</textarea>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div style="margin-bottom:10px" class="application-command">
+                                            <button type="button" class="application_button btn btn-success" data-modal="modal" id="onload">Nộp CV</button>
+                                        </div>
+                                    </main>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -47,7 +47,6 @@ module.exports = function (Post) {
     });
 
     Post.beforeRemote('deleteById', function (context, remoteMethodOutput, next) {
-        console.log(context);
         var idpost = context.args.id;
         var PostSkill = app.models.post_skill;
         PostSkill.deleteById(idpost, function () {
@@ -58,13 +57,10 @@ module.exports = function (Post) {
 
 
     Post.beforeRemote('prototype.patchAttributes', function (context, remoteMethodOutput, next) {
-        console.log(context);
         var idpost = context.args.data.idpost;
         var listSkill = context.args.data.skill;
         var PostSkill = app.models.post_skill;
         PostSkill.deleteById(idpost, function () {
-            console.log('delete skill id post : ', idpost)
-            console.log(idpost, context);
             listSkill.forEach(element => {
                 PostSkill.create({
                     idpost: idpost,

@@ -1,31 +1,31 @@
 {
-  "name": "post_skill",
+  "name": "follow",
   "base": "PersistedModel",
   "idInjection": false,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "idpost": {
+    "idcompany": {
       "type": "number",
-      "id": true
+      "id": true      
     },
-    "idskill": {
+    "idstudent": {
       "type": "number",
-      "id": true
+      "id": true      
     }
   },
   "validations": [],
   "relations": {
-    "post": {
+    "company": {
       "type": "belongsTo",
-      "model": "post",
-      "foreignKey": "idpost"
+      "model": "company",
+      "foreignKey": "idcompany"
     },
-    "skill": {
+    "student": {
       "type": "belongsTo",
-      "model": "skill",
-      "foreignKey": "idskill"
+      "model": "student",
+      "foreignKey": "idstudent"
     }
   },
   "acls": [],

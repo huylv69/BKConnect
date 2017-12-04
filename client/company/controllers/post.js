@@ -17,7 +17,6 @@ comApp.controller('PostController', ['$scope', '$rootScope', '$location', 'postS
                         text: "Tạo bài đăng thành công!",
                         icon: "success",
                     });
-                    click = false;
                 } else {
                     swal({
                         title: "Thất bại!",

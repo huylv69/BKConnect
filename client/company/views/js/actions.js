@@ -263,69 +263,69 @@ $(function(){
 
 $(window).resize(function(){
     x_navigation_onresize();
-    page_content_onresize();
+    // page_content_onresize();
 });
 
 function onload(){
     x_navigation_onresize();    
-    page_content_onresize();
+    // page_content_onresize();
 }
 
-function page_content_onresize(){
-    $(".page-content,.content-frame-body,.content-frame-right,.content-frame-left").css("width","").css("height","");
+// function page_content_onresize(){
+//     $(".page-content,.content-frame-body,.content-frame-right,.content-frame-left").css("width","").css("height","");
     
-    var content_minus = 0;
-    content_minus = ($(".page-container-boxed").length > 0) ? 40 : content_minus;
-    content_minus += ($(".page-navigation-top-fixed").length > 0) ? 50 : 0;
+//     var content_minus = 0;
+//     content_minus = ($(".page-container-boxed").length > 0) ? 40 : content_minus;
+//     content_minus += ($(".page-navigation-top-fixed").length > 0) ? 50 : 0;
     
-    var content = $(".page-content");
-    var sidebar = $(".page-sidebar");
+//     var content = $(".page-content");
+//     var sidebar = $(".page-sidebar");
     
-    if(content.height() < $(document).height() - content_minus){        
-        content.height($(document).height() - content_minus);
-    }        
+//     if(content.height() < $(document).height() - content_minus){        
+//         content.height($(document).height() - content_minus);
+//     }        
     
-    if(sidebar.height() > content.height()){        
-        content.height(sidebar.height());
-    }
+//     if(sidebar.height() > content.height()){        
+//         content.height(sidebar.height());
+//     }
     
-    if($(window).width() > 1024){
+//     if($(window).width() > 1024){
         
-        if($(".page-sidebar").hasClass("scroll")){
-            if($("body").hasClass("page-container-boxed")){
-                var doc_height = $(document).height() - 40;
-            }else{
-                var doc_height = $(window).height();
-            }
-           $(".page-sidebar").height(doc_height);
+//         if($(".page-sidebar").hasClass("scroll")){
+//             if($("body").hasClass("page-container-boxed")){
+//                 var doc_height = $(document).height() - 40;
+//             }else{
+//                 var doc_height = $(window).height();
+//             }
+//            $(".page-sidebar").height(doc_height);
            
-       }
+//        }
        
-        if($(".content-frame-body").height() < $(document).height()-162){
-            $(".content-frame-body,.content-frame-right,.content-frame-left").height($(document).height()-162);            
-        }else{
-            $(".content-frame-right,.content-frame-left").height($(".content-frame-body").height());
-        }
+//         if($(".content-frame-body").height() < $(document).height()-162){
+//             $(".content-frame-body,.content-frame-right,.content-frame-left").height($(document).height()-162);            
+//         }else{
+//             $(".content-frame-right,.content-frame-left").height($(".content-frame-body").height());
+//         }
         
-        $(".content-frame-left").show();
-        $(".content-frame-right").show();
-    }else{
-        $(".content-frame-body").height($(".content-frame").height()-80);
+//         $(".content-frame-left").show();
+//         $(".content-frame-right").show();
+//     }else{
+//         $(".content-frame-body").height($(".content-frame").height()-80);
         
-        if($(".page-sidebar").hasClass("scroll"))
-           $(".page-sidebar").css("height","");
-    }
+//         if($(".page-sidebar").hasClass("scroll"))
+//            $(".page-sidebar").css("height","");
+//     }
     
-    if($(window).width() < 1200){
-        if($("body").hasClass("page-container-boxed")){
-            $("body").removeClass("page-container-boxed").data("boxed","1");
-        }
-    }else{
-        if($("body").data("boxed") === "1"){
-            $("body").addClass("page-container-boxed").data("boxed","");
-        }
-    }
-}
+//     if($(window).width() < 1200){
+//         if($("body").hasClass("page-container-boxed")){
+//             $("body").removeClass("page-container-boxed").data("boxed","1");
+//         }
+//     }else{
+//         if($("body").data("boxed") === "1"){
+//             $("body").addClass("page-container-boxed").data("boxed","");
+//         }
+//     }
+// }
 
 /* PANEL FUNCTIONS */
 function panel_fullscreen(panel){    
@@ -540,7 +540,7 @@ function onresize(timeout){
     timeout = timeout ? timeout : 200;
 
     setTimeout(function(){
-        page_content_onresize();
+        // page_content_onresize();
     },timeout);
 }
 /* EOF PAGE ON RESIZE WITH TIMEOUT */

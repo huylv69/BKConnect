@@ -13,7 +13,8 @@ angular
     'service.student',
     'service.company',
     'service.admin',
-    'service.post'
+    'service.post',
+    'service.utils'
   ])
   .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider,
     $urlRouterProvider, $locationProvider) {

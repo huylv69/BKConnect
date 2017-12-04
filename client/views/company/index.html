@@ -80,7 +80,8 @@
 		</div>
 		<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 cp_follow_survey text-right">
 			<a style="background-color:#F67011; text-decoration: none;" class="btn-animation follow-company">
-				<span id="follow_text">Follow </span>
+				<span id="follow_text" ng-if="!following" ng-click="follow()">Theo dõi </span>
+				<span id="follow_text" ng-if="following" ng-click="unFollow()" class="fa fa-check">Đang Theo dõi </span>
 			</a>
 			<!-- find us for mobile -->
 		</div>

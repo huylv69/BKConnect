@@ -82,5 +82,9 @@
   "post_skill": {
     "dataSource": "mysqlDs",
     "public": true
+  },
+  "follow": {
+    "dataSource": "mysqlDs",
+    "public": true
   }
 }

@@ -67,6 +67,12 @@
       "type": "hasMany",
       "model": "AccessTokenCompany",
       "foreignKey": "userId"
+    },
+    "student": {
+      "type": "hasMany",
+      "model": "student",
+      "foreignKey": "idcompany",
+      "through": "follow"
     }
   },
   "acls": [
