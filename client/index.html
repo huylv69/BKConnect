@@ -15,13 +15,8 @@
 </head>
 
 <body ng-app="app">
-  <!-- <div class="navbar navbar-inverse navbar-fixed-top" id="test" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="/home">BKConnect - Cơ hội tuyển dụng</a>
-      </div>
-    </div>
-  </div> -->
+  <header ng-include="'views/header/index.html'"></header>
+
   <base href="/">
   <div ui-view class="view"></div>
 
@@ -60,6 +55,7 @@
   <script src="js/controllers/home/post.js"></script>
   <script src="js/controllers/home/home.js"></script>
 
+  <script src="views/modal/cv.js"></script>
 </body>
 
 </html>

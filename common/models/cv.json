@@ -1,26 +1,35 @@
 {
-  "name": "follow",
+  "name": "cv",
   "base": "PersistedModel",
   "idInjection": false,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "idcompany": {
-      "type": "number",
-      "id": true
-    },
     "idstudent": {
       "type": "number",
       "id": true
+    },
+    "idpost": {
+      "type": "number",
+      "id": true
+    },
+    "details": {
+      "type": "object"
+    },
+    "apply": {
+      "type": "date"
+    },
+    "seen": {
+      "type": "boolean"
     }
   },
   "validations": [],
   "relations": {
-    "company": {
+    "post": {
       "type": "belongsTo",
-      "model": "company",
-      "foreignKey": "idcompany"
+      "model": "post",
+      "foreignKey": "idpost"
     },
     "student": {
       "type": "belongsTo",

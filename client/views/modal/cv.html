@@ -1,0 +1,170 @@
+<div id="applyJobModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="applyJobModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" id="applyJobModalLabel">Application Form</h4>
+                <div id="page" class="hfeed site grid-container container grid-parent">
+                    <div id="content" class="site-content">
+
+                        <div id="primary" class="content-area grid-parent mobile-grid-100 grid-100 tablet-grid-100">
+                            <main id="main" class="site-main">
+                                <div class="inside-article row">
+                                    <div class="page-header-image-single grid-container information col-md-2">
+                                        <img width="256" height="256" ngf-thumbnail="chosenPhoto || user.photo || 'views/student/images/100.png'" class="attachment-full size-full wp-post-image"
+                                            alt="" itemprop="image" srcset="" sizes="(max-width: 100px) 100vw, 100px">
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="general" itemscope="" itemtype="http://schema.org/JobPosting">
+                                            <h3 class="name" itemprop="headline">{{infoCV.name}}</h3>
+                                            <ul class="gen_info">
+                                                <li class="classes">
+                                                    <strong>Ví trí ứng tuyển:</strong>
+                                                    <input ng-model="infoCV.position">
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="personal information">
+                                    <div class="title">
+                                        <i class="fa fa-fw fa-list"></i>Thông tin cá nhân
+                                    </div>
+                                    <div id="section-contact-edit" class="content form-wrapper form-view relative box-md">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="address">Email:</label>
+                                                    <div class="view-field" style="display: block;">
+                                                        <input type="email" autofocus="" class="form-control edit-control" id="emailaddress" disabled="disabled" placeholder="john.doe@navigosgroup.com"
+                                                            ng-model="infoCV.email">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="cell-number">
+                                                        Điện Thoại:</label>
+                                                    <div class="view-field clearfix" style="display: block;">
+                                                        <input type="tel" class="form-control edit-control" name="cellphone" id="cell-number" placeholder="Ví dụ: 0903012825" ng-model="infoCV.phone">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="date-of-birth">
+                                                        Ngày sinh:</label>
+                                                    <div class="view-field" style="display: block;">
+                                                        <input class="form-control edit-control" type="date" id="date-of-birth" name="birthday" placeholder="{ 'e.g. 28/04/1986'|trans }}"
+                                                            ng-model="infoCV.birthday">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Giới tính</label>
+                                                    <div class="view-field" style="display: block;">
+                                                        <div class="edit-field" style="display: block;">
+                                                            <label class="radio-inline" for="gender-male">
+                                                                <input class="edit-control" type="radio" name="gender" id="gender-nam" ng-value="true" ng-model="infoCV.sex"> Nam
+                                                            </label>
+                                                            <label class="radio-inline" for="gender-male">
+                                                                <input class="edit-control" type="radio" name="gender" id="gender-nữ" ng-value="false" ng-model="infoCV.sex"> Nữ
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Địa chỉ</label>
+                                                    <div class="view-field" style="display: block;">
+                                                        <p class="form-control-static view-control"></p>
+                                                        <input type="text" class="form-control edit-control" id="address" name="address" placeholder="Ví dụ: 130 Sương Nguyệt Ánh"
+                                                            ng-model="infoCV.address">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill information">
+                                    <div class="title">
+                                        <i class="fa fa-fw fa-flash"></i>Kỹ năng:</div>
+                                    <div class="content">
+                                        <form>
+                                            <div class="form-group">
+                                                <textarea class="form-control" rows="5" id="comment" ng-model="infoCV.skill">- Strong knowledge of JavaScript and Experience with at least some of the following technologies: NoSQL, AngularJS, NodeJS, ExpressJS, graph databases, Ionic, Cordova.
+             </textarea>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                                <div class="experience information">
+                                    <div class="title">
+                                        <i class="fa fa-fw fa-laptop"></i>Kinh nghiệm:</div>
+                                    <div class="content">
+                                        <form>
+                                            <div class="form-group">
+                                                <textarea class="form-control" rows="5" id="comment" ng-model="infoCV.experience">6 tháng thực tập tại FPT
+             </textarea>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="language information">
+                                    <div class="title">
+                                        <i class="fa fa-fw fa-star"></i>Học Vấn:</div>
+                                    <div class="content">
+                                        <form>
+                                            <div class="form-group">
+                                                <textarea class="form-control" ng-model="infoCV.education" rows="5" id="comment">700 Toeic và N4 tiếng Nhật </textarea>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="goal information">
+                                    <div class="title">
+                                        <i class="fa fa-fw fa-fighter-jet"></i>Mục tiêu:</div>
+                                    <div class="content">
+                                        <form>
+                                            <div class="form-group">
+                                                <textarea class="form-control" ng-model="infoCV.objective" rows="5" id="comment">Mục tiêu </textarea>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="additonal information">
+                                    <div class="title">
+                                        <i class="fa fa-fw fa-adjust"></i>Thông tin bổ sung</div>
+                                    <div class="content">
+                                        <form>
+                                            <div class="form-group">
+                                                <textarea class="form-control" ng-model="infoCV.other" rows="5" id="comment">Đã từng tham gia câu lạc bộ tin học của trường </textarea>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                                <div style="margin-bottom:10px" class="application-command">
+                                    <button type="button" class="application_button btn btn-success" data-modal="modal" id="onload" ng-click="applyCV()">Nộp CV</button>
+                                </div>
+                            </main>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

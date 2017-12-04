@@ -70,6 +70,12 @@
       "model": "company",
       "foreignKey": "idstudent",
       "through": "follow"
+    },
+    "post": {
+      "type": "hasMany",
+      "model": "post",
+      "foreignKey": "idstudent",
+      "through": "cv"
     }
   },
   "acls": [
@@ -86,5 +92,6 @@
       "permission": "ALLOW"
     }
   ],
+  "hidden":["emailVerified"],
   "methods": {}
 }

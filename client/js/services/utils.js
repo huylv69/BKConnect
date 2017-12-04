@@ -14,6 +14,14 @@ angular
             return BASE_URL + relativeUrl + "?access_token=" + accessToken;
         }
 
+        service.applyCV = function (idpost, idstudent, details, callback) {
+            $http.post(BASE_URL + 'cvs', { idpost: idpost, idstudent: idstudent, details: details }).then(function (res) {
+                callback(res);
+            }).catch(function (res) {
+                callback(res);
+            })
+        }
+        // Following
         service.follow = function (idcompany, idstudent, callback) {
             $http.post(BASE_URL + 'follows', { idcompany: idcompany, idstudent: idstudent }).then(function (res) {
                 callback(res);
@@ -23,7 +31,7 @@ angular
         }
 
         service.unFollow = function (idcompany, idstudent, callback) {
-            let url = buildQueryLink('students/' + idstudent + '/company/rel/' + idcompany);            
+            let url = buildQueryLink('students/' + idstudent + '/company/rel/' + idcompany);
             $http.delete(url).then(function (res) {
                 callback(res);
             }).catch(function (res) {

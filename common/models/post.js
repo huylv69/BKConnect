@@ -55,7 +55,6 @@ module.exports = function (Post) {
         })
     });
 
-
     Post.beforeRemote('prototype.patchAttributes', function (context, remoteMethodOutput, next) {
         var idpost = context.args.data.idpost;
         var listSkill = context.args.data.skill;

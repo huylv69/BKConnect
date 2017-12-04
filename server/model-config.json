@@ -86,5 +86,9 @@
   "follow": {
     "dataSource": "mysqlDs",
     "public": true
+  },
+  "cv": {
+    "dataSource": "mysqlDs",
+    "public": true
   }
 }

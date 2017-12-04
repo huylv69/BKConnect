@@ -67,6 +67,12 @@
       "model": "skill",
       "foreignKey": "idpost",
       "through": "post_skill"
+    },
+    "student": {
+      "type": "hasMany",
+      "model": "student",
+      "foreignKey": "idpost",
+      "through": "cv"
     }
   },
   "acls": [],
