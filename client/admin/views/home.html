@@ -1,0 +1,77 @@
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Yêu cầu tạo tài khoản
+      </h1>
+      <ol class="breadcrumb">
+        <li>
+          <a href="#">
+            <i class="fa fa-dashboard"></i> Home</a>
+        </li>
+        <li>
+          <a href="#">Công ty</a>
+        </li>
+        <li class="active">Yêu cầu</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Yêu cầu tạo tài khoản</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Tên công ty</th>
+                    <th>Email</th>
+                    <th>Lời giới thiệu</th>
+                    <th>Ngày đăng ký</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr ng-repeat="n in listCompany" repeat-done="initDataTable()">
+                    <td>{{$index+1}}</td>
+                    <td>{{n.name}}</td>
+                    <td>{{n.email}}</td>
+                    <td>{{n.about}}</td>
+                    <td >{{n.created_at | date:'dd/MM/yyyy HH:mm:ss'}}</td>
+                    <td class="actions">
+                      <a href="#" class=" btn btn-danger btn-sm" ng-disabled="n.activated" ng-click="confirmbyadmin(n)">
+                        <b>Activate</b>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+
+                <tfoot>
+                  <tr>
+                    <th>#</th>
+                    <th>Tên công ty</th>
+                    <th>Email</th>
+                    <th>Lời giới thiệu</th>
+                    <th>Ngày đăng ký</th>
+                    <th>Actions</th>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+
+ 

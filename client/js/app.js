@@ -29,7 +29,7 @@ angular
         controller: 'HomeController'
       })
 
-      .state('post',{
+      .state('post', {
         title: 'Chi tiết công việc',
         url: '/post/:id',
         templateUrl: 'views/home/post.html',
@@ -54,34 +54,12 @@ angular
         templateUrl: 'views/student/verified.html',
         controller: 'LoginController'
       })
-
       .state('homeCompany', {
         title: 'Trang chủ công ty ',
         url: '/companies/:id',
         templateUrl: 'views/company/index.html',
         controller: 'HomeCompanyController'
       })
-
-      //Admin
-      .state('loginAdmin', {
-        title: 'Đăng nhập tài khoản admin',
-        url: '/admin',
-        templateUrl: 'views/admin/login.html',
-        controller: 'LoginController'
-      })
-      .state('request', {
-        title: 'Trang chủ Admin ',
-        url: '/admin/home',
-        templateUrl: 'views/admin/home.html',
-        controller: 'RequestController'
-      })
-      .state('admin', {
-        title: 'Trang chủ Admin ',
-        url: '/admin/company',
-        templateUrl: 'views/admin/company.html',
-        controller: 'ListCompanyController'
-      })
-      ;
 
     $urlRouterProvider.otherwise('home');
 
@@ -93,6 +71,7 @@ angular
       //get currentUser
       $rootScope.currentUser = $mLocalStorage.getItem('userInfo');
       $rootScope.currentAdmin = $mLocalStorage.getItem('adminInfo');
-
+      $rootScope.$state = $state;
+     
     }]);
 
