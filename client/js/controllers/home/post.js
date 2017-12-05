@@ -1,8 +1,9 @@
-angular.module('app').controller('PostController', ['$scope', '$stateParams', '$rootScope', '$mPost', '$mCompany', '$state', '$mStudent', '$mUtils',
-    function ($scope, $stateParams, $rootScope, $mPost, $mCompany, $state, $mStudent, $mUtils) {
+angular.module('app').controller('PostController', ['$scope', '$stateParams', '$rootScope', '$mPost', '$mCompany', '$state', '$mStudent', '$mUtils', '$mLocalStorage',
+    function ($scope, $stateParams, $rootScope, $mPost, $mCompany, $state, $mStudent, $mUtils, $mLocalStorage) {
         var id = $stateParams.id;
         $scope.showModal = false;
         $scope.postDetail = {};
+
         $scope.showCV = function () {
             currentUser = $rootScope.currentUser;
             if (currentUser == null || currentUser == "") {

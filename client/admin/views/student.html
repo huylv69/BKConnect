@@ -1,0 +1,74 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Danh sách sinh viên
+    </h1>
+    <ol class="breadcrumb">
+        <li>
+            <a href="#">
+                <i class="fa fa-dashboard"></i> Home</a>
+        </li>
+        <li>
+            <a href="#">Sinh viên</a>
+        </li>
+        <li class="active">Danh sách</li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Danh sách sinh viên</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body" loading-pane="isPaneShown">
+                    <table id="example1" class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Tên </th>
+                                <th>Email</th>
+                                <th>Ngày sinh</th>
+                                <th>Số điện thoại</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr ng-repeat="n in listStudent" repeat-done="initDataTable()">
+                                <td>{{$index+1}}</td>
+                                <td>{{n.name}}</td>
+                                <td>{{n.email}}</td>
+                                <td>{{n.birthday | date:'dd/MM/yyyy'}}</td>
+                                <td>{{n.phone}}</td>
+                                <td class="actions">
+                                    <a class=" btn btn-danger btn-sm" ng-disabled="n.block" ng-click="blockStudent(n)">
+                                        <b>BLOCK</b>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                        <tfoot>
+                            <tr>
+                                <th>#</th>
+                                <th>Tên </th>
+                                <th>Email</th>
+                                <th>Ngày sinh</th>
+                                <th>Số điện thoại</th>
+                                <th>Actions</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+<!-- /.content -->

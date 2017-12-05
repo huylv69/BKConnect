@@ -10,14 +10,16 @@ angular.module('app').controller('HomeCompanyController', ['$scope', '$statePara
                     console.log($scope.companyInfo);
                 }
             });
-            let idUser = $rootScope.currentUser.userId;
-            $mUtils.checkFollow(id, idUser, function (res) {
-                if (res.status == 200) {
-                    $scope.following = true;
-                } else {
-                    $scope.following = false;
-                }
-            })
+            if ($rootScope.currentUser) {
+                let idUser = $rootScope.currentUser.userId;
+                $mUtils.checkFollow(id, idUser, function (res) {
+                    if (res.status == 200) {
+                        $scope.following = true;
+                    } else {
+                        $scope.following = false;
+                    }
+                })
+            }
         };
         var click = false;
         $scope.follow = function () {

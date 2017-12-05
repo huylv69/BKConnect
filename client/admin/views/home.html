@@ -25,7 +25,7 @@
               <h3 class="box-title">Yêu cầu tạo tài khoản</h3>
             </div>
             <!-- /.box-header -->
-            <div class="box-body">
+            <div class="box-body" loading-pane="isPaneShown">
               <table id="example1" class="table table-bordered table-hover">
                 <thead>
                   <tr>
@@ -43,7 +43,7 @@
                     <td>{{$index+1}}</td>
                     <td>{{n.name}}</td>
                     <td>{{n.email}}</td>
-                    <td>{{n.about}}</td>
+                    <td >{{n.about}}</td>
                     <td >{{n.created_at | date:'dd/MM/yyyy HH:mm:ss'}}</td>
                     <td class="actions">
                       <a href="#" class=" btn btn-danger btn-sm" ng-disabled="n.activated" ng-click="confirmbyadmin(n)">

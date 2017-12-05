@@ -23,7 +23,8 @@
     <link rel="stylesheet" href="../vendor/bootstrap-daterangepicker/daterangepicker.css">
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="admin/views/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-
+    <base href="/admin">
+    <link rel="stylesheet" href="admin/views/css/loading.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -41,10 +42,10 @@
             <a href="index2.html" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini">
-                    <b>A</b>LT</span>
+                    <b>BK</b>C</span>
                 <!-- logo for regular state and mobile devices -->
                 <span class="logo-lg">
-                    <b>Admin</b>LTE</span>
+                    <b>BKC</b>onnect</span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top">
@@ -364,8 +365,12 @@
                         </a>
                         <ul class="treeview-menu">
                             <li>
-                                <a href="pages/layout/top-nav.html">
+                                <a ui-sref="student">
                                     <i class="fa fa-circle-o"></i> Danh sách sinh viên</a>
+                            </li>
+                            <li>
+                                <a ui-sref="block">
+                                    <i class="fa fa-circle-o"></i> Sinh viên bị BLOCK </a>
                             </li>
                         </ul>
                     </li>
@@ -380,8 +385,8 @@
                         </a>
                         <ul class="treeview-menu">
                             <li>
-                                <a href="pages/layout/top-nav.html">
-                                    <i class="fa fa-circle-o"></i> Danh sách sinh viên</a>
+                                <a ui-sref="post">
+                                    <i class="fa fa-circle-o"></i> Danh sách bài đăng</a>
                             </li>
                         </ul>
                     </li>
@@ -419,8 +424,7 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <ui-view></ui-view>
-            <base href="/admin">
-            
+
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
@@ -445,17 +449,24 @@
     <script src="../vendor/angular-sanitize/angular-sanitize.js"></script>
     <script type="text/javascript" src="../vendor/ng-file-upload/ng-file-upload.min.js"></script>
     <script type="text/javascript" src="../vendor/ng-file-upload/ng-file-upload-shim.min.js"></script>
-
+    <script src="../vendor/lodash/dist/lodash.min.js"></script>
     <!-- App -->
     <!-- <script src="../js/config.js"></script> -->
+
     <script src="admin/app.js"></script>
     <script src="admin/services/localStorage.js"></script>
     <script src="admin/services/companyService.js"></script>
     <script src="admin/services/authen.js"></script>
+    <script src="admin/services/studentService.js"></script>
+    <script src="admin/services/postService.js"></script>
 
+    <script src="admin/controllers/login.js"></script>
     <script src="admin/controllers/home.js"></script>
     <script src="admin/controllers/listCompany.js"></script>
     <script src="admin/controllers/reqCompany.js"></script>
+    <script src="admin/controllers/post.js"></script>
+    <script src="admin/controllers/student.js"></script>
+    <script src="admin/controllers/studentBlock.js"></script>
 
     <!-- Library -->
     <!-- jQuery 3 -->

@@ -185,7 +185,7 @@ module.exports = function (Company) {
         });
     });
 
-    //Block  company account
+    //Activate  company account
     Company.activateCompany = function (email, fn) {
         fn = fn || utils.createPromiseCallback();
         Company.findOne({

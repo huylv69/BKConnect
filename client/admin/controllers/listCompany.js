@@ -11,7 +11,10 @@ angular.module('admin').controller('ListCompanyController', ['$scope', '$state',
 
         $scope.blockCompany = function (company) {
             var emailCompany = company.email;
+            $scope.isPaneShown = true;
+
             $mCompany.blockCompany(emailCompany, function (res) {
+                $scope.isPaneShown = false;
 
                 if (res.status == 204) {
                     company.block = true;
@@ -32,7 +35,10 @@ angular.module('admin').controller('ListCompanyController', ['$scope', '$state',
         }
         $scope.activateCompany = function (company) {
             var emailCompany = company.email;
+            $scope.isPaneShown = true;
             $mCompany.activateCompany(emailCompany, function (res) {
+                $scope.isPaneShown = false;
+
                 if (res.status == 204) {
                     company.block = false;
                     swal({

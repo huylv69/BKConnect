@@ -17,13 +17,13 @@ module.exports = function (User) {
             if (err) {
                 User.deleteById(user.id);
                 return next(err);
-            }else{
+            } else {
                 next();
             }
-            
+
         });
     });
-    
+
     //send password reset link when requested
     User.on('resetPasswordRequest', function (info) {
         var url = 'http://' + config.host + ':' + config.port + '/reset-password';
@@ -60,5 +60,163 @@ module.exports = function (User) {
             redirectToLinkText: 'Log in'
         });
     });
-    
+
+    //Get List Active
+    User.getListActive = function (fn) {
+        fn = fn || utils.createPromiseCallback();
+        User.find({
+            where: {
+                block: false
+            }
+        }, fn);
+        return fn.promise;
+    };
+    User.remoteMethod('getListActive',
+        {
+            description: 'Get list student Active .',
+            returns: { arg: 'students', type: 'array' },
+            http: { verb: 'get', path: '/getListActive' }
+        }
+    );
+
+    //Get List Block
+    User.getListBlock = function (fn) {
+        fn = fn || utils.createPromiseCallback();
+        User.find({
+            where: {
+                block: true
+            }
+        }, fn);
+        return fn.promise;
+    };
+    User.remoteMethod('getListBlock',
+        {
+            description: 'Get list student Block .',
+            returns: { arg: 'students', type: 'array' },
+            http: { verb: 'get', path: '/getListBlock' }
+        }
+    );
+
+
+    //Block  User account
+    User.blockStudent = function (email, fn) {
+        fn = fn || utils.createPromiseCallback();
+        User.findOne({
+            where: {
+                email: email
+            }
+        }, function (err, student) {
+            if (err) {
+                fn(err);
+            } else {
+                if (student && !student.block) {
+                    student.block = true;
+                    student.save(function (err) {
+                        if (err) {
+                            fn(err);
+                        } else {
+                            fn();
+                        }
+                    });
+                } else if (student) {
+                    let err = new Error('student has been Blocked');
+                    err.statusCode = 409;
+                    err.code = 'HAS_BLOCKED';
+                    fn(err);
+                } else {
+                    let err = new Error('No have student');
+                    err.statusCode = 401;
+                    err.code = 'NO_STUDENT';
+                    fn(err);
+                }
+            }
+        });
+        return fn.promise;
+    };
+
+    User.remoteMethod('blockStudent',
+        {
+            description: 'Block Student account  by Admin .',
+            accepts: [
+                { arg: 'email', type: 'string', required: true },
+            ],
+            http: { verb: 'get', path: '/blockStudent' },
+        }
+    );
+    User.afterRemote('blockStudent', function (context, student, next) {
+        User.app.models.Email.send({
+            to: context.args.email,
+            from: 'huylv.confirm@gmail.com',
+            subject: 'Block Account.',
+            html: `<h1>Attention</h1>
+            <p>
+            Attention ! Your account has been block.Please contact Admin as soon as possible
+            </p>
+            <h3>Team BKConnect</h3>`
+        }, function (err, mail) {
+            next();
+            console.log('email block sent!');
+        });
+    });
+
+    //Activate  company account
+    User.activateStudent = function (email, fn) {
+        fn = fn || utils.createPromiseCallback();
+        User.findOne({
+            where: {
+                email: email
+            }
+        }, function (err, student) {
+            if (err) {
+                fn(err);
+            } else {
+                if (student && student.block) {
+                    student.block = false;
+                    student.save(function (err) {
+                        if (err) {
+                            fn(err);
+                        } else {
+                            fn();
+                        }
+                    });
+                } else if (student) {
+                    let err = new Error('Student has been Reactivated');
+                    err.statusCode = 409;
+                    err.code = 'HAS_ACTIVATED';
+                    fn(err);
+                } else {
+                    let err = new Error('No have student');
+                    err.statusCode = 401;
+                    err.code = 'NO_STUDENT';
+                    fn(err);
+                }
+            }
+        });
+        return fn.promise;
+    };
+
+    User.remoteMethod('activateStudent',
+        {
+            description: 'Reactivate Student account  by Admin .',
+            accepts: [
+                { arg: 'email', type: 'string', required: true },
+            ],
+            http: { verb: 'get', path: '/activateStudent' },
+        }
+    );
+    User.afterRemote('activateStudent', function (context, student, next) {
+        User.app.models.Email.send({
+            to: context.args.email,
+            from: 'huylv.confirm@gmail.com',
+            subject: 'Re-Activated Account.',
+            html: `<h1>Congratulations</h1>
+            <p>
+            Congratulations ! Your Student account has been Reactivated.
+            </p>
+            <h3>Team BKConnect</h3>`
+        }, function (err, mail) {
+            next();
+            console.log('email activate sent!');
+        });
+    });
 };

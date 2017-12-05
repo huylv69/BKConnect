@@ -53,6 +53,7 @@
     "PACE": "pace#^1.0.2",
     "morris.js": "^0.5.1",
     "ng.datepicker-ui": "*",
-    "ng-tags-input": "^3.2.0"
+    "ng-tags-input": "^3.2.0",
+    "lodash": "^4.17.4"
   }
 }

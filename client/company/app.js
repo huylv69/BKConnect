@@ -4,6 +4,7 @@ var comApp = angular.module('comApp', ['ngRoute', 'summernote', 'ngDatepicker', 
 // configure our routes
 comApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $locationProvider.hashPrefix('');
+    
     $routeProvider
         // route for the home page
         .when('/home', {

@@ -33,28 +33,35 @@ module.exports = function (Post) {
         var idpost = context.result.idpost;
         var listSkill = context.args.data.skill;
         var postSkill = app.models.post_skill;
-        console.log(idpost, context);
-        listSkill.forEach(element => {
-            postSkill.create({
-                idpost: idpost,
-                idskill: element.idskill
-            }, function (err, res) {
-                if (err) console.log(err);
-                else console.log(res);
-            });
-        }, this);
+        // console.log(idpost, context);
+        if (listSkill) {
+            listSkill.forEach(element => {
+                postSkill.create({
+                    idpost: idpost,
+                    idskill: element.idskill
+                }, function (err, res) {
+                    if (err) console.log(err);
+                    else console.log(res);
+                });
+            }, this);
+        }
         next();
     });
 
     Post.beforeRemote('deleteById', function (context, remoteMethodOutput, next) {
         var idpost = context.args.id;
         var PostSkill = app.models.post_skill;
-        PostSkill.deleteById(idpost, function () {
-            console.log('delete id : ', idpost)
-            next();
-        })
-    });
+        var sql = 'DELETE FROM `cv` WHERE idpost = ' + idpost;
+        app.dataSources.mysqlDs.connector.query(sql, function (err, res) {
+            PostSkill.deleteById(idpost, function () {
+                console.log('delete skill id : ', idpost)
+                Post.prototype.__delete__student(null, { "id": idpost })
+                next();
 
+            })
+
+        });
+    });
     Post.beforeRemote('prototype.patchAttributes', function (context, remoteMethodOutput, next) {
         var idpost = context.args.data.idpost;
         var listSkill = context.args.data.skill;
@@ -73,4 +80,4 @@ module.exports = function (Post) {
         })
     });
 
-};
+};  

@@ -9,8 +9,10 @@ angular.module('admin').controller('RequestController', ['$scope', '$state', '$r
         }
 
         $scope.confirmbyadmin = function (company) {
+            $scope.isPaneShown = true;
             var emailCompany = company.email;
             $mCompany.confirmbyadmin(emailCompany, function (res) {
+                $scope.isPaneShown = false;
                 if (res.status == 204) {
                     company.activated = true;
                     swal({
