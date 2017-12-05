@@ -12,10 +12,8 @@ angular.module('admin').controller('ListCompanyController', ['$scope', '$state',
         $scope.blockCompany = function (company) {
             var emailCompany = company.email;
             $scope.isPaneShown = true;
-
             $mCompany.blockCompany(emailCompany, function (res) {
                 $scope.isPaneShown = false;
-
                 if (res.status == 204) {
                     company.block = true;
                     swal({

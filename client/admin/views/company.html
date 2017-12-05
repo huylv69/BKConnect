@@ -15,15 +15,15 @@
 </section>
 
 <!-- Main content -->
-<section class="content">
+<section class="content" loading-pane="isPaneShown">
     <div class="row">
         <div class="col-xs-12">
-            <div class="box">
+            <div class="box" >
                 <div class="box-header">
                     <h3 class="box-title">Danh sách tài khoản công ty</h3>
                 </div>
                 <!-- /.box-header -->
-                <div class="box-body" loading-pane="isPaneShown">
+                <div class="box-body">
                     <table id="example1" class="table table-bordered bordered table-striped  table-hover datatable">
                         <thead>
                             <tr>
@@ -46,9 +46,9 @@
                                 <td ng-bind-html="n.about"></td>
                                 <td>{{n.created_at | date:'dd/MM/yyyy HH:mm:ss'}}</td>
                                 <td class="actions">
-                                    <a href="#" class=" btn btn-danger btn-sm " ng-disabled="n.block" ng-click="blockCompany(n)">
+                                    <a class=" btn btn-danger btn-sm " ng-disabled="n.block" ng-click="blockCompany(n)">
                                         Block </a>
-                                    <a href="#" class=" btn btn-primary btn-sm " ng-disabled="!n.block" ng-click="activateCompany(n)">
+                                    <a class=" btn btn-primary btn-sm " ng-disabled="!n.block" ng-click="activateCompany(n)">
                                         Activate </a>
                                 </td>
                             </tr>
