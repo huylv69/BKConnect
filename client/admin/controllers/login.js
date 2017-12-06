@@ -39,12 +39,12 @@ angular.module('admin').controller('LoginController', ['$scope', '$state', '$roo
                             }
                         }).then(
                         function () {
-                            $state.go('request');
+                            $state.go('home');
                         },
                         // handling the promise rejection
                         function (dismiss) {
                             if (dismiss === 'timer') {
-                                $state.go('request');
+                                $state.go('home');
                             }
                         }
                         );

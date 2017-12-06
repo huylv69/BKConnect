@@ -3,7 +3,7 @@
 
 body, html {
 	height: 100%;
-	background-repeat: no-repeat;    /*background-image: linear-gradient(rgb(12, 97, 33),rgb(104, 145, 162));*/
+	background-repeat: no-repeat;    background-image: linear-gradient(rgb(12, 97, 33),rgb(104, 145, 162));
 	background:black;
 	position: relative;
 }

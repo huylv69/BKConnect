@@ -36,7 +36,7 @@
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
-    <div class="wrapper">
+    <div  class="wrapper" ng-hide="location.path() == '/login'">
         <header class="main-header">
             <!-- Logo -->
             <a href="index2.html" class="logo">
@@ -439,12 +439,15 @@
        immediately after the control sidebar -->
         <div class="control-sidebar-bg"></div>
     </div>
+    <ui-view ng-show="location.path() == '/login'"></ui-view>
+
     <script src="../vendor/sweetaleart/sweetalert.min.js"></script>
     <script src="../vendor/jquery/dist/jquery.js"></script>
     <script src="../vendor/bootstrap/dist/js/bootstrap.js"></script>
     <script src="../vendor/angular/angular.js"></script>
     <script src="../vendor/angular-resource/angular-resource.js"></script>
     <script src="../vendor/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="../vendor/angular-ui-router/release/stateEvents.js"></script>
     <script src="admin/views/vendor/angular-datatables.min.js"></script>
     <script src="../vendor/angular-sanitize/angular-sanitize.js"></script>
     <script type="text/javascript" src="../vendor/ng-file-upload/ng-file-upload.min.js"></script>

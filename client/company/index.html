@@ -86,7 +86,7 @@
 
 <body>
     <!-- START PAGE CONTAINER -->
-    <div class="page-container" ng-if="location.path() !== '/login'">
+    <div class="page-container" ng-hide="location.path() == '/login'">
         <!-- START PAGE SIDEBAR -->
         <div class="page-sidebar" >
             <!-- START X-NAVIGATION -->
@@ -301,7 +301,7 @@
         <!-- END PAGE CONTENT -->
     </div>
     <!-- END PAGE CONTAINER -->
-    <ng-view ng-if="location.path() == '/login'"></ng-view>
+    <ng-view ng-show="location.path() == '/login'"></ng-view>
     <base href="/company">    
     <!-- MESSAGE BOX-->
     <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
