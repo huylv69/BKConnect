@@ -36,6 +36,7 @@
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
+    <ui-view ng-show="location.path() == '/login'"></ui-view>    
     <div  class="wrapper" ng-hide="location.path() == '/login'">
         <header class="main-header">
             <!-- Logo -->
@@ -439,7 +440,6 @@
        immediately after the control sidebar -->
         <div class="control-sidebar-bg"></div>
     </div>
-    <ui-view ng-show="location.path() == '/login'"></ui-view>
 
     <script src="../vendor/sweetaleart/sweetalert.min.js"></script>
     <script src="../vendor/jquery/dist/jquery.js"></script>

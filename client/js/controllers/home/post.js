@@ -10,12 +10,20 @@ angular.module('app').controller('PostController', ['$scope', '$stateParams', '$
                 currentUser = $mLocalStorage.getItem("userInfo");
                 $rootScope.currentUser = currentUser;
             }
-            $mStudent.getInfo(currentUser.userId, function (res) {
-                $scope.infoCV = res;
-                $scope.infoCV.birthday = new Date(res.birthday);
-                $scope.showModal = !$scope.showModal;
-                console.log(res);
-            });
+            if (currentUser) {
+                $mStudent.getInfo(currentUser.userId, function (res) {
+                    $scope.infoCV = res;
+                    $scope.infoCV.birthday = new Date(res.birthday);
+                    console.log(res);
+                    $scope.showModal = !$scope.showModal;
+                });
+            } else {
+                swal({
+                    title: "Xin lỗi !",
+                    text: "Bạn cần đăng nhập để nộp CV!",
+                    icon: "warning",
+                });
+            }
         }
 
         let click = false;

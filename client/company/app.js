@@ -34,8 +34,11 @@ comApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, 
         .when('/editprofile', {
             templateUrl: 'company/views/editprofile.html',
             controller: 'ProfileController'
-        })
-
+        }).
+        otherwise({
+            redirect: '/home',
+        });
+        
 }]);
 
 comApp.run(function ($rootScope, $location, $mLocalStorage, AuthenService) {
