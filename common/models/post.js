@@ -11,8 +11,8 @@ module.exports = function (Post) {
             where: {
                 idcompany: idCompany
             }
-        }, function (err, listCompany) {
-            fn(err, listCompany);
+        }, function (err, listPost) {
+            fn(err, listPost);
         })
     }
     Post.remoteMethod('getPostCompany',
