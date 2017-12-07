@@ -4,7 +4,7 @@ var comApp = angular.module('comApp', ['ngRoute', 'summernote', 'ngDatepicker', 
 // configure our routes
 comApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $locationProvider.hashPrefix('');
-    
+
     $routeProvider
         // route for the home page
         .when('/home', {
@@ -34,11 +34,19 @@ comApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, 
         .when('/editprofile', {
             templateUrl: 'company/views/editprofile.html',
             controller: 'ProfileController'
-        }).
-        otherwise({
+        })
+        .when('/cvmangement', {
+            templateUrl: 'company/views/cvmanager.html',
+            controller: 'CVManagerController'
+        })
+        .when('/newcv', {
+            templateUrl: 'company/views/newcv.html',
+            controller: 'NewCVController'
+        })
+        .otherwise({
             redirect: '/home',
         });
-        
+
 }]);
 
 comApp.run(function ($rootScope, $location, $mLocalStorage, AuthenService) {

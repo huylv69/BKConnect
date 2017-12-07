@@ -4,6 +4,27 @@ var app = require('../../server/server');
 var path = require('path');
 
 module.exports = function (Post) {
+
+    //Get post for company 
+    Post.getPostCompany = function (idCompany, fn) {
+        Post.find({
+            where: {
+                idcompany: idCompany
+            }
+        }, function (err, listCompany) {
+            fn(err, listCompany);
+        })
+    }
+    Post.remoteMethod('getPostCompany',
+        {
+            description: 'Get list post of company .',
+            accepts: [
+                { arg: 'idCompany', type: 'number', required: true },
+            ],
+            returns: { arg: 'list', type: 'array' },
+            http: { verb: 'get', path: '/getPostCompany' }
+        }
+    );
     //Get List Request 
     Post.getAllPost = function (fn) {
         Post.find({}, function (err, list) {

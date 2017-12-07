@@ -4,7 +4,7 @@ angular.module('app')
             restrict: 'E',
             scope: true,
             transclude: true,
-            replace: false,
+            replace: true,
             templateUrl: 'views/modal/cv.html',
             link: function postLink(scope, element, attrs) {
                 scope.$watch(attrs.visible, function (value) {

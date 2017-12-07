@@ -1,12 +1,16 @@
-comApp.controller('ManagerPostController', ['$scope', '$location', '$http', '$route', 'postService', function ($scope, $location, $http, $route, postService) {
+comApp.controller('ManagerPostController', ['$scope', '$rootScope', '$http', '$route', 'postService', function ($scope, $rootScope, $http, $route, postService) {
 
     $scope.data = [];
-    $http.get(BASE_URL + 'posts').then(function (data) {
-        $scope.data = data.data;
-    })
-
+    var currentCompany = $rootScope.currentCompany;
+    let idCompany = currentCompany.userId;
+    var getData = function () {
+        postService.getPostCompany(idCompany, function (data) {
+            $scope.data = data.list;
+            console.log(data);
+        })
+    }
+    getData();
     $scope.postDetail = {};
-
     $scope.deletePost = function (id) {
         swal({
             title: "Bạn có thực sự muốn xóa bài đăng?",
