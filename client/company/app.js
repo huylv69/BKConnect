@@ -1,10 +1,10 @@
 // create the module and name it comApp
-var comApp = angular.module('comApp', ['ngRoute', 'summernote', 'ngDatepicker', 'ngTagsInput', 'ngFileUpload']);
+var comApp = angular.module('comApp', ['ngRoute', 'summernote', 'ngDatepicker', 'ngTagsInput', 'ngFileUpload', 'ngAnimate',
+    'ui.bootstrap']);
 
 // configure our routes
 comApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $locationProvider.hashPrefix('');
-
     $routeProvider
         // route for the home page
         .when('/home', {
@@ -53,7 +53,7 @@ comApp.run(function ($rootScope, $location, $mLocalStorage, AuthenService) {
     $rootScope.location = $location;
     $rootScope.companyName = "HuyDZ";
     $rootScope.currentCompany = $mLocalStorage.getItem('companyInfo');
-    $rootScope.$on('$routeChangeStart', function (event, next, current) {
+    $rootScope.$on('$routeChangeSuccess', function (event, next, current) {
         if ($rootScope.currentCompany == null) {
             if (next.templateUrl == "company/views/login.html") {
             }

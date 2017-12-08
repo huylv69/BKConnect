@@ -1,5 +1,5 @@
-angular.module('app').controller('PostController', ['$scope', '$stateParams', '$rootScope', '$mPost', '$mCompany', '$state', '$mStudent', '$mUtils', '$mLocalStorage',
-    function ($scope, $stateParams, $rootScope, $mPost, $mCompany, $state, $mStudent, $mUtils, $mLocalStorage) {
+angular.module('app').controller('PostController', ['$scope', '$stateParams', '$rootScope', '$mPost', '$mCompany', '$state', '$mStudent', '$mUtils', '$mLocalStorage', '$uibModal',
+    function ($scope, $stateParams, $rootScope, $mPost, $mCompany, $state, $mStudent, $mUtils, $mLocalStorage, $uibModal) {
         var id = $stateParams.id;
         $scope.showModal = false;
         $scope.postDetail = {};
@@ -11,11 +11,22 @@ angular.module('app').controller('PostController', ['$scope', '$stateParams', '$
                 $rootScope.currentUser = currentUser;
             }
             if (currentUser) {
+                var modalInstance = $uibModal.open({
+                    animation: true,
+                    ariaLabelledBy: 'modal-title',
+                    ariaDescribedBy: 'modal-body',
+                    templateUrl: 'myModalContent.html',
+                    size: 'lg',
+                    scope: $scope
+
+                });
                 $mStudent.getInfo(currentUser.userId, function (res) {
                     $scope.infoCV = res;
                     $scope.infoCV.birthday = new Date(res.birthday);
                     console.log(res);
-                    $scope.showModal = !$scope.showModal;
+                    modalInstance.result.then(function () {
+                    }, function () {
+                    });
                 });
             } else {
                 swal({
@@ -28,6 +39,7 @@ angular.module('app').controller('PostController', ['$scope', '$stateParams', '$
 
         let click = false;
         $scope.applyCV = function () {
+            console.log('ok')
             if (click) {
                 return;
             } else {
@@ -35,7 +47,10 @@ angular.module('app').controller('PostController', ['$scope', '$stateParams', '$
                 let idPost = id;
                 let idUser = $rootScope.currentUser.userId;
                 let details = $scope.infoCV;
+                $scope.isPaneShown = true;
                 $mUtils.applyCV(idPost, idUser, details, function (res) {
+                    $scope.isPaneShown = false;
+
                     if (res.status == 200) {
                         swal({
                             title: "Thành công!",

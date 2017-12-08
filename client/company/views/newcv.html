@@ -14,25 +14,26 @@
 <div class="page-title">
     <h2>
         <span class="fa fa-users"></span> CV Mới Nhận -
-        <big>{{listCV.lenght()}}</big>
+        <big>{{listCV.length}} CV</big>
     </h2>
 </div>
 <!-- END PAGE TITLE -->
 
 <!-- PAGE CONTENT WRAPPER -->
 <div class="page-content-wrap">
-
-    <div class="row" ng-repeat="cv in listCV">
-        <div class="col-md-3">
+    <div class="row">
+        <div class="col-md-3" ng-repeat="cv in listCV">
             <!-- CONTACT ITEM -->
             <div class="panel panel-default">
                 <div class="panel-body profile">
                     <div class="profile-image">
-                        <img ng-src="cv.details.photo" alt="Nadia Ali" />
+                        <img ngf-thumbnail=" cv.details.photo || 'views/student/images/100.png'" alt="Nadia Ali" />
                     </div>
                     <div class="profile-data">
                         <div class="profile-data-name">{{cv.details.name}}</div>
-                        <div class="profile-data-title">{{cv.position}}</div>
+                        <div class="profile-data-title" style="font-size: 14px">
+                            <strong>{{cv.position}}</strong>
+                        </div>
                     </div>
                     <div class="profile-controls">
                         <a href="#" class="profile-control-left">
@@ -60,67 +61,6 @@
             <!-- END CONTACT ITEM -->
         </div>
 
-    </div>
-    <div class="col-md-3">
-        <!-- CONTACT ITEM -->
-        <div class="panel panel-default">
-            <div class="panel-body profile">
-                <div class="profile-image">
-                    <img ng-src="assets/images/users/user3.jpg" alt="Nadia Ali" />
-                </div>
-                <div class="profile-data">
-                    <div class="profile-data-name">Nadia Ali</div>
-                    <div class="profile-data-title">Singer-Songwriter</div>
-                </div>
-                <div class="profile-controls">
-                    <a href="#" class="profile-control-left">
-                        <span class="fa fa-info"></span>
-                    </a>
-                    <a href="#" class="profile-control-right">
-                        <span class="fa fa-phone"></span>
-                    </a>
-                </div>
-            </div>
-            <div class="panel-body">
-                <div class="contact-info">
-                    <p>
-                        <small>Mobile</small>
-                        <br/>(555) 555-55-55</p>
-                    <p>
-                        <small>Email</small>
-                        <br/>nadiaali@domain.com</p>
-                    <p>
-                        <small>Address</small>
-                        <br/>123 45 Street San Francisco, CA, USA</p>
-                </div>
-            </div>
-        </div>
-        <!-- END CONTACT ITEM -->
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <ul class="pagination pagination-sm pull-right push-down-10 push-up-10">
-                <li class="disabled">
-                    <a href="#">«</a>
-                </li>
-                <li class="active">
-                    <a href="#">1</a>
-                </li>
-                <li>
-                    <a href="#">2</a>
-                </li>
-                <li>
-                    <a href="#">3</a>
-                </li>
-                <li>
-                    <a href="#">4</a>
-                </li>
-                <li>
-                    <a href="#">»</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
+    </div> 
 </div>
 <!-- END PAGE CONTENT WRAPPER -->

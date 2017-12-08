@@ -47,12 +47,6 @@ comApp.controller('PostController', ['$scope', '$rootScope', '$location', 'postS
         })
     }
     getData();
-    // $scope.$apply();
-    // $location.path("/forecast");
-    // $scope.createPost = function(){
-    //     console.log($scope.postDetail);
-    //     var win = window.open("","_blank");
-    //     win.document.body.innerHTML = $scope.postDetail.benefits;   
-    // }
+  
 
 }])

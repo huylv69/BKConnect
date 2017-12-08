@@ -64,9 +64,6 @@ angular
             ;
 
         $urlRouterProvider.otherwise('home');
-
-        // $('#test').addClass('hide');
-        // $('#test').removeClass('hide');
     }])
 
     .run(["$rootScope", '$state', '$mLocalStorage', '$location',

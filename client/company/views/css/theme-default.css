@@ -7376,3 +7376,9 @@ display:none;
   font-size: 14px;
   font-style: italic;
 }
+
+@media only screen and (min-width: 1025px) {
+  .page-sidebar {
+    min-height: 738px;
+  }
+}

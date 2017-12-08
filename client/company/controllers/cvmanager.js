@@ -1,18 +1,16 @@
-comApp.controller('CVManagerController', ['$scope', '$location', '$http', '$route', 'postService', function ($scope, $location, $http, $route, postService) {
+comApp.controller('CVManagerController', ['$scope', '$rootScope', '$route', 'postService', 'cvService', function ($scope, $rootScope, $route, postService, cvService) {
 
+    var idCompany = $rootScope.currentCompany.userId;
+    var getData = function () {
+        cvService.getListCVCompany(idCompany, function (res) {
+            $scope.results = res.results;
+            console.log(res)
+        })
+    }
+    getData();
 
+    $scope.oneAtATime = true;
+    
 
-    $scope.initDataTable = function () {
-        setTimeout(function () {
-            $("#example1").DataTable();
-        }, 10);
-    };
-
-}])
-    .directive('repeatDone', function () {
-        return function (scope, element, attrs) {
-            if (scope.$last) {
-                scope.$eval(attrs.repeatDone);
-            }
-        }
-    });;
+}]);
+    

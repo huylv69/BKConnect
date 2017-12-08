@@ -1,0 +1,118 @@
+<style>
+    .friends-grids {
+        padding: 2% 3% 4% 2%;
+        background: snow;
+        margin: .4em 0;
+    }
+
+    li.Jessica p {
+        text-align: center;
+        color: #999;
+    }
+
+    ul.dropdown-2 p {
+        text-align: center;
+        color: #999;
+    }
+
+    ul.dropdown-1 li img {
+        padding: 74px 0;
+    }
+
+    .grids-left {
+        float: left;
+    }
+
+    .grids-right h2 {
+        text-align: left;
+        color: black;
+        width: 55%;
+        margin: 0 auto;
+        padding: 0.8em 0.5em;
+        font-size: 0.7em;
+        font-weight: 400;
+    }
+
+    .grids-right h4 {
+        text-align: left;
+        color: black;
+        width: 55%;
+        margin: 0 auto;
+        padding: 0.8em 0.5em;
+        font-size: 0.5em;
+        font-weight: 400;
+    }
+
+    .grids-left img {
+        padding-top: 8px;
+    }
+
+    ul.grids-right-info li {
+        display: inline-block;
+        padding: 0px 38px 0 45px;
+        font-size: 24px;
+        color: #999;
+    }
+
+    .friend-grid {
+        background: url(../images/heart.png) no-repeat -13px -13px;
+        width: 70px;
+        height: 33px;
+        float: right;
+        display: block;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .friend-grid:hover {
+        background: url(../images/heart.png) no-repeat -13px -46px;
+        width: 70px;
+        height: 33px;
+        float: right;
+        display: block;
+    }
+</style>
+<!-- START BREADCRUMB -->
+<ul class="breadcrumb">
+    <li>
+        <a href="#">Home</a>
+    </li>
+    <li>
+        <a href="#">Quản lý CV</a>
+    </li>
+    <li class="active">Quản lý CV theo bài đăng</li>
+</ul>
+<!-- END BREADCRUMB -->
+
+<!-- PAGE TITLE -->
+<div class="page-title">
+    <h2>
+        <span class="fa fa-users"></span> Danh sách bài đăng:
+    </h2>
+</div>
+<!-- END PAGE TITLE -->
+<uib-accordion close-others="oneAtATime">
+    <div uib-accordion-group class="panel-default" is-open="status.open" ng-repeat="post in results.listpost">
+        <uib-accordion-heading>
+            Bài: {{post.title}} | Ngày đăng: {{post.created | date:'dd/MM/yyyy'}} | Hết hạn: {{post.expired | date:'dd/MM/yyyy'}}
+            <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+        </uib-accordion-heading>
+        <ul class="dropdown" ng-repeat="cv in results[post.idpost]">
+            <div class="friends-grids">
+                <div class="grids-left">
+                    <img ngf-thumbnail=" cv.details.photo || 'views/student/images/100.png'" data-target="#applyJobModal" data-toggle="modal"
+                    />
+                </div>
+                <div class="grids-right">
+                    <h3>{{cv.details.name}} - {{cv.details.position}}</h3>
+                    <h5>
+                        <i class="fa fa-fw fa-book">{{cv.details.email}}</i>
+                        <i class="fa fa-fw fa-book">{{cv.details.phone}}</i>
+                        <i class="fa fa-fw fa-book">{{cv.details.birthday}}</i>
+                        <i class="fa fa-fw fa-book">{{cv.details.address}}</i>
+                    </h5>
+                </div>
+            </div>
+        </ul>
+    </div>
+</uib-accordion>
