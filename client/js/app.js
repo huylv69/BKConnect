@@ -47,7 +47,7 @@ angular
       .state('profile', {
         title: 'Profile Student',
         url: '/student/profile',
-        templateUrl: 'views/student/profile.html',
+        templateUrl: 'views/student/profile1.html',
         controller: 'ProfileController'
       })
       .state('verified', {
@@ -62,7 +62,17 @@ angular
         templateUrl: 'views/company/index.html',
         controller: 'HomeCompanyController'
       })
-
+      .state('listCompany', {
+        title: 'Trang chủ các công ty ',
+        url: '/companies',
+        templateUrl: 'views/company/list.html',
+        controller: 'ListCompanyController'
+      })
+      .state('contact', {
+        title: 'Liên hệ',
+        url: '/contact',
+        templateUrl: 'views/home/contact.html'
+      })
     $urlRouterProvider.otherwise('home');
 
     // $('#test').addClass('hide');
