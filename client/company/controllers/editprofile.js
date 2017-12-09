@@ -29,14 +29,18 @@ comApp.controller('ProfileController', ['$rootScope', '$scope', '$location', 'co
                             var cover = "/api/containers/" + res.data.result.files['file'][0].container + "/download/" + res.data.result.files['file'][0].name;
                             //delete old 
                             var delLogo = $scope.companyDetail.logo;
-                            var indexLogo = delLogo.lastIndexOf('download/');
-                            var subLogo = delLogo.slice(indexLogo + 9);
-                            companyService.deleteLogo(subLogo);
+                            if(delLogo){
+                                var indexLogo = delLogo.lastIndexOf('download/');
+                                var subLogo = delLogo.slice(indexLogo + 9);
+                                companyService.deleteLogo(subLogo);
+                            }
 
                             var delcover = $scope.companyDetail.cover;
-                            var indexCover = delcover.lastIndexOf('download/');
-                            var subCover = delcover.slice(indexCover + 9);
-                            companyService.deleteCover(subCover);
+                            if(delcover){
+                                var indexCover = delcover.lastIndexOf('download/');
+                                var subCover = delcover.slice(indexCover + 9);
+                                companyService.deleteCover(subCover);
+                            }
                             //update
                             $scope.companyDetail.logo = logo;
                             $scope.companyDetail.cover = cover;
@@ -71,9 +75,11 @@ comApp.controller('ProfileController', ['$rootScope', '$scope', '$location', 'co
                         var logo = "/api/containers/" + res.data.result.files['file'][0].container + "/download/" + res.data.result.files['file'][0].name;
                         //delete old 
                         var delLogo = $scope.companyDetail.logo;
-                        var indexLogo = delLogo.lastIndexOf('download/');
-                        var subLogo = delLogo.slice(indexLogo + 9);
-                        companyService.deleteLogo(subLogo);
+                        if(delLogo){
+                            var indexLogo = delLogo.lastIndexOf('download/');
+                            var subLogo = delLogo.slice(indexLogo + 9);
+                            companyService.deleteLogo(subLogo);
+                        }
 
                         $scope.companyDetail.logo = logo;
                         companyService.updateById($scope.id, $scope.companyDetail, function (res) {
@@ -106,9 +112,11 @@ comApp.controller('ProfileController', ['$rootScope', '$scope', '$location', 'co
                         var cover = "/api/containers/" + res.data.result.files['file'][0].container + "/download/" + res.data.result.files['file'][0].name;
                         //delete old 
                         var delcover = $scope.companyDetail.cover;
-                        var indexCover = delcover.lastIndexOf('download/');
-                        var subCover = delcover.slice(indexCover + 9);
-                        companyService.deleteCover(subCover);
+                        if(delcover){
+                            var indexCover = delcover.lastIndexOf('download/');
+                            var subCover = delcover.slice(indexCover + 9);
+                            companyService.deleteCover(subCover);
+                        }
 
                         $scope.companyDetail.cover = cover;
                         companyService.updateById($scope.id, $scope.companyDetail, function (res) {

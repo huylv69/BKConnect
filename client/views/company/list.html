@@ -2,8 +2,8 @@
     <link href="views/company/css/list.css" rel="stylesheet" type="text/css" media="all" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
-    <link href="vendor/bootstrap/dist/css/bootstrap.css" />
-    
+    <link href="views/company/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+
 </head>
 <div id="content" class="site-content">
     <div class="title">KHÁM PHÁ CÁC CÔNG TY</div>
@@ -29,34 +29,35 @@
         </div>
     </form>
     <div class="row company_all">
-        <div class="box col-md-4">
-            <a class="company" target="_blank" href="/companies/misfit">
+        <div class="box col-md-4" style="height:400px; padding-bottom: 50px;" ng-repeat="company in listCompany">
+            <a class="company" target="_blank" href="/companies/{{company.idcompany}}">
                 <div class="company__banner">
-                    <img src="images/cover.png" width="340" height="160" alt="MISFIT Headline Photo">
+                    <img ng-src="{{company.cover}}" width="340" height="160" alt="MISFIT Headline Photo">
                 </div>
                 <div class="company__info">
                     <header class="company__header row">
-                        <div class="company__logo col-md-1">
-                            <img src="images/logo.jpg?1463630640" width="64" height="62" alt="MISFIT Vietnam Small Logo">
+                        <div class="company__logo col-md-1" style="width: 25%;padding-left: 30px;
+                        z-index: 1;">
+                            <img ng-src="{{company.logo}}" width="64" height="62" alt="MISFIT Vietnam Small Logo">
                         </div>
                         <div class="col-md-3">
-                            <div class="company__name">MISFIT</div>
+                            <div class="company__name">{{company.name}}</div>
                             <div class="company__add">
-                                <i class="fa fa-map-marker"></i> Hà Nội, Việt Nam</div>
+                                <i class="fa fa-map-marker"></i> {{company.address}}</div>
                         </div>
                     </header>
-                    <div class="company__desc">Great wearable computing products inventor and manufacturer</div>
+                    <div class="company__desc" ng-bind-html="company.about"> </div>
                 </div>
             </a>
         </div>
-        <div class="box col-md-4">
+        <!-- <div class="box col-md-4">
             <a class="company" target="_blank" href="/companies/misfit">
                 <div class="company__banner">
                     <img src="images/framgia-cover.jpg" width="340" height="160" alt="MISFIT Headline Photo">
                 </div>
                 <div class="company__info">
                     <header class="company__header row">
-                        <div class="company__logo col-md-1">
+                        <div class="company__logo col-md-1" >
                             <img src="images/framgia-logo.png?1463630640" width="64" height="62" alt="MISFIT Vietnam Small Logo">
                         </div>
                         <div class="col-md-3">
@@ -90,51 +91,7 @@
 
                 </div>
             </a>
-        </div>
-    </div>
-
-    <div class="row company_all">
-        <div class="box col-md-4">
-            <a class="company" target="_blank" href="/companies/misfit">
-                <div class="company__banner">
-                    <img src="images/cover.png" width="320" height="160" alt="MISFIT Headline Photo">
-                </div>
-                <div class="company__info">
-                    <header class="company__header row">
-                        <div class="company__logo col-md-1">
-                            <img src="images/logo.jpg?1463630640" width="64" height="62" alt="MISFIT Vietnam Small Logo">
-                        </div>
-                        <div class="col-md-3">
-                            <div class="company__name">MISFIT</div>
-                            <div class="company__add">
-                                <i class="fa fa-map-marker"></i> Hà Nội, Việt Nam</div>
-                        </div>
-                    </header>
-                    <div class="company__desc">Fashion Company</div>
-
-                </div>
-            </a>
-        </div>
-        <div class="box col-md-4">
-            <a class="company" target="_blank" href="/companies/misfit">
-                <div class="company__banner">
-                    <img src="images/framgia-cover.jpg" width="320" height="160" alt="MISFIT Headline Photo">
-                </div>
-                <div class="company__info">
-                    <header class="company__header row">
-                        <div class="company__logo col-md-1">
-                            <img src="images/framgia-logo.png?1463630640" width="64" height="62" alt="MISFIT Vietnam Small Logo">
-                        </div>
-                        <div class="col-md-3">
-                            <div class="company__name">FRAMGIA</div>
-                            <div class="company__add">
-                                <i class="fa fa-map-marker"></i> Hà Nội, Việt Nam</div>
-                        </div>
-                    </header>
-                    <div class="company__desc">One of the leading technical IT group in Asia</div>
-                </div>
-            </a>
-        </div>
+        </div> -->
     </div>
 </div>
 <!-- .entry-content -->

@@ -1681,6 +1681,10 @@ h5.widget-title {
 	font-weight: 600;
 	margin-bottom: 1em;
 	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.16);
+	background: #f15f43;
+    font-size: 1.2em;
+    color: #fff;
+    padding: 10px;
 }
 
 .widget-content span {
@@ -3052,6 +3056,48 @@ ul.tag2:last-child {
 	line-height: 32px;
 	background: #f26522;
 	color: #FFFFFF;
+}
+
+.friends-grids {
+  padding: 1% 3% 7% 2%;
+  background: snow;
+  cursor: pointer;
+  border-bottom: solid 1px grey;
+  height: 80px;
+}
+.grids-left {
+  float: left;
+}
+.grids-right h2 {
+text-align: left;
+  color: black;
+  width: 55%;
+  margin: 0 auto;
+  padding: 0.8em 0.5em;
+  font-size: 1em;
+  font-weight: 600;
+}
+.grids-right h4 {
+text-align: left;
+  color: black;
+  width: 55%;
+  margin: 0 auto;
+  padding: 0.8em 0.5em;
+  font-size: 0.5em;
+  font-weight: 400;
+}
+.grids-left img {
+  padding-top: 3px;
+  border-radius: 50px;
+}
+ul.grids-right-info li {
+  display: inline-block;
+  padding: 0px 38px 0 45px;
+  font-size: 24px;
+  color: #999;
+}
+.friends-grids:hover h2{
+  color: orange;
 }
 
 .footer_bottom1 label {

@@ -3,6 +3,7 @@ angular
   .module('service.auth', [])
   .factory('$mAuth', ['$http', '$rootScope', function ($http, $rootScope) {
     var service = {};
+    var user;
     service.signin = function (username, password, callback) {
       $http.post(BASE_URL + 'students/login', { email: username, password: password })
         .then(function (response) {
@@ -63,32 +64,13 @@ angular
         });
     }
 
-    //admin 
-    service.loginAdmin = function (username, password, callback) {
-      $http.post(BASE_URL + 'admins/login', { username: username, password: password })
-        .then(function (response) {
-          callback(response);
-        }, function (response) {
-          callback(response);
-        });
+    //authen 
+    service.setUser = function (user) {
+      user = user;
     }
 
-    // company login
-    service.loginCompany = function (email, password, callback) {
-      $http.post(BASE_URL + 'companies/login', { email: email, password: password })
-        .then(function (response) {
-          callback(response);
-        }, function (response) {
-          callback(response);
-        });
-    }
-    service.registerCompany = function (email, password, name, introduce, callback) {
-      $http.post(BASE_URL + 'companies', { email: email, password: password, name: name, about: introduce })
-        .then(function (response) {
-          callback(response);
-        }, function (response) {
-          callback(response);
-        });
+    service.isAuthen = function () {
+      return (user) ? user : false;
     }
     return service;
   }]);

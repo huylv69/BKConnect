@@ -7,14 +7,14 @@ angular.module('app').controller('ProfileController', ['$scope', '$state', '$roo
         };
         var loadData = function () {
             currentUser = $rootScope.currentUser;
-            if (currentUser == null || currentUser == "") {
-                currentUser = $mLocalStorage.getItem("userInfo");
-                $rootScope.currentUser = currentUser;
+            if (currentUser == null) {
+                $state.go('home')
+            } else {
+                $mStudent.getInfo(currentUser.userId, function (res) {
+                    $scope.user = res;
+                    $scope.user.birthday = new Date(res.birthday);
+                });
             }
-            $mStudent.getInfo(currentUser.userId, function (res) {
-                $scope.user = res;
-                $scope.user.birthday = new Date(res.birthday);
-            });
 
         };
 

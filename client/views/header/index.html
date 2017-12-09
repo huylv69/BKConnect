@@ -1,68 +1,83 @@
-
 <head>
-<title>Trang Chủ</title>
-<link href="views/header/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<title>Trang Chủ</title>
+	<link href="views/header/css/style.css" rel="stylesheet" type="text/css" media="all" />
 </head>
-<header>
-<nav> 
-	<div class="header">
+<header ng-controller="HeaderController">
+	<nav>
+		<div class="header">
 			<div class="header-bottom">
 				<div class="container">
 					<div class="logo">
-						<a href="index.html"><img src="views/header/images/logo1.png" class="img-responsive" alt=""></a>
+						<a href="index.html">
+							<img src="views/header/images/logo1.png" class="img-responsive" alt="">
+						</a>
 					</div>
 					<div class="head-nav">
-							<span class="menu"> </span>
-							<ul class="cl-effect-3">
-								<li class="active"><a href="index.html">Trang Chủ</a></li>
-								<li><a href="">Các công ty</a></li>							
-							</ul>
-								<!-- script-for-nav -->
-							<script>
-								$( "span.menu" ).click(function() {
-								  $( ".head-nav ul" ).slideToggle(300, function() {
+						<span class="menu" > </span>
+						<ul class="cl-effect-3">
+							<li class="active">
+								<a ui-sref="home">Trang Chủ</a>
+							</li>
+							<li>
+								<a ui-sref="listCompany">Công Ty</a>
+							</li>
+							<li>
+								<a ui-sref="search">Tìm kiếm</a>
+							</li>
+							<li>
+								<a ui-sref="contact">Liên Hệ</a>
+							</li>
+						</ul>
+						<!-- script-for-nav -->
+						<script>
+							$("span.menu").click(function () {
+								$(".head-nav ul").slideToggle(300, function () {
 									// Animation complete.
-								  });
 								});
-							</script>
-						<!-- script-for-nav --> 
+							});
+						</script>
+						<!-- script-for-nav -->
 					</div>
 					<div class="header-right1">
-						<div class="profile_details">		
-							<ul>
-								<li id = "drop" class="dropdown profile_details_drop">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-										<div class="profile_img">	
+						<div class="profile_details"class="dropdown profile_details_drop" uib-dropdown>
+			
+									<a  class="dropdown-toggle" uib-dropdown-toggle data-toggle="dropdown" aria-expanded="true">
+										<div class="profile_img">
 											<!-- <span class="prfil-img"><i class="fa fa-user" aria-hidden="true"></i></span> -->
-											<img class ="avatar" src="views/header/images/avt.jpg" alt="Mountain View" width="50" height="50">
-											<label>Judy</label> 	
-										</div>	
+											<img class="avatar" src="views/header/images/avt.jpg" alt="Mountain View" width="50" height="50">
+											<label>Judy</label>
+										</div>
 									</a>
-									<ul class="dropdown-menu drp-mnu">
-										<li> <a href="#"><i class="fa fa-cog"></i> Edit Profile</a> </li> 
-										<li> <a href="#"><i class="fa fa-user"></i> My CV</a> </li> 
-										<li> <a href="#"><i class="fa fa-sign-out"></i> Logout</a> </li>
+									<ul class="dropdown-menu drp-mnu" uib-dropdown-menu>
+										<li>
+											<a href="student/profile">
+												<i class="fa fa-cog"></i> Edit Profile</a>
+										</li>
+										
+										<li>
+											<a >
+												<i class="fa fa-sign-out" ng-click="logout()"></i> Logout</a>
+										</li>
 									</ul>
-								</li>
-							</ul>
+								
 						</div>
 					</div>
 				</div>
 			</div>
-	</div>
-</nav>
+		</div>
+	</nav>
 </header>
 <!-- header -->
 <script type="text/javascript">	
-	$("#drop").click(function(){
-		    $("#drop").toggleClass("open");
-		});
-	$(window).scroll(function(){
-	    if ($(window).scrollTop() >= 100) {
-	       $('nav').addClass('fixed-header');
-	    }
-	    else {
-	       $('nav').removeClass('fixed-header');
-	    }
+	$("#drop").click(function () {
+		$("#drop").toggleClass("open");
+	});
+	$(window).scroll(function () {
+		if ($(window).scrollTop() >= 100) {
+			$('nav').addClass('fixed-header');
+		}
+		else {
+			$('nav').removeClass('fixed-header');
+		}
 	});
 </script>

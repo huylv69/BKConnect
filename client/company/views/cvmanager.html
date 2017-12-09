@@ -1,76 +1,39 @@
 <style>
     .friends-grids {
-        padding: 2% 3% 4% 2%;
+        padding: 5px;
+        box-shadow: 2px 4px 3px #888888;
         background: snow;
         margin: .4em 0;
+        max-width: 900px;
     }
-
-    li.Jessica p {
-        text-align: center;
-        color: #999;
+    .friends-grids:hover{
+	background: #ffffff;
+	border-color: transparent;
+	box-shadow: 0 0 5px 1px #bcbcbc;
+}
+    .panel-heading h4{
+        padding-left: 35px;
     }
-
-    ul.dropdown-2 p {
-        text-align: center;
-        color: #999;
-    }
-
-    ul.dropdown-1 li img {
-        padding: 74px 0;
-    }
-
     .grids-left {
         float: left;
+        padding-left: 40px;
     }
 
-    .grids-right h2 {
-        text-align: left;
-        color: black;
-        width: 55%;
-        margin: 0 auto;
-        padding: 0.8em 0.5em;
-        font-size: 0.7em;
-        font-weight: 400;
+    .grids-left img{
+        width:80px; height: 80px; border-radius: 90px;
     }
 
-    .grids-right h4 {
-        text-align: left;
-        color: black;
-        width: 55%;
-        margin: 0 auto;
-        padding: 0.8em 0.5em;
-        font-size: 0.5em;
-        font-weight: 400;
+    .grids-right {
+        padding-left: 150px;
     }
 
+    .grids-right h3 {
+        padding-bottom: 5px; 
+    }
     .grids-left img {
         padding-top: 8px;
     }
 
-    ul.grids-right-info li {
-        display: inline-block;
-        padding: 0px 38px 0 45px;
-        font-size: 24px;
-        color: #999;
-    }
-
-    .friend-grid {
-        background: url(../images/heart.png) no-repeat -13px -13px;
-        width: 70px;
-        height: 33px;
-        float: right;
-        display: block;
-        font-size: 16px;
-        cursor: pointer;
-    }
-
-    .friend-grid:hover {
-        background: url(../images/heart.png) no-repeat -13px -46px;
-        width: 70px;
-        height: 33px;
-        float: right;
-        display: block;
-    }
 </style>
 <!-- START BREADCRUMB -->
 <ul class="breadcrumb">
@@ -95,21 +58,25 @@
     <div uib-accordion-group class="panel-default" is-open="status.open" ng-repeat="post in results.listpost">
         <uib-accordion-heading>
             Bài: {{post.title}} | Ngày đăng: {{post.created | date:'dd/MM/yyyy'}} | Hết hạn: {{post.expired | date:'dd/MM/yyyy'}}
-            <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+            <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}" style="padding-left: 10px;"></i>
         </uib-accordion-heading>
         <ul class="dropdown" ng-repeat="cv in results[post.idpost]">
             <div class="friends-grids">
                 <div class="grids-left">
-                    <img ngf-thumbnail=" cv.details.photo || 'views/student/images/100.png'" data-target="#applyJobModal" data-toggle="modal"
-                    />
+                    <img ngf-thumbnail=" cv.details.photo || 'views/student/images/100.png'" data-target="#applyJobModal" data-toggle="modal" />
                 </div>
                 <div class="grids-right">
                     <h3>{{cv.details.name}} - {{cv.details.position}}</h3>
                     <h5>
-                        <i class="fa fa-fw fa-book">{{cv.details.email}}</i>
-                        <i class="fa fa-fw fa-book">{{cv.details.phone}}</i>
-                        <i class="fa fa-fw fa-book">{{cv.details.birthday}}</i>
-                        <i class="fa fa-fw fa-book">{{cv.details.address}}</i>
+                        <div class="row" style="height: 40px;">
+                            <div class="col-md-4"><i class="fa fa-fw fa-book "></i>{{cv.details.email}}</div>
+                            <div class="col-md-4"><i class="fa fa-fw fa-book "></i> {{cv.details.phone}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4"><i class="fa fa-fw fa-book "></i> {{cv.details.birthday}}</div>
+                            <div class="col-md-4"><i class="fa fa-fw fa-book "></i> {{cv.details.address}}</div>
+                        </div>
+                       
                     </h5>
                 </div>
             </div>

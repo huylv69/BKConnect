@@ -47,8 +47,9 @@ angular
       .state('profile', {
         title: 'Profile Student',
         url: '/student/profile',
-        templateUrl: 'views/student/profile1.html',
-        controller: 'ProfileController'
+        templateUrl: 'views/student/profile.html',
+        controller: 'ProfileController',
+        requireLogin: true
       })
       .state('verified', {
         title: 'Kích hoạt thành công',
@@ -73,15 +74,20 @@ angular
         url: '/contact',
         templateUrl: 'views/home/contact.html'
       })
+      .state('search', {
+        title: 'Tìm kiếm công việ',
+        url: '/search',
+        templateUrl: 'views/home/search.html'
+      })
     $urlRouterProvider.otherwise('home');
 
     // $('#test').addClass('hide');
     // $('#test').removeClass('hide');
   }])
-  .run(["$rootScope", '$state', '$mAuth', '$mLocalStorage',
-    function ($rootScope, $state, $mAuth, $mLocalStorage) {
+  .run(["$rootScope", '$state', '$mAuth', '$mLocalStorage', '$location',
+    function ($rootScope, $state, $mAuth, $mLocalStorage, $location) {
       //get currentUser
       $rootScope.currentUser = $mLocalStorage.getItem('userInfo');
       $rootScope.$state = $state;
-
+      
     }]);

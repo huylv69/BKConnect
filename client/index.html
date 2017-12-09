@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BKConnect </title>
   <!-- Bootstrap -->
-  <link href="./vendor/bootstrap/dist/css/bootstrap.css" />
+  <link href="vendor/bootstrap/dist/css/bootstrap.css" />
 
   <!-- <link href="views/styles.css" rel="stylesheet" /> -->
   <!-- <link href="./vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" /> -->
@@ -19,7 +19,7 @@
   <header ng-include="'views/header/index.html'"></header>
   <base href="/">
   <div style="height: 80px"></div>
-  <div ui-view class="view"></div>
+  <div ui-view ></div>
 
   <!-- Library -->
   <script src="./vendor/angular/angular.js"></script>
@@ -50,14 +50,12 @@
   <script src="./js/services/utils.js"></script>
   <!-- Controller -->
   <script src="./js/controllers/login.js"></script>
+  <script src="./js/controllers/header.js"></script>
   <script src="./js/controllers/student/profile.js"></script>
-  <script src="./js/controllers/admin/listCompany.js"></script>
-  <script src="./js/controllers/admin/reqCompany.js"></script>
   <script src="./js/controllers/company/home.js"></script>
   <script src="./js/controllers/home/post.js"></script>
   <script src="./js/controllers/home/home.js"></script>
   <script src="./js/controllers/company/list.js"></script>
-  <script src="views/modal/cv.js"></script>
 </body>
 
 </html>
