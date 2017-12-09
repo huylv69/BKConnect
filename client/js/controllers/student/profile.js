@@ -15,7 +15,6 @@ angular.module('app').controller('ProfileController', ['$scope', '$state', '$roo
                     $scope.user.birthday = new Date(res.birthday);
                 });
             }
-
         };
 
         let click = false;
@@ -32,9 +31,11 @@ angular.module('app').controller('ProfileController', ['$scope', '$state', '$roo
                     }).then(function (res) { //upload function returns a promise
                         var photo = "/api/containers/" + res.data.result.files['file'][0].container + "/download/" + res.data.result.files['file'][0].name;
                         var del = $scope.user.photo;
-                        var index = del.lastIndexOf('download/');
-                        var subDes = del.slice(index + 9);
-                        $mStudent.deletePhoto(subDes);
+                        if(del){
+                            var index = del.lastIndexOf('download/');
+                            var subDes = del.slice(index + 9);
+                            $mStudent.deletePhoto(subDes);
+                        }
                         $scope.user.photo = photo;
                         $mStudent.updateInfo($scope.user, function (res) {
                             if (res.status == 200) {

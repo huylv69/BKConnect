@@ -6,21 +6,26 @@
         margin: .4em 0;
         max-width: 900px;
     }
-    .friends-grids:hover{
-	background: #ffffff;
-	border-color: transparent;
-	box-shadow: 0 0 5px 1px #bcbcbc;
-}
-    .panel-heading h4{
+
+    .friends-grids:hover {
+        background: #ffffff;
+        border-color: transparent;
+        box-shadow: 0 0 5px 1px #bcbcbc;
+    }
+
+    .panel-heading h4 {
         padding-left: 35px;
     }
+
     .grids-left {
         float: left;
         padding-left: 40px;
     }
 
-    .grids-left img{
-        width:80px; height: 80px; border-radius: 90px;
+    .grids-left img {
+        width: 80px;
+        height: 80px;
+        border-radius: 90px;
     }
 
     .grids-right {
@@ -28,13 +33,17 @@
     }
 
     .grids-right h3 {
-        padding-bottom: 5px; 
+        padding-bottom: 5px;
     }
+
     .grids-left img {
         padding-top: 8px;
     }
-
 </style>
+<head>
+        <link href="company/views/css/cv.css" rel="stylesheet" type="text/css" media="all" />
+        
+</head>
 <!-- START BREADCRUMB -->
 <ul class="breadcrumb">
     <li>
@@ -50,7 +59,7 @@
 <!-- PAGE TITLE -->
 <div class="page-title">
     <h2>
-        <span class="fa fa-users"></span> Danh sách bài đăng:
+        <span class="fa fa-users"></span> Danh sách bài đăng: Hiện có {{results.listpost.lenght}} bài đăng
     </h2>
 </div>
 <!-- END PAGE TITLE -->
@@ -58,28 +67,175 @@
     <div uib-accordion-group class="panel-default" is-open="status.open" ng-repeat="post in results.listpost">
         <uib-accordion-heading>
             Bài: {{post.title}} | Ngày đăng: {{post.created | date:'dd/MM/yyyy'}} | Hết hạn: {{post.expired | date:'dd/MM/yyyy'}}
-            <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}" style="padding-left: 10px;"></i>
+            <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"
+                style="padding-left: 10px;"></i>
         </uib-accordion-heading>
         <ul class="dropdown" ng-repeat="cv in results[post.idpost]">
-            <div class="friends-grids">
+            <div class="friends-grids" ng-click="showCV(cv)">
                 <div class="grids-left">
-                    <img ngf-thumbnail=" cv.details.photo || 'views/student/images/100.png'" data-target="#applyJobModal" data-toggle="modal" />
+                    <img ngf-thumbnail=" cv.details.photo || 'views/student/images/100.png'" data-target="#applyJobModal" data-toggle="modal"
+                    />
                 </div>
                 <div class="grids-right">
                     <h3>{{cv.details.name}} - {{cv.details.position}}</h3>
                     <h5>
                         <div class="row" style="height: 40px;">
-                            <div class="col-md-4"><i class="fa fa-fw fa-book "></i>{{cv.details.email}}</div>
-                            <div class="col-md-4"><i class="fa fa-fw fa-book "></i> {{cv.details.phone}}</div>
+                            <div class="col-md-4">
+                                <i class="fa fa-fw fa-book "></i>Email: {{cv.details.email}}</div>
+                            <div class="col-md-4">
+                                <i class="fa fa-fw fa-book "></i>Điện thoại: {{cv.details.phone}}</div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4"><i class="fa fa-fw fa-book "></i> {{cv.details.birthday}}</div>
-                            <div class="col-md-4"><i class="fa fa-fw fa-book "></i> {{cv.details.address}}</div>
+                            <div class="col-md-4">
+                                <i class="fa fa-fw fa-book "></i>Ngày nộp: {{cv.apply | date:'dd/MM/yyyy'}}</div>
+                            <div class="col-md-4">
+                                <i class="fa fa-fw fa-book "></i>Địa chỉ: {{cv.details.address}}</div>
                         </div>
-                       
+
                     </h5>
                 </div>
             </div>
         </ul>
     </div>
 </uib-accordion>
+
+<script type="text/ng-template" id="myModalContent.html">    
+                <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <!-- <span aria-hidden="true">×</span> -->
+                        </button>
+                        <h3 class="modal-title" id="modal-title">Application</h3>
+                </div>
+                            <div class="modal-body" id="modal-body">
+                        <div id="primary" class="content-area grid-parent mobile-grid-100 grid-100 tablet-grid-100">
+                            <main id="main" class="site-main">
+                                <div class="inside-article row">
+                                    <div class="page-header-image-single grid-container information col-md-2">
+                                        <img width="256" height="256" ngf-thumbnail="chosenPhoto || infoCV.photo || 'views/student/images/100.png'" class="attachment-full size-full wp-post-image" alt="" itemprop="image"
+                                            srcset="" sizes="(max-width: 100px) 100vw, 100px">
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="general" itemscope="" itemtype="http://schema.org/JobPosting">
+                                            <h3 class="name" itemprop="headline">{{infoCV.name}}</h3>
+                                            <ul class="gen_info">
+                                                <li class="classes">
+                                                    <strong>Ví trí ứng tuyển:</strong> {{infoCV.position}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="personal information">
+                                    <div class="title">
+                                        <i class="fa fa-fw fa-list"></i>Thông tin cá nhân</div>
+                                    <div id="section-contact-edit" class="content form-wrapper form-view relative box-md">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="address">Email</label>
+                                                    <div class="view-field" style="display: block;">
+                                                        <p class="form-control-static view-control">{{infoCV.email}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="cell-number">
+                                                        Điện Thoại</label>
+                                                    <div class="view-field clearfix" style="display: block;">
+                                                        <p class="form-control-static view-control pull-left placeholder"> {{infoCV.phone}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="date-of-birth">
+                                                        Ngày sinh</label>
+                                                    <div class="view-field" style="display: block;">
+                                                        <p class="form-control-static view-control">{{infoCV.birthday | date:'dd/MM/yyyy'}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Địa chỉ</label>
+                                                    <div class="view-field" style="display: block;">
+                                                        <p class="form-control-static view-control"> {{infoCV.address}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Giới tính</label>
+                                                    <div class="view-field" style="display: block;">
+                                                        <p class="form-control-static view-control" data-type="radio" ng-value="true" ng-model="infoCV.sex">Nam</p>
+                                                        <p class="form-control-static view-control" data-type="radio" ng-value="false" ng-model="infoCV.sex">Nữ</p>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="nationality">
+                                                        Quốc Tịch</label>
+                                                    <div class="view-field" style="display: block;">
+                                                        <p class="form-control-static view-control" data-type="select">Việt Nam</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill information">
+                                    <div class="title">
+                                        <i class="fa fa-fw fa-flash"></i>Kỹ năng</div>
+                                    <div class="content">
+                                        {{infoCV.skill}}
+                                    </div>
+
+                                </div>
+                                <div class="experience information">
+                                    <div class="title">
+                                        <i class="fa fa-fw fa-laptop"></i>Kinh nghiệm</div>
+                                    <div class="content">
+                                        {{nfoCV.experience}}
+                                    </div>
+                                </div>
+                                <div class="language information">
+                                    <div class="title">
+                                        <i class="fa fa-fw fa-star"></i>Học vấn</div>
+                                    <div class="content">
+                                        {{infoCV.education}}
+                                    </div>
+                                </div>
+                                <div class="goal information">
+                                    <div class="title">
+                                        <i class="fa fa-fw fa-fighter-jet"></i>Mục tiêu</div>
+                                    <div class="content">
+                                        {{infoCV.objective}}
+                                    </div>
+                                </div>
+                                <div class="additonal information">
+                                    <div class="title">
+                                        <i class="fa fa-fw fa-adjust"></i>Thông tin bổ sung</div>
+                                    <div class="content">
+                                      {{infoCV.other}}
+                                    </div>
+
+                                </div>
+
+                            </main>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</script>

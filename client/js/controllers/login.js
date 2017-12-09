@@ -67,12 +67,12 @@ angular.module('app').controller('LoginController', ['$scope', '$state', '$rootS
                             }
                         }).then(
                         function () {
-                            $state.go('profile', { "id": 1 });
+                            $state.go('home');
                         },
                         // handling the promise rejection
                         function (dismiss) {
                             if (dismiss === 'timer') {
-                                $state.go('profile', { "id": 1 });
+                                $state.go('home');
                             }
                         }
                         );

@@ -10,35 +10,35 @@
     <form id="search_companies_form" class="search-form" action="/companies" accept-charset="UTF-8" method="get">
         <input name="utf8" type="hidden" value="✓">
         <div class="row">
-            <div class="search_section_wrapper col-md-10 col-xs-10 col-ms-10">
+            <div class="search_section_wrapper col-md-8 col-md-offset-2">
                 <div class="search_text_wrapper">
                     <div class="ion-ios-search"></div>
                     <div class="search_field_wrapper">
                         <input type="text" name="query" id="search_companies_text" class="search_text hide" style="display: none;">
                         <ul class="tagit ui-widget ui-widget-content ui-corner-all">
                             <i class="fa fa-fw fa-search"></i>
-                            <input type="text" class="ui-widget-content ui-autocomplete-input" placeholder="Enter company name" autocomplete="off">
+                            <input type="text" class="ui-widget-content ui-autocomplete-input" ng-model="searchString" placeholder="Enter company name" autocomplete="off">
                             <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="search_button_wrapper col-md-2 col-xs-2 col-ms-2">
+            <!-- <div class="search_button_wrapper col-md-2 col-xs-2 col-ms-2">
                 <input type="submit" name="commit" value="Search" class="search_button button-red left">
-            </div>
+            </div> -->
         </div>
     </form>
     <div class="row company_all">
-        <div class="box col-md-4" style="height:400px; padding-bottom: 50px; margin-top: 30px; " ng-repeat="company in listCompany">
+        <div class="box col-md-4" style="height:400px; padding-bottom: 50px; margin-top: 30px; " ng-repeat="company in listCompany | searchFor:searchString">
             <a class="company" target="_blank" href="/companies/{{company.idcompany}}">
                 <div class="company__banner">
-                    <img ngf-thumbnail="company.cover || 'views/student/images/100.png'" width="340" height="160" alt="Cover of Company">
+                    <img ngf-thumbnail="company.cover || 'views/home/images/cover-default.jpg'" width="340" height="160" alt="Cover of Company">
                 </div>
                 <div class="company__info">
                     <header class="company__header row">
                         <div class="company__logo col-md-1" style="width: 25%;padding-left: 30px;
                         z-index: 1;">
-                            <img ngf-thumbnail="company.cover || 'views/student/images/100.png'" width="64" height="62" alt="Logo of Company ">
+                            <img ngf-thumbnail="company.logo || 'views/home/images/logo1.png'" width="70" height="70" alt="Logo of Company ">
                         </div>
                         <div class="col-md-3">
                             <div class="company__name">{{company.name}}</div>

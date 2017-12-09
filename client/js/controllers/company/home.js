@@ -1,5 +1,5 @@
-angular.module('app').controller('HomeCompanyController', ['$scope', '$stateParams', '$rootScope', '$mCompany', '$mLocalStorage', '$mUtils',
-    function ($scope, $stateParams, $rootScope, $mCompany, $mLocalStorage, $mUtils) {
+angular.module('app').controller('HomeCompanyController', ['$scope', '$stateParams', '$rootScope', '$mCompany', '$mLocalStorage', '$mUtils', '$state',
+    function ($scope, $stateParams, $rootScope, $mCompany, $mLocalStorage, $mUtils, $state) {
         var id = $stateParams.id;
         var getData = function () {
             $mCompany.getInfo(id, function (res) {
@@ -69,5 +69,7 @@ angular.module('app').controller('HomeCompanyController', ['$scope', '$statePara
                 })
             }
         }
+
         getData();
+
     }]);

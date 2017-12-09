@@ -14,6 +14,16 @@ angular
             return BASE_URL + relativeUrl + "&access_token=" + accessToken;
         }
 
+        service.checkId = function (id, callback) {
+            var url = BASE_URL + "companies/" + id;
+            $http.head(url)
+                .then(function (res) {
+                    callback(res);
+                }, function (err) {
+                    callback(err);
+                });
+        }
+        
         service.getInfo = function (userId, callback) {
             var url = BASE_URL + "companies/" + userId;
             $http.get(url)
@@ -55,32 +65,7 @@ angular
                 })
         }
 
-        service.blockCompany = function (emailCompany, callback) {
-            var url = BASE_URL + "companies/blockCompany";
-            $http.get(url, { params: { "email": emailCompany } })
-                .then(function (res) {
-                    callback(res);
-                }, function (err) {
-                    callback(err);
-                })
-        }
-        service.activateCompany = function (emailCompany, callback) {
-            var url = BASE_URL + "companies/activateCompany";
-            $http.get(url, { params: { "email": emailCompany } })
-                .then(function (res) {
-                    callback(res);
-                }, function (err) {
-                    callback(err);
-                })
-        }
-        service.confirmbyadmin = function (emailCompany, callback) {
-            var url = BASE_URL + "companies/confirmbyadmin";
-            $http.get(url, { params: { "email": emailCompany } })
-                .then(function (res) {
-                    callback(res);
-                }, function (err) {
-                    callback(err);
-                })
-        }
+       
+        
         return service;
     }]);

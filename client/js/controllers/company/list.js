@@ -11,4 +11,21 @@ function ($scope, $stateParams, $rootScope, $mCompany, $mLocalStorage, $mUtils) 
         });
     };
     getData();
+    
 }]);
+angular.module('app').filter('searchFor', function(){
+    return function(arr, searchString){
+        if(!searchString){
+            return arr;
+        }
+        var result = [];
+        searchString = searchString.toLowerCase();
+        angular.forEach(arr, function(company){
+            console.log(company)
+            if(company.name.toLowerCase().indexOf(searchString) !== -1){
+            result.push(company);
+        }
+        });
+        return result;
+    };
+});

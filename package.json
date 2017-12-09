@@ -1,6 +1,10 @@
 {
   "name": "bkconnect",
   "version": "1.0.0",
+  "author": {
+    "name": "HuyLV",
+    "email": "levanhuy96@gmail.com"
+  },
   "main": "server/server.js",
   "engines": {
     "node": ">=4"
@@ -32,6 +36,6 @@
     "type": "",
     "url": ""
   },
-  "license": "UNLICENSED",
+  "license": "MIT",
   "description": "bkconnect"
 }
