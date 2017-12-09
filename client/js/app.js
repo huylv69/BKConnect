@@ -79,6 +79,10 @@ angular
         url: '/search',
         templateUrl: 'views/home/search.html'
       })
+      .state('external', {
+        url: '/company',
+        external: true
+   })
     $urlRouterProvider.otherwise('home');
 
     // $('#test').addClass('hide');

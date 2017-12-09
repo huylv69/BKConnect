@@ -19,7 +19,7 @@ angular
             $http.get(url)
                 .then(function (res) {
                     callback(res.data);
-                },function(err){
+                }, function (err) {
                     callback(err.data);
                 });
         }
@@ -33,6 +33,7 @@ angular
                     callback(err.data);
                 })
         }
+
         service.getListReq = function (callback) {
             var url = BASE_URL + "companies/getListReq";
             $http.get(url)
@@ -42,6 +43,8 @@ angular
                     callback(err.data);
                 })
         }
+
+        //Get List Activated 
         service.getListActivated = function (callback) {
             var url = BASE_URL + "companies/getListActivated";
             $http.get(url)

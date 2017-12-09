@@ -29,16 +29,16 @@
         </div>
     </form>
     <div class="row company_all">
-        <div class="box col-md-4" style="height:400px; padding-bottom: 50px;" ng-repeat="company in listCompany">
+        <div class="box col-md-4" style="height:400px; padding-bottom: 50px; margin-top: 30px; " ng-repeat="company in listCompany">
             <a class="company" target="_blank" href="/companies/{{company.idcompany}}">
                 <div class="company__banner">
-                    <img ng-src="{{company.cover}}" width="340" height="160" alt="MISFIT Headline Photo">
+                    <img ngf-thumbnail="company.cover || 'views/student/images/100.png'" width="340" height="160" alt="Cover of Company">
                 </div>
                 <div class="company__info">
                     <header class="company__header row">
                         <div class="company__logo col-md-1" style="width: 25%;padding-left: 30px;
                         z-index: 1;">
-                            <img ng-src="{{company.logo}}" width="64" height="62" alt="MISFIT Vietnam Small Logo">
+                            <img ngf-thumbnail="company.cover || 'views/student/images/100.png'" width="64" height="62" alt="Logo of Company ">
                         </div>
                         <div class="col-md-3">
                             <div class="company__name">{{company.name}}</div>
