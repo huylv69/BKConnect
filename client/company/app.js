@@ -70,3 +70,14 @@ comApp.run(function ($rootScope, $location, $mLocalStorage, AuthenService) {
 
     });
 });
+
+comApp.controller('LogoutController', ['$scope', '$rootScope', '$mLocalStorage', '$location',
+    function ($scope, $rootScope, $mLocalStorage, $location) {
+        $scope.logout = function () {
+            $mLocalStorage.deleteItem('companyInfo');
+            $rootScope.currentCompany = null;
+            $scope.user = $rootScope.currentCompany;
+            $rootScope.$broadcast('loadHeader');
+            $location.path("/login");
+        }
+    }])

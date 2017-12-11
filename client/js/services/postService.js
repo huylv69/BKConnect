@@ -12,7 +12,7 @@ angular
           callback(err.data);
         });
     }
-    service.getAllPost = function(callback){
+    service.getAllPost = function (callback) {
       var url = BASE_URL + "posts/getAllPost";
       $http.get(url)
         .then(function (res) {
@@ -21,8 +21,18 @@ angular
           callback(err.data);
         });
     }
-    service.getCareer = function(idCareer,callback){
-      var url = BASE_URL + "careers/"+idCareer;
+    service.getCareer = function (idCareer, callback) {
+      var url = BASE_URL + "careers/" + idCareer;
+      $http.get(url)
+        .then(function (res) {
+          callback(res.data);
+        }, function (err) {
+          callback(err.data);
+        });
+    }
+
+    service.getSkillPost = function (id, callback) {
+      var url = BASE_URL + "posts/" + id + "/skill";
       $http.get(url)
         .then(function (res) {
           callback(res.data);

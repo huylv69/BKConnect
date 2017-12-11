@@ -38,7 +38,7 @@
 						</script>
 						<!-- script-for-nav -->
 					</div>
-					<div class="header-right1" ng-if="currentUser">
+					<div class="header-right1" ng-if="user">
 						<div class="profile_details" class="dropdown profile_details_drop" uib-dropdown>
 
 							<a class="dropdown-toggle" uib-dropdown-toggle data-toggle="dropdown" aria-expanded="true">
@@ -55,19 +55,19 @@
 								</li>
 
 								<li>
-									<a>
-										<i class="fa fa-sign-out" ng-click="logout()"></i> Logout</a>
+									<a ng-click="logout()">
+										<i class="fa fa-sign-out"></i> Logout</a>
 								</li>
 							</ul>
 
 						</div>
 					</div>
-					<div class="header-right2" ng-if="!currentUser">
+					<div class="header-right2" ng-if="!user">
 						<li>
 							<a href="/login">Sinh viên</a>
 						</li>
 						<li>
-							<a onclick="window.location.replace('/company')" >Công ty</a>
+							<a onclick="window.location.replace('/company')">Công ty</a>
 						</li>
 					</div>
 				</div>

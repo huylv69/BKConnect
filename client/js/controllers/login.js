@@ -68,11 +68,14 @@ angular.module('app').controller('LoginController', ['$scope', '$state', '$rootS
                         }).then(
                         function () {
                             $state.go('home');
+                            $rootScope.$broadcast('loadHeader');                            
                         },
                         // handling the promise rejection
                         function (dismiss) {
                             if (dismiss === 'timer') {
                                 $state.go('home');
+                                $rootScope.$broadcast('loadHeader');                            
+                                
                             }
                         }
                         );

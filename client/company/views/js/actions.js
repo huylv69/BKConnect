@@ -108,13 +108,13 @@ $(document).ready(function(){
         if(box.length > 0){
             box.toggleClass("open");
             
-            var sound = box.data("sound");
+            // var sound = box.data("sound");
             
-            if(sound === 'alert')
-                playAudio('alert');
+            // if(sound === 'alert')
+            //     playAudio('alert');
             
-            if(sound === 'fail')
-                playAudio('fail');
+            // if(sound === 'fail')
+            //     playAudio('fail');
             
         }        
         return false;
@@ -546,13 +546,13 @@ function onresize(timeout){
 /* EOF PAGE ON RESIZE WITH TIMEOUT */
 
 /* PLAY SOUND FUNCTION */
-function playAudio(file){
-    if(file === 'alert')
-        document.getElementById('audio-alert').play();
+// function playAudio(file){
+//     if(file === 'alert')
+//         document.getElementById('audio-alert').play();
 
-    if(file === 'fail')
-        document.getElementById('audio-fail').play();    
-}
+//     if(file === 'fail')
+//         document.getElementById('audio-fail').play();    
+// }
 /* END PLAY SOUND FUNCTION */
 
 /* NEW OBJECT(GET SIZE OF ARRAY) */

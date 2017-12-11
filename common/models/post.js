@@ -33,7 +33,6 @@ module.exports = function (Post) {
                 expired: { gt: Date.now() }
             }
         }, function (err, list) {
-            console.log(Date.now())
             var itemsProcessed = 0;
             if (list == 0) {
                 fn(null, list);
@@ -113,4 +112,48 @@ module.exports = function (Post) {
         })
     });
 
+    Post.getPostFollow = function (idStudent, fn) {
+        var follow = app.models.follow;
+        console.log('ok')
+        var results = {};
+        var listPost = [];
+        var itemsProcessed = 0;
+        follow.find({
+            where: {
+                idstudent: idStudent
+            }
+        }, function (err, listCom) {
+            results.listComFollow = listCom;
+            console.log(listCom);
+            if (listCom) {
+                listCom.forEach(element => {
+                    Post.find({
+                        where: {
+                            idcompany: element.idcompany
+                        }
+                    }, function (err, list) {
+                        listPost = listPost.concat(list);
+                        itemsProcessed++;
+                        if (itemsProcessed === listCom.length) {
+                            results.listPost = listPost;
+                            fn(err, results);
+                        }
+                    })
+                }, this);
+            } else {
+                fn(null, results);
+            }
+        }
+        )
+    }
+    Post.remoteMethod('getPostFollow',
+        {
+            description: 'Get list post for company follow.',
+            accepts: [
+                { arg: 'idStudent', type: 'number', required: true },
+            ],
+            returns: { arg: 'results', type: 'object' },
+            http: { verb: 'get', path: '/getPostFollow' }
+        }
+    );
 };  

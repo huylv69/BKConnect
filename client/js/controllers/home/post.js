@@ -4,30 +4,39 @@ angular.module('app').controller('PostController', ['$scope', '$stateParams', '$
         $scope.showModal = false;
         $scope.postDetail = {};
 
-        $scope.showCV = function () {
+        $scope.showCV = function (postDetail) {
             currentUser = $rootScope.currentUser;
+            var expired = new Date(postDetail.expired);
+            //console.log(expired, ' ', expired < Date.now())
             if (currentUser == null || currentUser == "") {
                 currentUser = $mLocalStorage.getItem("userInfo");
                 $rootScope.currentUser = currentUser;
             }
             if (currentUser) {
-                var modalInstance = $uibModal.open({
-                    animation: true,
-                    ariaLabelledBy: 'modal-title',
-                    ariaDescribedBy: 'modal-body',
-                    templateUrl: 'myModalContent.html',
-                    size: 'lg',
-                    scope: $scope
-
-                });
-                $mStudent.getInfo(currentUser.userId, function (res) {
-                    $scope.infoCV = res;
-                    $scope.infoCV.birthday = new Date(res.birthday);
-                    console.log(res);
-                    modalInstance.result.then(function () {
-                    }, function () {
+                if (expired < Date.now()) {
+                    swal({
+                        title: "Xin lỗi !",
+                        text: "Bài đăng đã hết hạn! Bạn có thể liên hệ riêng với công ty",
+                        icon: "warning",
                     });
-                });
+                } else {
+                    var modalInstance = $uibModal.open({
+                        animation: true,
+                        ariaLabelledBy: 'modal-title',
+                        ariaDescribedBy: 'modal-body',
+                        templateUrl: 'myModalContent.html',
+                        size: 'lg',
+                        scope: $scope
+
+                    });
+                    $mStudent.getInfo(currentUser.userId, function (res) {
+                        $scope.infoCV = res;
+                        $scope.infoCV.birthday = new Date(res.birthday);
+                        modalInstance.result.then(function () {
+                        }, function () {
+                        });
+                    });
+                }
             } else {
                 swal({
                     title: "Xin lỗi !",
@@ -35,6 +44,7 @@ angular.module('app').controller('PostController', ['$scope', '$stateParams', '$
                     icon: "warning",
                 });
             }
+
         }
 
         let click = false;
@@ -82,7 +92,10 @@ angular.module('app').controller('PostController', ['$scope', '$stateParams', '$
                     $state.go('home');
                 } else {
                     $scope.postDetail = res;
-                    // console.log(res);
+                    console.log(res);
+                    $mPost.getSkillPost(id, function (res) {
+                        $scope.listSkill = res;
+                    })
                     $mCompany.getInfo($scope.postDetail.idcompany, function (res) {
                         $scope.companyInfo = res;
                         // console.log($scope.companyInfo);

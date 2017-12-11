@@ -55,5 +55,14 @@ angular
                     callback(response);
                 });
         }
+        service.getInfoFollow = function (id, callback) {
+            $http.get(BASE_URL + 'posts/getPostFollow', { params: { idStudent: id } })
+                .then(function (response) {
+                    callback(response.data);
+                })
+                .catch(function (response) {
+                    callback(response);
+                });
+        }
         return service;
     }]);

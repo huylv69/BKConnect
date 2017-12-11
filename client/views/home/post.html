@@ -9,105 +9,112 @@
 <div class="inner_page_agile " style="margin: auto">
   <h3>{{postDetail.title}}</h3>
   <div class="container" style="width :80% ; margin-top: 13px; font-size:18px ">
-      <p class="col-md-4" style="text-align: right;">Ngành: {{career}} </p>
-      <p class="col-md-4" style="text-align: center; border-left: solid 1px;border-right: solid 1px; ">Lương: {{postDetail.salary}} </p>
-      <p class="col-md-4" style="text-align: left;"> Địa điểm: {{postDetail.address}}</p>
+    <p class="col-md-4" style="text-align: right;">Ngành: {{career}} </p>
+    <p class="col-md-4" style="text-align: center; border-left: solid 1px;border-right: solid 1px; ">Lương: {{postDetail.salary}} </p>
+    <p class="col-md-4" style="text-align: left;"> Địa điểm: {{postDetail.address}}</p>
   </div>
 
 </div>
 <div class="services-breadcrumb_w3layouts">
   <div class="inner_breadcrumb">
-      <ul class="short_w3ls">
-          <li class="fa fa-star"> Thông tin chi tiết </li>
-      </ul>
+    <ul class="short_w3ls">
+      <li class="fa fa-star"> Thông tin chi tiết </li>
+    </ul>
   </div>
 </div>
 <div class="container">
   <div class="inner_sec_grids_info_w3ls">
-      <div class="col-md-8 job_info_left">
-          <div class="job-detail-description">
-              <div class="title-detail">
-                  <span class="fa fa-thumb-tack"></span> Giới thiệu công việc
-              </div>
-              <div class="detail-description">
-                  <p ng-bind-html="postDetail.description"></p>
-              </div>
+    <div class="col-md-8 job_info_left">
+      <div class="job-detail-description">
+        <div class="title-detail">
+          <span class="fa fa-thumb-tack"></span> Giới thiệu công việc
+        </div>
+        <div class="detail-description">
+          <p ng-bind-html="postDetail.description"></p>
+        </div>
 
-          </div>
-          <div class="job-detail-description">
-              <div class="title-detail">
-                  <span class="fa fa-thumb-tack"></span> Yêu cầu công việc
-              </div>
-              <div class="detail-description">
-                  <p ng-bind-html="postDetail.require_skill"></p>
-
-              </div>
-
-          </div>
-          <div class="job-detail-description">
-              <div class="title-detail">
-                  <span class="fa fa-thumb-tack"></span> Quyền lợi
-              </div>
-              <div class="detail-description">
-                  <p ng-bind-html="postDetail.benefits"></p>
-
-              </div>
-
-          </div>
-          <div class="job-detail-description">
-              <div class="title-detail">
-                  <span class="fa fa-thumb-tack"></span> Nộp hồ sơ
-              </div>
-              <div class="detail-description">
-                  <p ng-bind-html="postDetail.contact"></p>
-
-              </div>
-
-          </div>
-          <div class="job-detail-description">
-              <div class="apply">
-                  <a data-target="#applyJobModal" data-toggle="modal" data-ng-click="showCV()">Ứng tuyển</a>
-                  <!-- <a data-target='#cInfo' data-ng-click=="showCV()">Ứng tuyển</a> -->
-              </div>
-          </div>
       </div>
+      <div class="job-detail-description">
+        <div class="title-detail">
+          <span class="fa fa-thumb-tack"></span> Yêu cầu công việc
+        </div>
+        <div class="detail-description">
+          <p ng-bind-html="postDetail.require_skill"></p>
 
-      <div class="company-info col-md-4">
-          <div class="company-desc" itemscope="" itemtype="http://schema.org/Organization">
-              <div class="company-header">
-                  <div class="company-featured">
-                      <a href="#">
-                          <img width="147" height="119" ng-src="{{companyInfo.logo}}" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 cp_logo  mobile-hide">
-                      </a>
-                  </div>
-                  <h3 class="company-title" itemprop="name">
-                      <a href="#">{{companyInfo.name}}</a>
-                  </h3>
-              </div>
-              <div class="company-info">
-                  <div class="company-info-content" ng-bind-html="companyInfo.about" aria-expanded="true" id="rmjs-1" style="max-height: none;">
-                  </div>
-                  <div class="company-custom-fields">
-                      <strong class="company-cf-title">Information</strong>
-                      <ul>
-                          <li>
-                              <strong class="label-_address company-cf">Địa chỉ:</strong>
-                              {{companyInfo.address}}</li>
-                          <li>
-                              <strong class="label-_jm_company_field__diachi company-cf">Website:</strong>
-                              <a href="//{{companyInfo.website}}" class="value-_jm_company_field__diachi cf-text-value">{{companyInfo.website}}</a>
-                          </li>
-                          <li>
-                              <strong class="label-_jm_company_field_company-size company-cf" style="display: inline-block;">Sứ mệnh :</strong>
-                              <span class="value-_jm_company_field_company-size cf-select-value" ng-bind-html="companyInfo.mission" style="display: inline-block;"></span>
-                          </li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
+        </div>
+
       </div>
+      <div class="job-detail-description">
+        <div class="title-detail">
+          <span class="fa fa-thumb-tack"></span> Quyền lợi
+        </div>
+        <div class="detail-description">
+          <p ng-bind-html="postDetail.benefits"></p>
 
-<script type="text/ng-template" id="myModalContent.html">
+        </div>
+
+      </div>
+      <div class="job-detail-description">
+        <div class="title-detail">
+          <span class="fa fa-thumb-tack"></span> Nộp hồ sơ
+        </div>
+        <div class="detail-description">
+          <p ng-bind-html="postDetail.contact"></p>
+        </div>
+      </div>
+      <div class="job-detail-description">
+        <div class="title-detail">
+          <span class="fa fa-thumb-tack"></span> Kỹ năng:
+        </div>
+        <div class="detail-description">
+          <a href="" ng-repeat="skill in listSkill"> | {{skill.name}}</a>
+        </div>
+      </div>
+      <div class="job-detail-description">
+        <div class="apply">
+          <a data-target="#applyJobModal" data-toggle="modal" data-ng-click="showCV(postDetail)">Ứng tuyển</a>
+          <!-- <a data-target='#cInfo' data-ng-click=="showCV()">Ứng tuyển</a> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="company-info col-md-4">
+      <div class="company-desc" itemscope="" itemtype="http://schema.org/Organization">
+        <div class="company-header">
+          <div class="company-featured">
+            <a href="#">
+              <img width="147" height="119" ng-src="{{companyInfo.logo}}" class="col-xs-12 col-sm-2 col-md-2 col-lg-2 cp_logo  mobile-hide">
+            </a>
+          </div>
+          <h3 class="company-title" itemprop="name">
+            <a href="#">{{companyInfo.name}}</a>
+          </h3>
+        </div>
+        <div class="company-info">
+          <div class="company-info-content" ng-bind-html="companyInfo.about" aria-expanded="true" id="rmjs-1" style="max-height: none;">
+          </div>
+          <div class="company-custom-fields">
+            <strong class="company-cf-title">Information</strong>
+            <ul>
+              <li>
+                <strong class="label-_address company-cf">Địa chỉ:</strong>
+                {{companyInfo.address}}</li>
+              <li>
+                <strong class="label-_jm_company_field__diachi company-cf">Website:</strong>
+                <a href="//{{companyInfo.website}}" class="value-_jm_company_field__diachi cf-text-value">{{companyInfo.website}}</a>
+              </li>
+              <li>
+                <strong class="label-_jm_company_field_company-size company-cf" style="display: inline-block;">Sứ mệnh :</strong>
+                <span class="value-_jm_company_field_company-size cf-select-value" ng-bind-html="companyInfo.mission" style="display: inline-block;"></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/ng-template" id="myModalContent.html">
   <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <!-- <span aria-hidden="true">×</span> -->
@@ -273,6 +280,6 @@
           </div>
   </div>
 </script>
-      <div class="clearfix"></div>
-  </div>
+  <div class="clearfix"></div>
+</div>
 </div>
