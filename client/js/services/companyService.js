@@ -23,7 +23,7 @@ angular
                     callback(err);
                 });
         }
-        
+
         service.getInfo = function (userId, callback) {
             var url = BASE_URL + "companies/" + userId;
             $http.get(url)
@@ -34,6 +34,15 @@ angular
                 });
         }
 
+        service.getListTop = function (callback) {
+            var url = BASE_URL + "companies";
+            $http.get(url, { params: { "filter": { "limit": 5 } } })
+                .then(function (res) {
+                    callback(res.data);
+                }, function (err) {
+                    callback(err.data);
+                })
+        }
         service.getList = function (callback) {
             var url = BASE_URL + "companies";
             $http.get(url)
@@ -65,7 +74,7 @@ angular
                 })
         }
 
-       
-        
+
+
         return service;
     }]);

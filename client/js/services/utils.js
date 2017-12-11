@@ -46,5 +46,14 @@ angular
                 callback(res);
             })
         }
+        service.getAllCareer = function (callback) {
+            $http.get(BASE_URL + 'careers')
+                .then(function (response) {
+                    callback(response.data);
+                })
+                .catch(function (response) {
+                    callback(response);
+                });
+        }
         return service;
     }]);

@@ -27,7 +27,13 @@ module.exports = function (Post) {
     );
     //Get List Request 
     Post.getAllPost = function (fn) {
-        Post.find({}, function (err, list) {
+        Post.find({
+            order: 'created DESC',
+            where: {
+                expired: { gt: Date.now() }
+            }
+        }, function (err, list) {
+            console.log(Date.now())
             var itemsProcessed = 0;
             if (list == 0) {
                 fn(null, list);
@@ -92,15 +98,17 @@ module.exports = function (Post) {
         var listSkill = context.args.data.skill;
         var PostSkill = app.models.post_skill;
         PostSkill.deleteById(idpost, function () {
-            listSkill.forEach(element => {
-                PostSkill.create({
-                    idpost: idpost,
-                    idskill: element.idskill
-                }, function (err, res) {
-                    if (err) console.log(err);
-                    else console.log(res);
-                });
-            }, this);
+            if (listSkill) {
+                listSkill.forEach(element => {
+                    PostSkill.create({
+                        idpost: idpost,
+                        idskill: element.idskill
+                    }, function (err, res) {
+                        if (err) console.log(err);
+                        else console.log(res);
+                    });
+                }, this);
+            }
             next();
         })
     });
