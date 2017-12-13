@@ -114,7 +114,6 @@ module.exports = function (Post) {
 
     Post.getPostFollow = function (idStudent, fn) {
         var follow = app.models.follow;
-        console.log('ok')
         var results = {};
         var listPost = [];
         var itemsProcessed = 0;
@@ -127,19 +126,32 @@ module.exports = function (Post) {
             console.log(listCom);
             if (listCom) {
                 listCom.forEach(element => {
-                    Post.find({
-                        where: {
-                            idcompany: element.idcompany
-                        }
-                    }, function (err, list) {
-                        listPost = listPost.concat(list);
-                        itemsProcessed++;
-                        if (itemsProcessed === listCom.length) {
-                            results.listPost = listPost;
-                            fn(err, results);
-                        }
+                    var sql = ` select logo,name from company where idcompany = ` + element.idcompany;
+                    app.dataSources.mysqlDs.connector.query(sql, function (err, res) {
+                        element['logoCom'] = res[0].logo;
+                        element['nameCom'] = res[0].name;
+                        Post.find({
+                            where: {
+                                idcompany: element.idcompany,
+                                expired: { gt: Date.now() }
+                            }
+                        }, function (err, list) {
+                            for (let index = 0; index < list.length; index++) {
+                                const e = list[index];
+                                e['logoCom'] = res[0].logo;
+                                e['nameCom'] = res[0].name;
+                            }
+                            listPost = listPost.concat(list);
+                            itemsProcessed++;
+                            if (itemsProcessed === listCom.length) {
+                                results.listPost = listPost;
+                                fn(err, results);
+                            }
+                        })
                     })
                 }, this);
+
+
             } else {
                 fn(null, results);
             }

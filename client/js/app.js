@@ -77,7 +77,8 @@ angular
       .state('search', {
         title: 'Tìm kiếm công việ',
         url: '/search',
-        templateUrl: 'views/home/search.html'
+        templateUrl: 'views/home/search.html',
+        controller: 'SearchController'        
       })
       .state('external', {
         url: '/company',

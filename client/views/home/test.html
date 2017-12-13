@@ -1,0 +1,49 @@
+<div ng-controller="MyCtrl">
+    <div>
+      <div class="top">
+          Search: <input name="company" type="text" class="search-input" ng-model="query"/>
+      </div>
+        
+<section class="left" style="border-right:1px">  
+    <div class="filter">
+    Pant Size
+    <div>
+        <div ng-repeat="pants in pantsGroup">
+            <b><input type="checkbox" ng-model="usePants[pants]"/>{{pants}}</b>
+            <span>({{ (filteredPlayers | filter:query | filter:count('pants', pants)).length }})</span>
+        </div>
+    </div>
+    </div>
+    
+    <div class="filter">
+    Shirt Size
+    <div>
+        <div ng-repeat="shirts in shirtsGroup">
+            <b><input type="checkbox" ng-model="useShirts[shirts]"/>{{shirts}}</b>
+            <span>({{ (filteredPlayers | filter:query | filter:count('shirt', shirts)).length }})</span>
+        </div>
+    </div>
+    </div>
+
+    <div class="filter">
+    Shoe Size
+    <div>
+        <div ng-repeat="shoes in shoesGroup">
+            <b><input type="checkbox" ng-model="useShoes[shoes]"/>{{shoes}}</b>
+            <span>({{ (filteredPlayers | filter:query | filter:count('shoes', shoes)).length }})</span>
+        </div>
+    </div>
+    </div>
+</section>        
+<section class="right" style="border-right:1px">
+    <div>
+        <ul>
+        <li ng-repeat="player in filteredPlayers | filter:query" >
+            <p><b>Player: {{player.name}}</b></p>
+            <p>Shirt Size: {{player.shirt}} Pant Size: {{player.pants}} Shoe Size: {{player.shoes}}</p>
+        </li>
+        </ul>    
+    </div>
+    </div>
+</section>
+</div>

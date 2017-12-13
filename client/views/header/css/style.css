@@ -39,7 +39,7 @@
   display: inline-block;
   margin: 0px 5px;
   outline: none;
-  padding: 0.5em 0.1em 1.5em;
+  padding: 1em 0.1em 1.1em;
   color: black;
   text-decoration: none;
   letter-spacing: 1px;
@@ -64,8 +64,8 @@
 	font-weight: 400;
 	font-size: 16px;
 }
-.head-nav ul li a:hover, .head-nav ul li.active a{
-	color: black;
+.head-nav ul li a:hover{
+	color: #00ccff;
   font-weight: bold;
 }
 .fixed-header {
