@@ -44,8 +44,8 @@
 							<a class="dropdown-toggle" uib-dropdown-toggle data-toggle="dropdown" aria-expanded="true">
 								<div class="profile_img">
 									<!-- <span class="prfil-img"><i class="fa fa-user" aria-hidden="true"></i></span> -->
-									<img class="avatar" src="views/header/images/avt.jpg" alt="Mountain View" width="50" height="50">
-									<label>Judy</label>
+									<img class="avatar" ngf-thumbnail="user.photo || 'views/student/images/100.png'" alt="Mountain View" width="50" height="50">
+									<label>{{user.name}}</label>
 								</div>
 							</a>
 							<ul class="dropdown-menu drp-mnu" uib-dropdown-menu>

@@ -78,12 +78,13 @@ angular
         title: 'Tìm kiếm công việ',
         url: '/search',
         templateUrl: 'views/home/search.html',
-        controller: 'SearchController'        
+        controller: 'SearchController',
+        params: { where: {} }
       })
       .state('external', {
         url: '/company',
         external: true
-   })
+      })
     $urlRouterProvider.otherwise('home');
 
     // $('#test').addClass('hide');
@@ -94,5 +95,5 @@ angular
       //get currentUser
       $rootScope.currentUser = $mLocalStorage.getItem('userInfo');
       $rootScope.$state = $state;
-      
+
     }]);

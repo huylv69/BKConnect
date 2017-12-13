@@ -1,5 +1,5 @@
-angular.module('app').controller('ProfileController', ['$scope', '$state', '$rootScope', '$mStudent', '$mLocalStorage', 'Upload',
-    function ($scope, $state, $rootScope, $mStudent, $mLocalStorage, Upload) {
+angular.module('app').controller('ProfileController', ['$scope', '$state', '$rootScope', '$mStudent', '$mLocalStorage', 'Upload', '$mUtils',
+    function ($scope, $state, $rootScope, $mStudent, $mLocalStorage, Upload, $mUtils) {
 
         var user = {};
         $scope.myDate = {
@@ -14,6 +14,10 @@ angular.module('app').controller('ProfileController', ['$scope', '$state', '$roo
                     $scope.user = res;
                     $scope.user.birthday = new Date(res.birthday);
                 });
+                $mUtils.getInfoFollow($rootScope.currentUser.userId, function (res) {
+                    $scope.listComFollow = res.results.listComFollow;
+                    console.log($scope.listComFollow);
+                })
             }
         };
 
@@ -31,7 +35,7 @@ angular.module('app').controller('ProfileController', ['$scope', '$state', '$roo
                     }).then(function (res) { //upload function returns a promise
                         var photo = "/api/containers/" + res.data.result.files['file'][0].container + "/download/" + res.data.result.files['file'][0].name;
                         var del = $scope.user.photo;
-                        if(del){
+                        if (del) {
                             var index = del.lastIndexOf('download/');
                             var subDes = del.slice(index + 9);
                             $mStudent.deletePhoto(subDes);

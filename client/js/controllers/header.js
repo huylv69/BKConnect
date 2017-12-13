@@ -1,5 +1,5 @@
-angular.module('app').controller('HeaderController', ['$scope', '$state', '$rootScope', '$mAuth', '$mLocalStorage',
-    function ($scope, $state, $rootScope, $mAuth, $mLocalStorage) {
+angular.module('app').controller('HeaderController', ['$scope', '$state', '$rootScope', '$mStudent', '$mLocalStorage',
+    function ($scope, $state, $rootScope, $mStudent, $mLocalStorage) {
 
         $scope.user = $rootScope.currentUser;
         // $scope.authen = ($rootScope.currentUser) ? true : false;
@@ -12,15 +12,26 @@ angular.module('app').controller('HeaderController', ['$scope', '$state', '$root
         // console.log($scope.authen)
         $scope.logout = function () {
             $mLocalStorage.deleteItem('userInfo');
-            $rootScope.currentUser = null;   
+            $rootScope.currentUser = null;
             $scope.user = $rootScope.currentUser;
-            $rootScope.$broadcast('loadHeader');                                        
+            $state.go('home');
+            $rootScope.$broadcast('loadHeader');
         }
 
-        var loadData = function () {
-
+        if ($scope.user != null) {
+            $mStudent.getInfo($rootScope.currentUser.userId, function (res) {
+                $scope.user = res;
+                console.log(res);
+            });
         }
+
         $scope.$on('loadHeader', function () {
             $scope.user = $rootScope.currentUser;
+            if ($rootScope.currentUser) {
+                $mStudent.getInfo($rootScope.currentUser.userId, function (res) {
+                    $scope.user = res;
+                    console.log(res);
+                });
+            }
         });
     }]);

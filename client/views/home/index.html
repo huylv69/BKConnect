@@ -71,12 +71,12 @@
 <div id="search_form" class="search_top">
 	<h2>Tìm kiếm cơ hội dành cho bạn</h2>
 	<form action="#" method="post">
-		<input type="text" name="Enter Keyword(s)" placeholder="Nhập từ khóa tìm kiếm(s)" required="">
-		<select id="country12" class="frm-field required">
+		<input type="text" name="Enter Keyword(s)" ng-model="stringSearch" placeholder="Nhập từ khóa tìm kiếm(s)" required="">
+		<select id="country12" class="frm-field required" ng-model="chooseCareer">
 			<option value="null"> Chọn ngành tìm kiếm</option>
 			<option ng-repeat="option in careerGroup" value="{{option.idcareer}}">{{option.name}}</option>
 		</select>
-		<input type="submit" value="Tìm kiếm">
+		<input type="submit" ui-sref="search({ where: { stringSearch: stringSearch ,chooseCareer :chooseCareer }})" value="Tìm kiếm">
 		<div class="clearfix"></div>
 	</form>
 </div>
@@ -247,7 +247,7 @@
 			</div>
 
 			<div class="col_3 permit" ng-if="authen">
-				<h3>Các công ty follow</h3>
+				<h3>Các công ty theo dõi</h3>
 				<ul class="list_2">
 					<li ng-repeat="company in listComFollow">
 						<div class="friends-grids">

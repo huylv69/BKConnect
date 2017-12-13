@@ -51,6 +51,9 @@
 						<div id="myTabContent" class="tab-content">
 
 							<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+								<div ng-if="(filteredPost | searchMulti :searchString) == 0" class="tab_grid">
+									<strong> Không có kết quả phù hợp </strong>
+								</div>
 								<div ng-repeat="post in filteredPost | searchMulti :searchString">
 									<div class="tab_grid">
 										<div class="col-sm-3 loc_1">
@@ -191,7 +194,7 @@
 					<tbody>
 						<tr class="unread checked" ng-repeat="career in careerGroup">
 							<td class="hidden-xs">
-								<input type="checkbox" ng-model="useCareer[career.idcareer]" />
+								<input type="checkbox" ng-checked="career.idcareer==chooseCareer" ng-model="useCareer[career.idcareer]" />
 							</td>
 							<td class="hidden-xs">
 								<b> {{career.name}}</b>

@@ -2,8 +2,8 @@ angular.module('app').controller('SearchController', ['$scope', '$stateParams', 
     function ($scope, $stateParams, $rootScope, $mPost, $state, $mUtils, $mCompany, filterFilter) {
         $scope.useCareer = {};
         $scope.useCategory = {};
-
-
+        
+        console.log($stateParams.where)
         var getData = function () {
             $mPost.getAllPost(function (res) {
                 $scope.listPost = res.list;
@@ -100,6 +100,13 @@ angular.module('app').controller('SearchController', ['$scope', '$stateParams', 
                             filterAfterCareer = filterAfterCategory;
                         }
                         $scope.filteredPost = filterAfterCareer;
+
+                        if ($stateParams.where.stringSearch) {
+                            $scope.searchString = $stateParams.where.stringSearch;
+                        }
+                        if ($stateParams.where.chooseCareer) {
+                            $scope.chooseCareer = $stateParams.where.chooseCareer
+                        }
                     }, true);
                 })
             });
