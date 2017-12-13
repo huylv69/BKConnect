@@ -25,7 +25,9 @@ comApp.controller('NewCVController', ['$scope', '$rootScope', '$location', 'post
         });
         if (!infoCV.seen) {
             infoCV.seen = true;
-            cvService.updateSeen(infoCV, function (res) { console.log(res) })
+            cvService.updateSeen(infoCV, function (res) { 
+                console.log(res) 
+            })
         }
     }
 }]);

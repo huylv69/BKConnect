@@ -20,12 +20,15 @@ comApp.service('cvService', ['$http', '$rootScope', function ($http, $rootScope)
   }
 
   service.updateSeen = function (infoCV, callback) {
-    $http.patch(BASE_URL + "cvs/" + infoCV.idstudent, infoCV)
-      .then(function (response) {
-        callback(response.data);
-      }, function (err) {
-        callback(err);
-      })
+    var url = BASE_URL + "cvs/update?where[idstudent]=" + infoCV.idstudent + "&where[idpost]=" + infoCV.idpost;
+    var data = {
+      seen: true
+    }
+    $http.post(url, data).then(function (res) {
+      callback(res.data);
+    }, function (err) {
+      callback(err);
+    });
   }
   return service;
 }]);
