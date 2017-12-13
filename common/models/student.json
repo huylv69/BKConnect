@@ -95,6 +95,5 @@
       "permission": "ALLOW"
     }
   ],
-  "hidden":["emailVerified"],
   "methods": {}
 }
