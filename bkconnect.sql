@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: localhost
--- Thời gian đã tạo: Th12 13, 2017 lúc 08:58 AM
+-- Thời gian đã tạo: Th12 13, 2017 lúc 11:19 AM
 -- Phiên bản máy phục vụ: 10.1.28-MariaDB
 -- Phiên bản PHP: 7.0.24
 
@@ -519,7 +519,7 @@ INSERT INTO `skill` (`idskill`, `name`) VALUES
 
 CREATE TABLE `student` (
   `idstudent` int(11) NOT NULL,
-  `emailVerified` tinyint(1) NOT NULL,
+  `emailVerified` tinyint(1) NOT NULL DEFAULT '0',
   `block` tinyint(1) NOT NULL DEFAULT '0',
   `email` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   `name` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
@@ -682,7 +682,7 @@ ALTER TABLE `post`
 -- AUTO_INCREMENT cho bảng `student`
 --
 ALTER TABLE `student`
-  MODIFY `idstudent` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `idstudent` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
