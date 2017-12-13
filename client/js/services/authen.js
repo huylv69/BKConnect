@@ -28,7 +28,7 @@ angular
         });
     }
     service.register = function (email, password, username, callback) {
-      $http.post(BASE_URL + 'students', { email: email, password: password, displayName: username })
+      $http.post(BASE_URL + 'students', { email: email, password: password, name: username })
         .then(function (response) {
           callback(response);
         })
