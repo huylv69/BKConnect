@@ -42,6 +42,9 @@
                         />
 
                         <div class="tp">
+                            <p class="text-center" ng-show="loading">
+                                <span class="fa fa-spinner fa-spin fa-3x"></span>
+                            </p>
                             <p ng-show="errLogin" class="text-danger" text> {{textLogin}} </p>
                             <input type="submit" value="Login" ng-disabled="loginForm.$invalid" />
                         </div>
@@ -81,7 +84,7 @@
         <div class="inner_sec_grids_info_w3ls">
             <div class="signin-form">
                 <div class="login-form-rec">
-                    <form name="registerForm" ng-submit="register()" >
+                    <form name="registerForm" ng-submit="register()">
                         <input id="usernamesignup" ng-model="student.name" name="name" required="required" type="text" placeholder="Bạn tên là gì nhỉ ?"
                         />
                         <input id="emailsignup" type="email" name="emailsignup" ng-model="student.email" ng-required=true ng-pattern="/[\d]+@student\.hust\.edu\.vn$/"
@@ -93,6 +96,9 @@
                             placeholder="Re-Password" />
                         <p ng-show="usernameIsExisting" class="p_errorLogin"> * Tài khoản đã tồn tại, vui lòng thử lại với email mới </p>
                         <h4 class="text-notifi" ng-if="showNotifi"> {{textNotifi}} </h4>
+                        <p class="text-center" ng-show="loading">
+                            <span class="fa fa-spinner fa-spin fa-3x"></span>
+                        </p>
                         <input type="submit" value="Register" ng-disabled="registerForm.$invalid">
                     </form>
                     <p class="reg">

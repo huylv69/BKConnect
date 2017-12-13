@@ -18,6 +18,7 @@ angular.module('app').controller('LoginController', ['$scope', '$state', '$rootS
 
         //register student
         $scope.register = function () {
+            $scope.loading = true;                        
             var name = $scope.student.name;
             var password = $scope.student.password;
             var email = $scope.student.email;
@@ -25,12 +26,16 @@ angular.module('app').controller('LoginController', ['$scope', '$state', '$rootS
                 $mAuth.register(email, password, name, function (response) {
                     console.log(response);
                     if (response.status == 200) {
+                        $scope.loading = false;                    
+                        
                         if (response.data.email) {
                             $rootScope.textNotifi = "Đăng kí tài khoản thành công . Kiểm tra email để kích hoạt tài khoản";
                             $scope.showNotifi = true;
                         }
                     }
                     else {
+                        $scope.loading = false;                    
+                        
                         if (response.status == 422) {
                             $scope.usernameIsExisting = true;
                             return;
@@ -44,11 +49,13 @@ angular.module('app').controller('LoginController', ['$scope', '$state', '$rootS
 
         //signin student
         $scope.signIn = function () {
+            $scope.loading = true;            
             var email = $scope.user.email;
             var password = $scope.user.password;
             $mAuth.signin(email, password, function (response) {
                 console.log(response);
                 if (response.status == 200) {
+                    $scope.loading = false;                    
                     let user = {
                         userId: response.data.userId,
                         token: response.data.id
@@ -80,6 +87,7 @@ angular.module('app').controller('LoginController', ['$scope', '$state', '$rootS
                         }
                         );
                 } else {
+                    $scope.loading = false;                                        
                     if (response.data.error.code == "LOGIN_FAILED_EMAIL_NOT_VERIFIED") {
                         $scope.textLogin = "Xác thực email trước khi đăng nhập";
                         $scope.errLogin = true;

@@ -1,10 +1,12 @@
 comApp.controller('LoginController', ['$rootScope', '$scope', '$location', 'AuthenService', '$mLocalStorage', '$window', function ($rootScope, $scope, $location, AuthenService, $mLocalStorage, $window) {
     //login Company
     $scope.loginCompany = function () {
+        $scope.loading = true;        
         var email = $scope.company.email;
         var password = $scope.company.password;
         AuthenService.loginCompany(email, password, function (response) {
-            console.log(response);
+            // console.log(response);
+            $scope.loading = false;
             if (response.status == 200) {
                 let user = {
                     userId: response.data.userId,

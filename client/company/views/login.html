@@ -28,6 +28,9 @@
 		</ul> -->
         <p ng-show="errLogin" class="text-danger" text> {{textLogin}} </p>
         <div class="aitssendbuttonw3ls">
+            <p class="text-center" ng-show="loading">
+                <span class="fa fa-spinner fa-spin fa-3x"></span>
+            </p>
             <input type="submit" value="LOGIN">
             <p> To register new account
                 <span>→</span>

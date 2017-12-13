@@ -44,6 +44,7 @@ angular.module('app').controller('ProfileController', ['$scope', '$state', '$roo
                         $mStudent.updateInfo($scope.user, function (res) {
                             if (res.status == 200) {
                                 $scope.loading = false;
+                                $rootScope.$broadcast('loadHeader');
                                 swal({
                                     title: "Thành công!",
                                     text: "Cập nhật dữ liệu thành công!",
@@ -68,6 +69,7 @@ angular.module('app').controller('ProfileController', ['$scope', '$state', '$roo
                     $mStudent.updateInfo($scope.user, function (res) {
                         if (res.status == 200) {
                             $scope.loading = false;
+                            $rootScope.$broadcast('loadHeader');
                             swal({
                                 title: "Thành công!",
                                 text: "Cập nhật dữ liệu thành công!",
