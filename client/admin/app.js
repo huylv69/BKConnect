@@ -10,7 +10,8 @@ angular
         'service.company',
         'service.auth',
         'service.student',
-        'service.post'
+        'service.post',
+        'datatables'
     ])
     .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider,
         $urlRouterProvider, $locationProvider) {

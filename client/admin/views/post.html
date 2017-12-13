@@ -25,7 +25,7 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <table id="example1" class="table table-bordered table-hover">
+                    <table datatable="ng" class="table table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -40,7 +40,7 @@
                         </thead>
 
                         <tbody>
-                            <tr ng-repeat="n in listPosts" repeat-done="initDataTable()">
+                            <tr ng-repeat="n in listPosts" >
                                 <td>{{$index+1}}</td>
                                 <td>{{n.title}}</td>
                                 <td>
@@ -55,6 +55,9 @@
                                 <td class="actions">
                                     <a class=" btn btn-danger btn-md" ng-click="deletePost(n.idpost)">
                                         <b>Xóa</b>
+                                    </a>
+                                    <a class=" btn btn-primary btn-md" href="/post/{{n.idpost}}" target="_blank">
+                                        <b>Xem</b>
                                     </a>
                                 </td>
                             </tr>

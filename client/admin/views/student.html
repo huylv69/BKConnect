@@ -25,7 +25,7 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body" loading-pane="isPaneShown">
-                    <table id="example1" class="table table-bordered table-hover">
+                    <table datatable="ng" class="table table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -38,7 +38,7 @@
                         </thead>
 
                         <tbody>
-                            <tr ng-repeat="n in listStudent" repeat-done="initDataTable()">
+                            <tr ng-repeat="n in listStudent" >
                                 <td>{{$index+1}}</td>
                                 <td>{{n.name}}</td>
                                 <td>{{n.email}}</td>

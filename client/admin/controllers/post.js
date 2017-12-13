@@ -39,20 +39,4 @@ angular.module('admin').controller('PostController', ['$scope', '$state', '$root
             });
         }
         loadData()
-
-        $scope.initDataTable = function () {
-            setTimeout(function () {
-                $("#example1").DataTable();
-            }, 10);
-        };
-        // $scope.reset = function () {
-        //     $state.reload();
-        // }
     }])
-    .directive('repeatDone', function () {
-        return function (scope, element, attrs) {
-            if (scope.$last) {
-                scope.$eval(attrs.repeatDone);
-            }
-        }
-    });;

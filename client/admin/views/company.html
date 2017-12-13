@@ -18,13 +18,13 @@
 <section class="content" loading-pane="isPaneShown">
     <div class="row">
         <div class="col-xs-12">
-            <div class="box" >
+            <div class="box">
                 <div class="box-header">
                     <h3 class="box-title">Danh sách tài khoản công ty</h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <table id="example1" class="table table-bordered bordered table-striped  table-hover datatable">
+                    <table datatable="ng" class="table table-bordered bordered table-striped  table-hover datatable">
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -38,7 +38,7 @@
                         </thead>
 
                         <tbody>
-                            <tr ng-repeat="n in listCompany" repeat-done="initDataTable()">
+                            <tr ng-repeat="n in listCompany">
                                 <td>{{$index+1}}</td>
                                 <td>{{n.name}}</td>
                                 <td>{{n.email}}</td>
@@ -50,6 +50,8 @@
                                         Block </a>
                                     <a class=" btn btn-primary btn-sm " ng-disabled="!n.block" ng-click="activateCompany(n)">
                                         Activate </a>
+                                    <a class=" btn btn-primary btn-sm " target="_blank" href="/companies/{{n.idcompany}}">
+                                        View </a>
                                 </td>
                             </tr>
                         </tbody>

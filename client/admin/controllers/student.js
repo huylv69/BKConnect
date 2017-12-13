@@ -28,20 +28,10 @@ angular.module('admin').controller('StudentController', ['$scope', '$state', '$r
                 }
             })
         }
-        $scope.initDataTable = function () {
-            setTimeout(function () {
-                $("#example1").DataTable();
-            }, 0);
-        };
+        
         $scope.reset = function () {
             $state.reload();
         }
         loadData();
     }])
-    .directive('repeatDone', function () {
-        return function (scope, element, attrs) {
-            if (scope.$last) {
-                scope.$eval(attrs.repeatDone);
-            }
-        }
-    });
+    
