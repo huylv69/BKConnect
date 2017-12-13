@@ -55,10 +55,10 @@
                     <span class="sr-only">Toggle navigation</span>
                 </a>
 
-                <div class="navbar-custom-menu">
+                <div class="navbar-custom-menu" ng-controller="LogoutController">
                     <ul class="nav navbar-nav">
                         <!-- User Account: style can be found in dropdown.less -->
-                        <li class="dropdown user user-menu">
+                        <!-- <li class="dropdown user user-menu">
                             <ul class="dropdown-menu">
                                 <li class="user-footer">
                                     <div class="pull-left">
@@ -69,10 +69,10 @@
                                     </div>
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
                         <!-- Control Sidebar Toggle Button -->
                         <li>
-                            <a href="#" data-toggle="control-sidebar">
+                            <a ng-click="logout()" data-toggle="control-sidebar">
                                 <i class="fa fa-gears"></i>
                             </a>
                         </li>

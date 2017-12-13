@@ -174,3 +174,24 @@ angular
             };
         });
 
+angular.module('admin').controller('LogoutController', ['$scope', '$rootScope', '$mLocalStorage', '$state',
+    function ($scope, $rootScope, $mLocalStorage, $state) {
+        $scope.logout = function () {
+            swal({
+                title: "Bạn có thực sự muốn thoát?",
+                text: "Bạn sẽ cần đăng nhập lại lần sau khi vào trang quản trị!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((out) => {
+                    if (out) {
+                        $mLocalStorage.deleteItem('adminInfo');
+                        $rootScope.currentAdmin = null;
+                        $scope.user = $rootScope.currentAdmin;
+                        $state.go("login");
+                    } else {
+                    }
+                });
+        }
+    }])

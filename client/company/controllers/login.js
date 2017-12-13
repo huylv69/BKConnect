@@ -26,14 +26,16 @@ comApp.controller('LoginController', ['$rootScope', '$scope', '$location', 'Auth
                     }).then(
                     function () {
                         $scope.$apply(function () {
-                            $location.path('/post');
+                            // $location.url('/post');
+                            $window.location.href = 'company';
                         });
                     },
                     // handling the promise rejection
                     function (dismiss) {
                         if (dismiss === 'timer') {
                             $scope.$apply(function () {
-                                $location.path('/post');
+                                // $location.url('/post');
+                                $window.location.href = 'company';
                             })
                         }
                     }

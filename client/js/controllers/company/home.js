@@ -1,5 +1,5 @@
-angular.module('app').controller('HomeCompanyController', ['$scope', '$stateParams', '$rootScope', '$mCompany', '$mLocalStorage', '$mUtils', '$state',
-    function ($scope, $stateParams, $rootScope, $mCompany, $mLocalStorage, $mUtils, $state) {
+angular.module('app').controller('HomeCompanyController', ['$scope', '$stateParams', '$rootScope', '$mCompany', '$mLocalStorage', '$mUtils', '$mPost', '$state',
+    function ($scope, $stateParams, $rootScope, $mCompany, $mLocalStorage, $mUtils, $mPost, $state) {
         var id = $stateParams.id;
         var getData = function () {
             $mCompany.getInfo(id, function (res) {
@@ -7,9 +7,14 @@ angular.module('app').controller('HomeCompanyController', ['$scope', '$statePara
                     $state.go('home');
                 } else {
                     $scope.companyInfo = res;
-                    console.log($scope.companyInfo);
+                    // console.log($scope.companyInfo);
                 }
             });
+
+            $mPost.getPostCompany($stateParams.id, function (res) {
+                $scope.listPost = res.list;
+                console.log(res);
+            })
             if ($rootScope.currentUser) {
                 let idUser = $rootScope.currentUser.userId;
                 $mUtils.checkFollow(id, idUser, function (res) {

@@ -52,83 +52,32 @@
 <div id="jobsListing" class="panel-collapse cp_our_jobs_container collapse in" aria-expanded="true" style="">
 	<div class="panel-body">
 		<div class="cp_our_jobs_listing" id="ajax_cp_our_jobs_listing">
-			<h3 style="border-color: #F67011">We Have 4 Jobs For You</h3>
+			<h3 style="border-color: #F67011">Chúng tôi có {{listPost.length}} công việc cho bạn</h3>
 			<div class="jobs_listing_block ">
-				<div class="cp_our_job_item  show ">
+				<div class="cp_our_job_item  show " ng-repeat="post in listPost">
 					<div class="row">
 						<div class="col-xs-12 col-sm-10 cp_Job_summary_info">
 							<h4>
-								<a href="" target="_blank" onclick="">Lập Trình Viên Java</a>
+								<a href="/post/{{post.idpost}}" target="_blank" >{{post.title}}</a>
 							</h4>
 							<ul>
 								<li>
-									<i class="fa fa-briefcase"></i>Experienced (non-manager)</li>
+									<i class="fa fa-briefcase"></i>{{post.category}}
+								</li>
 								<li>
-									<i class="fa fa-calendar-o"></i>27/10/2017</li>
+									<i class="fa fa-calendar-o"></i>Hạn đăng ký: <b> {{post.expired | date:'dd/MM/yyyy'}}</b> 
+								</li>
+								<li>
+									<i class="fa fa-map-marker "></i> Địa chỉ: {{post.address}}
+								</li>
 							</ul>
 						</div>
 						<div class="col-xs-12 col-sm-2 cp_job_view_detail">
-							<a href="" target="_blank" onclick="">View More</a>
+							<a href="/post/{{post.idpost}}" target="_blank" >View More</a>
 						</div>
 					</div>
 				</div>
 
-
-				<div class="cp_our_job_item  show ">
-					<div class="row">
-						<div class="col-xs-12 col-sm-10 cp_Job_summary_info">
-							<h4>
-								<a href="" target="_blank" onclick="">Br.se Làm Việc Dài Hạn Tại Nhật Bản</a>
-							</h4>
-							<ul>
-								<li>
-									<i class="fa fa-briefcase"></i>Experienced (non-manager)</li>
-								<li>
-									<i class="fa fa-calendar-o"></i>27/10/2017</li>
-							</ul>
-						</div>
-						<div class="col-xs-12 col-sm-2 cp_job_view_detail">
-							<a href="" target="_blank" onclick="">View More </a>
-						</div>
-					</div>
-				</div>
-				<div class="cp_our_job_item  show ">
-					<div class="row">
-						<div class="col-xs-12 col-sm-10 cp_Job_summary_info">
-							<h4>
-								<a href="" target="_blank" onclick="">Xamarin Developer ( Up to 1000 USD )</a>
-							</h4>
-							<ul>
-								<li>
-									<i class="fa fa-briefcase"></i>Experienced (non-manager)</li>
-								<li>
-									<i class="fa fa-calendar-o"></i>26/10/2017</li>
-							</ul>
-						</div>
-						<div class="col-xs-12 col-sm-2 cp_job_view_detail">
-							<a href="" target="_blank" onclick="">View More</a>
-						</div>
-					</div>
-				</div>
-				<div class="cp_our_job_item  show ">
-					<div class="row">
-						<div class="col-xs-12 col-sm-10 cp_Job_summary_info">
-							<h4>
-								<a href="" target="_blank" onclick="">Java Developer Work in Singapore (Up to 6000 SGD)</a>
-							</h4>
-							<ul>
-								<li>
-									<i class="fa fa-briefcase"></i>Experienced (non-manager)</li>
-								<li>
-									<i class="fa fa-calendar-o"></i>25/10/2017</li>
-							</ul>
-						</div>
-						<div class="col-xs-12 col-sm-2 cp_job_view_detail">
-							<a href="" target="_blank" onclick="">
-								View More</a>
-						</div>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>

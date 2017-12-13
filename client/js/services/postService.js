@@ -12,6 +12,14 @@ angular
           callback(err.data);
         });
     }
+    service.getPostCompany = function (id, callback) {
+      $http.get(BASE_URL + "posts/getPostCompany", { params: { "idCompany": id } })
+        .then(function (response) {
+          callback(response.data);
+        }, function (err) {
+          callback(err);
+        })
+    }
     service.getAllPost = function (callback) {
       var url = BASE_URL + "posts/getAllPost";
       $http.get(url)
