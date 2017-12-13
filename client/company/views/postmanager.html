@@ -45,7 +45,7 @@
                     </ul>
                 </div>
                 <div class="panel-body">
-                    <table id="example1" class="table table-bordered bordered table-striped  table-hover datatable">
+                    <table datatable="ng" class="table table-bordered bordered table-striped  table-hover datatable">
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -58,7 +58,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="post in data" repeat-done="initDataTable()">
+                            <tr ng-repeat="post in data" >
                                 <td data-title="'#'">
                                     {{$index+1}}</td>
                                 <td data-title="'Name'">
@@ -72,17 +72,20 @@
                                 <td data-title="'Salary'">
                                     {{post.salary}}</td>
                                 <td>
-                                    <a href="#edit/{{post.idpost}}" class=" btn btn-success btn-sm " >
+                                    <a href="#edit/{{post.idpost}}" class=" btn btn-success btn-sm ">
                                         Edit </a>
                                     <button class=" btn btn-danger btn-sm " ng-click="deletePost(post.idpost)">
                                         Delete </button>
+                                    <a class=" btn btn-primary btn-md" href="/post/{{post.idpost}}" target="_blank">
+                                        <b>Xem</b>
+                                    </a>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-        
+
         </div>
     </div>
 

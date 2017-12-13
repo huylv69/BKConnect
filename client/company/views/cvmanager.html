@@ -59,12 +59,19 @@
 <!-- PAGE TITLE -->
 <div class="page-title">
     <h2>
-        <span class="fa fa-users"></span> Danh sách bài đăng: Hiện có {{results.listpost.lenght}} bài đăng
+        <span class="fa fa-users"></span> Danh sách bài đăng: Hiện có {{results.listpost.length}} bài đăng
     </h2>
+    
+</div>
+<div class="col-md-10">
+        <div class="input-group push-down-10">
+            <span class="input-group-addon"><span class="fa fa-search"></span></span>
+            <input type="text" class="form-control" placeholder="Từ khóa tìm kiếm"  ng-model="searchString"/>
+        </div>   
 </div>
 <!-- END PAGE TITLE -->
 <uib-accordion close-others="oneAtATime">
-    <div uib-accordion-group class="panel-default" is-open="status.open" ng-repeat="post in results.listpost">
+    <div uib-accordion-group class="panel-default" is-open="status.open" ng-repeat="post in results.listpost | searchFor:searchString">
         <uib-accordion-heading>
             Bài: {{post.title}} | Ngày đăng: {{post.created | date:'dd/MM/yyyy'}} | Hết hạn: {{post.expired | date:'dd/MM/yyyy'}}
             <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"

@@ -1,6 +1,6 @@
 // create the module and name it comApp
 var comApp = angular.module('comApp', ['ngRoute', 'summernote', 'ngDatepicker', 'ngTagsInput', 'ngFileUpload', 'ngAnimate',
-    'ui.bootstrap']);
+    'ui.bootstrap','datatables']);
 
 // configure our routes
 comApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
