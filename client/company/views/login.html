@@ -15,17 +15,10 @@
 
 <div class="w3layoutscontaineragileits">
     <h2>Login here</h2>
-    <form ng-submit="loginCompany()" autocomplete="on">
-        <input type="email" Name="Email" placeholder="EMAIL" required="required" ng-model="company.email">
-        <input type="password" Name="Password" placeholder="PASSWORD" required="required" ng-model="company.password">
-        <!-- <ul class="agileinfotickwthree">
-			<li>
-				<input type="checkbox" id="brand1" value="">
-				<label for="brand1">
-					<span></span>Remember me</label>
-				<a href="#">Forgot password?</a>
-			</li>
-		</ul> -->
+    <form ng-submit="loginCompany()">
+        <input type="email" Name="Email" placeholder="EMAIL" required="required" ng-model="userLog.email">
+        <input type="password" Name="Password" autocomplete="off" placeholder="PASSWORD" required="required" ng-model="userLog.password">
+
         <p ng-show="errLogin" class="text-danger" text> {{textLogin}} </p>
         <div class="aitssendbuttonw3ls">
             <p class="text-center" ng-show="loading">
@@ -54,19 +47,19 @@
                     </div>
                 </div>
                 <div class="form-sub-w3ls">
-                    <input type="email" Name="Email" placeholder="EMAIL" required="required" ng-model="company.email">
+                    <input type="email" Name="RegEmail" placeholder="EMAIL" required="required" ng-model="company.email">
                     <div class="icon-agile">
                         <i class="fa fa-envelope-o" aria-hidden="true"></i>
                     </div>
                 </div>
                 <div class="form-sub-w3ls">
-                    <input placeholder="Password" id="regpass" type="password" ng-model="company.password" required="required">
+                    <input placeholder="Password" autocomplete="off" type="password" ng-model="company.password" required="required">
                     <div class="icon-agile">
                         <i class="fa fa-unlock-alt" aria-hidden="true"></i>
                     </div>
                 </div>
                 <div class="form-sub-w3ls">
-                    <input placeholder="Confirm Password" id="confirmpass" ng-model="company.repass" type="password" required="required">
+                    <input placeholder="Confirm Password" autocomplete="off" ng-model="company.repass" type="password" required="required">
                     <div class="icon-agile">
                         <i class="fa fa-unlock-alt" aria-hidden="true"></i>
                     </div>
@@ -76,10 +69,10 @@
 							</textarea>
                 </div>
                 <p ng-show="usernameIsExisting" class="p_errorLogin" ng-if="!showNotifi"> * Tài khoản đã tồn tại, vui lòng thử lại với email mới </p>
+                <p class="text-notifi" ng-if="showNotifi"> {{textNotifi}} </p>
                 <div class="submit-w3l">
-                    <button type="submit" value="Register">submit</button>
+                    <input type="submit" value="Register">
                 </div>
-                <h1 class="text-notifi" ng-if="showNotifi"> {{textNotifi}} </h1>
             </form>
         </div>
     </div>

@@ -38,7 +38,7 @@
                             type="email" placeholder="20141943@student.hust.edu.vn" />
                         <span class="text-danger" ng-show="!loginForm.email.$error.required&&loginForm.email.$error.pattern"> * Hust email address is required</span>
 
-                        <input id="password" ng-model="user.password" placeholder="Password" name="password" required="required" type="password"
+                        <input id="password" ng-model="user.password"autocomplete="off" placeholder="Password" name="password" required="required" type="password"
                         />
 
                         <div class="tp">
@@ -87,12 +87,13 @@
                     <form name="registerForm" ng-submit="register()">
                         <input id="usernamesignup" ng-model="student.name" name="name" required="required" type="text" placeholder="Bạn tên là gì nhỉ ?"
                         />
+                        <span class="text-danger" ng-show="registerForm.name.$error.required && registerForm.name.$dirty">* required</span>
                         <input id="emailsignup" type="email" name="emailsignup" ng-model="student.email" ng-required=true ng-pattern="/[\d]+@student\.hust\.edu\.vn$/"
                             placeholder="20141943@student.hust.edu.vn" />
                         <span class="text-danger" ng-show="!registerForm.emailsignup.$error.required&&registerForm.emailsignup.$error.pattern"> * Hust email address is required</span>
-                        <input id="passwordsignup" name="passwordsignup" ng-model="student.password" required="required" type="password" placeholder="Password"
+                        <input id="passwordsignup" name="passwordsignup" ng-model="student.password" required="required" autocomplete="off" type="password" placeholder="Password"
                         />
-                        <input id="passwordsignup_confirm" name="passwordsignup_confirm" ng-model="student.repass" required="required" type="password"
+                        <input id="passwordsignup_confirm" name="passwordsignup_confirm" ng-model="student.repass" autocomplete="off" required="required" type="password"
                             placeholder="Re-Password" />
                         <p ng-show="usernameIsExisting" class="p_errorLogin"> * Tài khoản đã tồn tại, vui lòng thử lại với email mới </p>
                         <h4 class="text-notifi" ng-if="showNotifi"> {{textNotifi}} </h4>

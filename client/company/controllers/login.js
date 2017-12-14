@@ -1,9 +1,11 @@
 comApp.controller('LoginController', ['$rootScope', '$scope', '$location', 'AuthenService', '$mLocalStorage', '$window', function ($rootScope, $scope, $location, AuthenService, $mLocalStorage, $window) {
     //login Company
     $scope.loginCompany = function () {
-        $scope.loading = true;        
-        var email = $scope.company.email;
-        var password = $scope.company.password;
+        $scope.loading = true;
+        $scope.errLogin = false;
+
+        var email = $scope.userLog.email;
+        var password = $scope.userLog.password;
         AuthenService.loginCompany(email, password, function (response) {
             // console.log(response);
             $scope.loading = false;
@@ -56,27 +58,48 @@ comApp.controller('LoginController', ['$rootScope', '$scope', '$location', 'Auth
 
     //register company
     $scope.registerCompany = function () {
+        $scope.loading = true;
+        $scope.showNotifi = false;
+        $scope.usernameIsExisting = false;
         var name = $scope.company.name;
         var password = $scope.company.password;
+        var repass = $scope.company.repass;
         var email = $scope.company.email;
         var introduce = $scope.company.introduce;
-        if (name != null && password != null && email != null && introduce != null) {
-            AuthenService.registerCompany(email, password, name, introduce, function (response) {
-                console.log(response);
-                if (response.status == 200) {
-                    if (response.data.email) {
-                        $rootScope.textNotifi = "Đăng kí tài khoản thành công . Liên hệ Admin để kích hoạt tài khoản";
-                        $scope.showNotifi = true;
+        if (repass === password) {
+            if (name != null && password != null && email != null && introduce != null) {
+                AuthenService.registerCompany(email, password, name, introduce, function (response) {
+                    // console.log(response);
+                    $scope.loading = false;
+                    if (response.status == 200) {
+                        if (response.data.email) {
+                            $rootScope.textNotifi = "Đăng kí tài khoản thành công . Liên hệ Admin để kích hoạt tài khoản";
+                            $scope.showNotifi = true;
+                        }
                     }
-                }
-                else {
-                    if (response.status == 422) {
-                        $scope.usernameIsExisting = true;
-                        return;
-                    } else {
-                        console.log("Server lỗi");
+                    else {
+                        if (response.status == 422) {
+                            $scope.usernameIsExisting = true;
+                            return;
+                        } else {
+                            console.log("Server lỗi");
+                        }
                     }
-                }
+                });
+            } else {
+                $scope.loading = false;
+                swal({
+                    title: "Thất bại!",
+                    text: "Điền đầy đủ thông tin bạn nhé!",
+                    icon: "warning",
+                });
+            }
+        } else {
+            $scope.loading = false;
+            swal({
+                title: "Thất bại!",
+                text: "Mật khẩu không khớp!",
+                icon: "warning",
             });
         }
     }
