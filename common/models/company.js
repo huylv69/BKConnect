@@ -13,6 +13,7 @@ module.exports = function (Company) {
             let defaultError = new Error('login failed');
             defaultError.statusCode = 401;
             defaultError.code = 'LOGIN_FAILED';
+            console.log(company);
             if (err || company == null) {
                 next(defaultError);
             } else {
@@ -21,6 +22,11 @@ module.exports = function (Company) {
                     errActive.statusCode = 409;
                     errActive.code = 'LOGIN_FAILED_COMPANY_NOT_VERIFIED';
                     next(errActive);
+                } else if (company.block) {
+                    let errBlock = new Error('The company has been blocked');
+                    errBlock.statusCode = 406;
+                    errBlock.code = 'BLOCK_COMPANY';
+                    next(errBlock);
                 } else {
                     next();
                 }
@@ -46,8 +52,8 @@ module.exports = function (Company) {
         }
     );
 
-     //Get List Activated 
-     Company.getListActivated = function (fn) {
+    //Get List Activated 
+    Company.getListActivated = function (fn) {
         fn = fn || utils.createPromiseCallback();
         Company.find({
             where: {

@@ -25,7 +25,7 @@ module.exports = function (Post) {
             http: { verb: 'get', path: '/getPostCompany' }
         }
     );
-    //Get List Request 
+    //Get All Post  
     Post.getAllPost = function (fn) {
         Post.find({
             order: 'created DESC',
@@ -56,6 +56,36 @@ module.exports = function (Post) {
             description: 'Get list company request .',
             returns: { arg: 'list', type: 'array' },
             http: { verb: 'get', path: '/getAllPost' }
+        }
+    );
+
+    Post.getAllPostAdmin = function (fn) {
+        Post.find({
+            order: 'created DESC'
+        }, function (err, list) {
+            var itemsProcessed = 0;
+            if (list == 0) {
+                fn(null, list);
+            } else {
+                list.forEach(function (element) {
+                    var sql = ` select logo,name from company where idcompany = ` + element.idcompany;
+                    app.dataSources.mysqlDs.connector.query(sql, function (err, res) {
+                        element['logoCom'] = res[0].logo;
+                        element['nameCom'] = res[0].name;
+                        itemsProcessed++;
+                        if (itemsProcessed === list.length) {
+                            fn(null, list);
+                        }
+                    })
+                }, this);
+            }
+        });
+    };
+    Post.remoteMethod('getAllPostAdmin',
+        {
+            description: 'Get list company request .',
+            returns: { arg: 'list', type: 'array' },
+            http: { verb: 'get', path: '/getAllPostAdmin' }
         }
     );
 

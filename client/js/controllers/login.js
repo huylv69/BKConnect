@@ -119,7 +119,6 @@ angular.module('app').controller('LoginController', ['$scope', '$state', '$rootS
                                 if (dismiss === 'timer') {
                                     $state.go('home');
                                     $rootScope.$broadcast('loadHeader');
-
                                 }
                             }
                             );
@@ -127,6 +126,9 @@ angular.module('app').controller('LoginController', ['$scope', '$state', '$rootS
                         $scope.loading = false;
                         if (response.data.error.code == "LOGIN_FAILED_EMAIL_NOT_VERIFIED") {
                             $scope.textLogin = "Xác thực email trước khi đăng nhập";
+                            $scope.errLogin = true;
+                        } else if (response.status == 406) {
+                            $scope.textLogin = "*Tài khoản đang bị Block . Đề nghị liên hệ Admin";
                             $scope.errLogin = true;
                         } else {
                             $scope.textLogin = "*Login failed. Wrong username or password ";

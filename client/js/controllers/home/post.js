@@ -49,7 +49,7 @@ angular.module('app').controller('PostController', ['$scope', '$stateParams', '$
 
         let click = false;
         $scope.applyCV = function () {
-            console.log('ok')
+            // console.log('ok')
             if (click) {
                 return;
             } else {
@@ -92,7 +92,7 @@ angular.module('app').controller('PostController', ['$scope', '$stateParams', '$
                     $state.go('home');
                 } else {
                     $scope.postDetail = res;
-                    console.log(res);
+                    // console.log(res);
                     $mPost.getSkillPost(id, function (res) {
                         $scope.listSkill = res;
                     })

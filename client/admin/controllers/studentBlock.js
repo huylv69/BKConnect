@@ -3,7 +3,7 @@ angular.module('admin').controller('StudentBlockController', ['$scope', '$state'
         var loadData = function () {
             $mStudent.getListBlock(function (res) {
                 $scope.listStudent = res.students;
-                console.log(res);
+                // console.log(res);
             })
         };
 

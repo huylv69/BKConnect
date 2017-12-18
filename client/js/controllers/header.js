@@ -2,14 +2,7 @@ angular.module('app').controller('HeaderController', ['$scope', '$state', '$root
     function ($scope, $state, $rootScope, $mStudent, $mLocalStorage) {
 
         $scope.user = $rootScope.currentUser;
-        // $scope.authen = ($rootScope.currentUser) ? true : false;
-        // $scope.$watch($rootScope.currentUser, function (value, oldValue) {
-
-        //     if (value != oldValue)
-        //         $scope.authen = ($rootScope.currentUser) ? true : false;
-
-        // }, true);
-        // console.log($scope.authen)
+       
         $scope.logout = function () {
             $mLocalStorage.deleteItem('userInfo');
             $rootScope.currentUser = null;
@@ -21,7 +14,7 @@ angular.module('app').controller('HeaderController', ['$scope', '$state', '$root
         if ($scope.user != null) {
             $mStudent.getInfo($rootScope.currentUser.userId, function (res) {
                 $scope.user = res;
-                console.log(res);
+                // console.log(res);
             });
         }
 
@@ -30,7 +23,7 @@ angular.module('app').controller('HeaderController', ['$scope', '$state', '$root
             if ($rootScope.currentUser) {
                 $mStudent.getInfo($rootScope.currentUser.userId, function (res) {
                     $scope.user = res;
-                    console.log(res);
+                    // console.log(res);
                 });
             }
         });

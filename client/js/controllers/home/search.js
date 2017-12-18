@@ -3,11 +3,11 @@ angular.module('app').controller('SearchController', ['$scope', '$stateParams', 
         $scope.useCareer = {};
         $scope.useCategory = {};
         
-        console.log($stateParams.where)
+        // console.log($stateParams.where)
         var getData = function () {
             $mPost.getAllPost(function (res) {
                 $scope.listPost = res.list;
-                console.log(res);
+                // console.log(res);
 
                 $mUtils.getAllCareer((response) => {
                     $scope.listCareer = response;
@@ -81,7 +81,7 @@ angular.module('app').controller('SearchController', ['$scope', '$stateParams', 
                                 }
                             }
                         }
-                        console.log($scope.careerGroup, $scope.useCareer)
+                        // console.log($scope.careerGroup, $scope.useCareer)
                         var filterAfterCareer = [];
                         selected = false;
                         for (var j in filterAfterCategory) {
@@ -118,7 +118,7 @@ angular.module('app').controller('SearchController', ['$scope', '$stateParams', 
             if ($scope.authen) {
                 $mUtils.getInfoFollow($rootScope.currentUser.userId, function (res) {
                     $scope.listPostFollow = res.results.listPost;
-                    console.log(res);
+                    // console.log(res);
                 })
             };
         }

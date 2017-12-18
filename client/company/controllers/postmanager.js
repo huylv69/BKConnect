@@ -6,7 +6,7 @@ comApp.controller('ManagerPostController', ['$scope', '$rootScope', '$http', '$r
     var getData = function () {
         postService.getPostCompany(idCompany, function (data) {
             $scope.data = data.list;
-            console.log(data);
+            // console.log(data);
         })
     }
     getData();

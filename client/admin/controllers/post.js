@@ -3,8 +3,7 @@ angular.module('admin').controller('PostController', ['$scope', '$state', '$root
         var loadData = function () {
             $mPost.getListPost(function (res) {
                 $scope.listPosts = res.list;
-                console.log(res);
-
+                // console.log(res);
             })
         };
         $scope.deletePost = function (id) {

@@ -39,10 +39,10 @@ comApp.controller('PostController', ['$scope', '$rootScope', '$location', 'postS
     var getData = function () {
         utilsService.getCareer((response) => {
             $scope.listCareer = response;
-            console.log(response)
+            // console.log(response)
         });
         utilsService.getSkill((res) => {
-            console.log(res);
+            // console.log(res);
             listSkills = res;
         })
     }

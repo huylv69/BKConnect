@@ -2,6 +2,31 @@
 var config = require('../../server/config.json');
 var path = require('path');
 module.exports = function (User) {
+    //Check verify before Login 
+    User.beforeRemote('login', function (ctx, user, next) {
+        var self = this;
+        let email = ctx.args.credentials.email;
+        User.findOne({ where: { "email": email } }, function (err, user) {
+            let defaultError = new Error('login failed');
+            defaultError.statusCode = 401;
+            defaultError.code = 'LOGIN_FAILED';
+            console.log(user);
+            if (err || user == null) {
+                next(defaultError);
+            } else {
+                if (user.block) {
+                    let errBlock = new Error('The company has been blocked');
+                    errBlock.statusCode = 406;
+                    errBlock.code = 'BLOCK_COMPANY';
+                    next(errBlock);
+                } else {
+                    next();
+                }
+            }
+        })
+    })
+
+
     User.afterRemote('create', function (context, user, next) {
         var options = {
             type: 'email',

@@ -15,11 +15,11 @@ angular
         }
 
         service.getListPost = function (callback) {
-            var url = BASE_URL + "posts/getAllPost";
+            var url = BASE_URL + "posts/getAllPostAdmin";
             $http.get(url)
                 .then(function (res) {
                     callback(res.data);
-                    console.log(res.data)
+                    // console.log(res.data)
                 }, function (err) {
                     callback(err.data);
                 })

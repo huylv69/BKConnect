@@ -42,16 +42,17 @@ comApp.controller('LoginController', ['$rootScope', '$scope', '$location', 'Auth
                                 $window.location.href = 'company';
                             })
                         }
-                    }
-                    );
+                    });
+            } else if (response.data.error.code == "LOGIN_FAILED_COMPANY_NOT_VERIFIED") {
+
+                $scope.textLogin = "Tài khoản chưa kích hoạt. Liên hệ với admin để kích hoạt";
+                $scope.errLogin = true;
+            } else if (response.status == 406) {
+                $scope.textLogin = "Tài khoản đang bị block. Liên hệ admin";
+                $scope.errLogin = true;
             } else {
-                if (response.data.error.code == "LOGIN_FAILED_COMPANY_NOT_VERIFIED") {
-                    $scope.textLogin = "Tài khoản chưa kích hoạt. Liên hệ với admin để kích hoạt";
-                    $scope.errLogin = true;
-                } else {
-                    $scope.textLogin = "*Login failed. Wrong username or password ";
-                    $scope.errLogin = true;
-                }
+                $scope.textLogin = "*Login failed. Wrong username or password ";
+                $scope.errLogin = true;
             }
         });
     }

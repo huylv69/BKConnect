@@ -7,7 +7,7 @@ comApp.controller('NewCVController', ['$scope', '$rootScope', '$location', 'post
     }
     getData();
     $scope.showCV = function (infoCV) {
-        console.log(infoCV)
+        // console.log(infoCV)
         $scope.infoCV = infoCV.details;
         $scope.infoCV.birthday = new Date(infoCV.details.birthday);
         var modalInstance = $uibModal.open({

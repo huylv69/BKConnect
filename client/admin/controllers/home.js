@@ -8,5 +8,5 @@ function ($scope, $stateParams, $rootScope, $state) {
     //     })
     // }
     // getData();
-    console.log(BASE_URL);
+    // console.log(BASE_URL);
 }]);

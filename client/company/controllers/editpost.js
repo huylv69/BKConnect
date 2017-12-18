@@ -5,19 +5,19 @@ comApp.controller('EditPostController', ['$scope', '$location', '$routeParams', 
     var loadData = function () {
         utilsService.getCareer((response) => {
             $scope.listCareer = response;
-            console.log(response)
+            // console.log(response)
         });
         postService.getById(id, function (res) {
             $scope.postDetail = res.data;
-            console.log(res);
+            // console.log(res);
         });
         utilsService.getSkill((res) => {
-            console.log(res);
+            // console.log(res);
             listSkills = res;
         });
         postService.getSkillPost(id, function (res) {
             $scope.postDetail.skill = res;
-            console.log(res);
+            // console.log(res);
         });
     }
 

@@ -5,7 +5,7 @@ angular.module('admin').controller('ListCompanyController', ['$scope', '$state',
         var loadData = function () {
             $mCompany.getListActivated(function (res) {
                 $scope.listCompany = res.companies;
-                console.log(res);
+                // console.log(res);
             })
         };
 
@@ -28,7 +28,7 @@ angular.module('admin').controller('ListCompanyController', ['$scope', '$state',
                         icon: "error",
                     });
                 }
-                console.log(res);
+                // console.log(res);
             })
         }
         $scope.activateCompany = function (company) {

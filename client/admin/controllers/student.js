@@ -3,7 +3,7 @@ angular.module('admin').controller('StudentController', ['$scope', '$state', '$r
         var loadData = function () {
             $mStudent.getListActive(function (res) {
                 $scope.listStudent = res.students;
-                console.log(res);
+                // console.log(res);
             })
         };
         $scope.isPaneShown = false;

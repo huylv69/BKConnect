@@ -7,7 +7,7 @@ angular.module('app').controller('HomeController', ['$scope', '$stateParams', '$
             if ($scope.authen) {
                 $mUtils.getPostFollow($rootScope.currentUser.userId, function (res) {
                     $scope.listPostFollow = res.results.listPost;
-                    console.log(res);
+                    // console.log(res);
                 })
             }
         });
@@ -18,7 +18,7 @@ angular.module('app').controller('HomeController', ['$scope', '$stateParams', '$
                 // console.log(res);
                 $mUtils.getAllCareer((response) => {
                     $scope.listCareer = response;
-                    console.log(response);
+                    // console.log(response);
                     $scope.careerGroup = [];
                     let careerGroup = uniqueItems($scope.listPost, 'idcareer');
                     for (let index = 0; index < careerGroup.length; index++) {
@@ -40,7 +40,7 @@ angular.module('app').controller('HomeController', ['$scope', '$stateParams', '$
                 $mUtils.getInfoFollow($rootScope.currentUser.userId, function (res) {
                     $scope.listPostFollow = res.results.listPost;
                     $scope.listComFollow = res.results.listComFollow;
-                    console.log($scope.listComFollow);
+                    // console.log($scope.listComFollow);
                 })
             };
         }
