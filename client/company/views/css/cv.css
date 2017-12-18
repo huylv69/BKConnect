@@ -57,11 +57,12 @@ label {
 }
 .general{
   border:  2px ;
-  padding: 50px 0px;
+  padding: 50px 80px;
 }
 .general .name{
   color: orange;
   text-align: left;
+  padding-left: 20px;
 }
 .general ul{
   list-style: none;

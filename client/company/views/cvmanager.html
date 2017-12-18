@@ -117,12 +117,12 @@
                         <div id="primary" class="content-area grid-parent mobile-grid-100 grid-100 tablet-grid-100">
                             <main id="main" class="site-main">
                                 <div class="inside-article row">
-                                    <div class="page-header-image-single grid-container information col-md-2">
+                                    <div class=" col-md-2 page-header-image-single grid-container ">
                                         <img width="256" height="256" ngf-thumbnail="chosenPhoto || infoCV.photo || 'views/student/images/100.png'" class="attachment-full size-full wp-post-image" alt="" itemprop="image"
                                             srcset="" sizes="(max-width: 100px) 100vw, 100px">
                                     </div>
 
-                                    <div class="col-md-4">
+                                    <div class="col-md-10">
                                         <div class="general" itemscope="" itemtype="http://schema.org/JobPosting">
                                             <h3 class="name" itemprop="headline">{{infoCV.name}}</h3>
                                             <ul class="gen_info">
@@ -210,7 +210,7 @@
                                     <div class="title">
                                         <i class="fa fa-fw fa-laptop"></i>Kinh nghiệm</div>
                                     <div class="content">
-                                        {{nfoCV.experience}}
+                                        {{infoCV.experience}}
                                     </div>
                                 </div>
                                 <div class="language information">
